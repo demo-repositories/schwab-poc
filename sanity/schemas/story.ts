@@ -16,6 +16,7 @@ export default {
       name: 'role',
       type: 'string',
       title: 'Role',
+      initialValue: 'story',
     },
     {
       name: 'identifier',
@@ -124,29 +125,25 @@ export default {
         ],
       },
     },
-    // {
-    //   name: 'featuredMedia',
-    //   type: 'array',
-    //   title: 'Featured media',
-    //   of: [
-    //     {
-    //       type: 'reference',
-    //       to: [{type: 'accessibleImage'}, {type: 'podcast'}, {type: 'video'}, {type: 'audio'}],
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'authors',
-    //   type: 'array',
-    //   title: 'Authors',
-    //   of: [{type: 'reference', to: [{type: 'person'}]}],
-    // },
-    // {
-    //   name: 'contributors',
-    //   type: 'array',
-    //   title: 'Contributors',
-    //   of: [{type: 'reference', to: [{type: 'person'}]}],
-    // },
+    {
+      name: 'featuredMedia',
+      type: 'array',
+      title: 'Featured media',
+      of: [{type: 'featuredImage'}, {type: 'podcast'}, {type: 'video'}, {type: 'audio'}],
+    },
+    {
+      name: 'authors',
+      type: 'array',
+      title: 'Authors',
+      of: [{type: 'person'}],
+    },
+    {
+      name: 'contributors',
+      type: 'array',
+      title: 'Contributors',
+      of: [{type: 'person'}],
+    },
+    // Are these a set list of options?
     {
       name: 'complianceCode',
       type: 'string',
