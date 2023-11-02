@@ -1,5 +1,7 @@
 /**
  * This is the object sent from Schwab with 'components' excluded for brevity
+ *
+ * Components listed on call: Bynder block, data table, video, CTA from library with segment tagging
  */
 const storyFromSchwab = {
   role: 'story',
