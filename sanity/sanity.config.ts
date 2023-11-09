@@ -3,6 +3,7 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {table} from '@sanity/table'
 import {schemaTypes} from './schemas'
+import {defaultDocumentNode} from './desk/defaultDocumentNode'
 
 export default defineConfig({
   name: 'default',
@@ -11,7 +12,7 @@ export default defineConfig({
   projectId: 'fvuvea00',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool(), table()],
+  plugins: [deskTool({defaultDocumentNode}), visionTool(), table()],
 
   schema: {
     types: schemaTypes,

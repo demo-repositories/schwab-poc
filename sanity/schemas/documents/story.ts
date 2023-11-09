@@ -5,17 +5,17 @@ export default {
   title: 'Story',
   type: 'document',
   icon: BookText,
-  groups: [
-    {
-      name: 'seo',
-      title: 'SEO',
-    },
-  ],
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      source: 'title',
     },
     {
       name: 'content',
@@ -41,6 +41,12 @@ export default {
       title: 'SEO Data',
       type: 'seoData',
       group: 'seo',
+    },
+  ],
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO',
     },
   ],
 }
