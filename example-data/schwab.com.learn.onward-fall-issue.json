@@ -1,0 +1,255 @@
+{
+  "story/onward-fall-issue": {
+    "role": "story",
+    "identifier": "7641",
+    "uuid": "b238653c-3f4f-4bb3-b5fb-af77ae1c45c4",
+    "language": "en",
+    "moderationState": "published",
+    "urlAlias": "/story/onward-fall-issue",
+    "hostname": "educationcontent.schwab.com",
+    "title": "Fall 2023 Issue",
+    "subtitle": null,
+    "shortTitle": "Fall 2023 Issue",
+    "summary": "Explore the Fall 2023 edition of Onward magazine.",
+    "duration": null,
+    "excerpt": "",
+    "displayDate": "2023-08-10T16:00:00+00:00",
+    "lastPublished": "2023-10-19T02:10:54+00:00",
+    "editorialType": "general-story",
+    "featuredMedia": [
+      {
+        "role": "image",
+        "uuid": "ff923549-2855-42ea-b1fd-e006c3c3399a",
+        "identifier": "40521",
+        "title": "Q3_2023_Onward_Cover_3x2.jpg",
+        "url": "https://educationcontent.schwab.com/sites/g/files/eyrktu1071/files/Q3_2023_Onward_Cover_3x2.jpg",
+        "altText": "",
+        "attribution": null,
+        "aspectRatio": "3:2",
+        "disclosure": null,
+        "caption": null,
+        "index": 0
+      },
+      {
+        "role": "image",
+        "uuid": "6aefaa30-73a7-4213-b07d-dfb4e1bde08c",
+        "identifier": "40526",
+        "title": "Q3_2023_Onward_Cover_2x1.jpg",
+        "url": "https://educationcontent.schwab.com/sites/g/files/eyrktu1071/files/Q3_2023_Onward_Cover_2x1.jpg",
+        "altText": "",
+        "attribution": null,
+        "aspectRatio": "300:157",
+        "disclosure": null,
+        "caption": null,
+        "index": 1
+      },
+      {
+        "role": "image",
+        "uuid": "9585060a-5bb5-4583-b89e-eb224f52e3dd",
+        "identifier": "40531",
+        "title": "Q3_2023_Onward_Cover_1x1.jpg",
+        "url": "https://educationcontent.schwab.com/sites/g/files/eyrktu1071/files/Q3_2023_Onward_Cover_1x1.jpg",
+        "altText": "",
+        "attribution": null,
+        "aspectRatio": "1:1",
+        "disclosure": null,
+        "caption": null,
+        "index": 2
+      }
+    ],
+    "authors": [],
+    "contributors": [],
+    "complianceCode": "0823-35ZA",
+    "disclosure": "<p>The information provided here is for general informational purposes only and should not be considered an individualized recommendation or personalized investment advice. The investment strategies mentioned here may not be suitable for everyone. Each investor needs to review an investment strategy for his or her own particular situation before making any investment decision. </p><p>All expressions of opinion are subject to change without notice in reaction to shifting market conditions. Data contained herein from third-party providers is obtained from what are considered reliable sources. However, its accuracy, completeness, or reliability cannot be guaranteed. </p><p>Examples provided are for illustrative purposes only and not intended to be reflective of results you can expect to achieve.</p>",
+    "components": [
+      {
+        "role": "text",
+        "text": "<p>In the first year of retirement, the prospect of calculating your tax obligation and managing withholding across multiple income sources can be intimidating. In this issue, we look at what retirees need to know to manage their taxes effectively throughout the year.</p><p>Elsewhere in the magazine, Schwab experts offer financial tips for empty nesters, share hard-won lessons about becoming a successful trader, make the case for investing internationally, and more.</p>",
+        "index": 0
+      },
+      {
+        "role": "resource",
+        "title": "View the Fall 2023 print edition.",
+        "link": {
+          "url": "https://schwab.bynder.com/m/132235ec3e4cbd79/original/Onward-Fall-2023-Q3.pdf",
+          "linkText": null,
+          "attributes": null
+        },
+        "caption": "<p>In the PDF viewer, click Tools (<strong>&gt;&gt;</strong>) in the upper-righthand corner and select:</p>\n\n<ul><li><strong>Presentation Mode</strong> to view full screen</li>\n\t<li><strong>Open</strong> to view the PDF in your browser or PDF software</li>\n\t<li><strong>Print </strong>to read offline</li>\n\t<li><strong>Download </strong>to save</li>\n</ul>",
+        "style": { "variant": "pdf" },
+        "index": 1
+      },
+      { "role": "dynamicCTA", "index": 2 }
+    ],
+    "taxonomy": [
+      {
+        "vocabulary": "schwab_locale",
+        "vocabularyName": "Schwab Locale",
+        "vocabularyUuid": "26d5d68f-1efc-4142-967a-05bebe39aa8c",
+        "terms": [
+          {
+            "termId": "1436",
+            "termUuid": "9e59c383-7b8d-478b-b2b8-f4611f072099",
+            "urlAlias": "/taxonomy/term/1436",
+            "isPrimary": false,
+            "termName": "United States (English)",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "business_line",
+        "vocabularyName": "Business Line",
+        "vocabularyUuid": "a0c1c8f1-e3c0-45b8-afee-634d937077f7",
+        "terms": [
+          {
+            "termId": "1151",
+            "termUuid": "b278ea5c-5f8c-4da4-9293-becd5476d2b0",
+            "urlAlias": "/taxonomy/term/1151",
+            "isPrimary": false,
+            "termName": "Learning Experience and Publications",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "cadence",
+        "vocabularyName": "Cadence",
+        "vocabularyUuid": "2001d0d8-02bf-4dcb-b627-7d35bbc826ea",
+        "terms": [
+          {
+            "termId": "771",
+            "termUuid": "d98ec2fe-fea5-4c62-9b0f-dc46ea267be2",
+            "urlAlias": "/taxonomy/term/771",
+            "isPrimary": false,
+            "termName": "Quarterly",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "channel",
+        "vocabularyName": "Channel Suitability",
+        "vocabularyUuid": "67876cde-478a-49ea-a6d8-5ac8a84d8c41",
+        "terms": [
+          {
+            "termId": "1131",
+            "termUuid": "ffdadb65-a4d5-47e6-83c2-57e736077c38",
+            "urlAlias": "/taxonomy/term/1131",
+            "isPrimary": false,
+            "termName": "Omnichannel",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "content_purpose",
+        "vocabularyName": "Content Purpose",
+        "vocabularyUuid": "5b768745-8653-4ec5-b871-e7277967ceb1",
+        "terms": [
+          {
+            "termId": "906",
+            "termUuid": "3e294b4b-4022-40bc-88f9-2c66e775b745",
+            "urlAlias": "/taxonomy/term/906",
+            "isPrimary": false,
+            "termName": "How does it work",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "901",
+            "termUuid": "d3a82804-8ddc-42a1-9d7e-39a871ea7a97",
+            "urlAlias": "/taxonomy/term/901",
+            "isPrimary": false,
+            "termName": "What is it",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "916",
+            "termUuid": "1a2127f8-bbbc-49bb-8e6f-8268982f67df",
+            "urlAlias": "/taxonomy/term/916",
+            "isPrimary": false,
+            "termName": "What should I do",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "section",
+        "vocabularyName": "Section",
+        "vocabularyUuid": "857d8f38-19a8-4f5c-aca9-6b23902b4ce4",
+        "terms": [
+          {
+            "termId": "326",
+            "termUuid": "bbb11b81-6f36-428c-b131-671942462014",
+            "urlAlias": "/taxonomy/term/326",
+            "isPrimary": true,
+            "termName": "Onward",
+            "parentTermId": "306",
+            "parentTermUuid": "006264c2-b8e0-4383-ba35-3cba5df43254",
+            "parentTermName": "Publications",
+            "locale": "en"
+          },
+          {
+            "termId": "1211",
+            "termUuid": "1c3b666b-fc61-480f-89fd-f2b9ef6bbf3d",
+            "urlAlias": "/taxonomy/term/1211",
+            "isPrimary": false,
+            "termName": "Onward Archive",
+            "parentTermId": "326",
+            "parentTermUuid": "bbb11b81-6f36-428c-b131-671942462014",
+            "parentTermName": "Onward",
+            "locale": "en"
+          },
+          {
+            "termId": "1066",
+            "termUuid": "8be863dc-357a-4fd3-9633-5f25d0cb67a4",
+            "urlAlias": "/taxonomy/term/1066",
+            "isPrimary": false,
+            "termName": "Onward Letters",
+            "parentTermId": "326",
+            "parentTermUuid": "bbb11b81-6f36-428c-b131-671942462014",
+            "parentTermName": "Onward",
+            "locale": "en"
+          }
+        ]
+      }
+    ],
+    "apiMetadata": {
+      "cacheTags": "paragraph:90216,paragraph:90211,media:40521,media:40526,media:40531,taxonomy_term:326,paragraph:90201,paragraph:90206,paragraph:92276,taxonomy_term:1151,taxonomy_term:771,taxonomy_term:1131,taxonomy_term:906,taxonomy_term:901,taxonomy_term:916,taxonomy_term:1211,taxonomy_term:1066,paragraph:821,node:7641",
+      "analytics": {
+        "adHocTags": [{ "key": "scroll50-dblclk", "value": "reii-genst" }],
+        "doubleClickTags": [{ "type": "reii", "category": "genlp" }],
+        "analyticsTitle": "Onward Fall Issue",
+        "analyticsCategory": null
+      },
+      "searchMeta": {
+        "description": "Explore the Fall 2023 edition of Onward magazine.",
+        "abstract": "Explore the Fall 2023 edition of Onward magazine.",
+        "keywords": null
+      }
+    },
+    "style": { "hideFeaturedInTemplate": false },
+    "resourceVersion": 2
+  }
+}

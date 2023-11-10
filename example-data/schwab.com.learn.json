@@ -1,0 +1,776 @@
+{
+  "education-home": {
+    "role": "pattern_landing_page",
+    "identifier": "2091",
+    "uuid": "47b86247-0746-47ea-aec8-ebf1f077b421",
+    "language": "en",
+    "moderationState": "published",
+    "urlAlias": "/education-home",
+    "hostname": "educationcontent.schwab.com",
+    "displayDate": null,
+    "lastPublished": "2023-10-17T21:04:26+00:00",
+    "editorialType": "hub",
+    "title": "Insights & Education ",
+    "summary": "Keeping you at the forefront of modern investing ",
+    "components": [
+      {
+        "role": "bcn_marquee",
+        "eyebrow": null,
+        "title": "Insights & Education",
+        "displayTitle": true,
+        "buttons": null,
+        "links": null,
+        "description": "<p>Keeping you at the forefront of modern investing </p>",
+        "style": { "variant": "editorial" },
+        "index": 0
+      },
+      {
+        "role": "query_set",
+        "eyebrow": null,
+        "title": "The latest commentary",
+        "displayTitle": true,
+        "description": null,
+        "count": 5,
+        "links": [
+          {
+            "url": "/market-commentary",
+            "type": null,
+            "linkText": "View more",
+            "attributes": null
+          }
+        ],
+        "offset": 0,
+        "sortBy": "default",
+        "featuredMedia": [],
+        "authorFilters": [],
+        "contentTypeFilters": [
+          {
+            "contentType": "story",
+            "editorialTypes": ["general-story", "podcast", "video"]
+          }
+        ],
+        "featuredContent": [],
+        "taxonomyFilters": [
+          [
+            {
+              "vocabularyName": "Category",
+              "termId": "636",
+              "termName": "Markets and Economy"
+            },
+            {
+              "vocabularyName": "Category",
+              "termId": "651",
+              "termName": "Government Policy"
+            },
+            {
+              "vocabularyName": "Content Purpose",
+              "termId": "911",
+              "termName": "What's new"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Category",
+              "termId": "636",
+              "termName": "Markets and Economy"
+            },
+            {
+              "vocabularyName": "Category",
+              "termId": "646",
+              "termName": "International"
+            },
+            {
+              "vocabularyName": "Content Purpose",
+              "termId": "911",
+              "termName": "What's new"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Category",
+              "termId": "636",
+              "termName": "Markets and Economy"
+            },
+            {
+              "vocabularyName": "Category",
+              "termId": "661",
+              "termName": "Sectors"
+            },
+            {
+              "vocabularyName": "Content Purpose",
+              "termId": "911",
+              "termName": "What's new"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Category",
+              "termId": "636",
+              "termName": "Markets and Economy"
+            },
+            { "vocabularyName": "Category", "termId": "641", "termName": "US" },
+            {
+              "vocabularyName": "Content Purpose",
+              "termId": "911",
+              "termName": "What's new"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Business Line",
+              "termId": "1151",
+              "termName": "Learning Experience and Publications"
+            },
+            {
+              "vocabularyName": "Category",
+              "termId": "656",
+              "termName": "Market Volatility"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "271",
+              "termName": "Market Outlook"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Content Purpose",
+              "termId": "911",
+              "termName": "What's new"
+            },
+            {
+              "vocabularyName": "Section",
+              "termId": "266",
+              "termName": "Bond Insights"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Business Line",
+              "termId": "1156",
+              "termName": "Schwab Center for Financial Research"
+            },
+            {
+              "vocabularyName": "Category",
+              "termId": "656",
+              "termName": "Market Volatility"
+            }
+          ]
+        ],
+        "style": { "variant": "discovery_editorial" },
+        "index": 1
+      },
+      {
+        "role": "query_set",
+        "eyebrow": null,
+        "title": "Market updates",
+        "displayTitle": true,
+        "description": null,
+        "count": 4,
+        "links": null,
+        "offset": 0,
+        "sortBy": "default",
+        "featuredMedia": [],
+        "authorFilters": [],
+        "contentTypeFilters": [
+          {
+            "contentType": "story",
+            "editorialTypes": ["general-story", "podcast", "video"]
+          }
+        ],
+        "featuredContent": [
+          {
+            "identifier": "8226",
+            "urlAlias": "story/stock-market-update-open",
+            "contentType": "story",
+            "index": 0
+          }
+        ],
+        "taxonomyFilters": [
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "301",
+              "termName": "Today's Options Market Update"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "281",
+              "termName": "Looking to the Futures"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "286",
+              "termName": "Weekly Trader’s Outlook"
+            }
+          ]
+        ],
+        "style": { "variant": "perspectives_editorial" },
+        "index": 2
+      },
+      {
+        "role": "query_set",
+        "eyebrow": null,
+        "title": "Popular in trading",
+        "displayTitle": true,
+        "description": null,
+        "count": 6,
+        "links": [
+          {
+            "url": "/trading",
+            "type": null,
+            "linkText": "View more",
+            "attributes": null
+          }
+        ],
+        "offset": 0,
+        "sortBy": "default",
+        "featuredMedia": [],
+        "authorFilters": [],
+        "contentTypeFilters": [
+          {
+            "contentType": "story",
+            "editorialTypes": ["general-story", "podcast", "video"]
+          }
+        ],
+        "featuredContent": [],
+        "taxonomyFilters": [
+          [
+            {
+              "vocabularyName": "Authoring Flags",
+              "termId": "786",
+              "termName": "Featured"
+            },
+            {
+              "vocabularyName": "Business Line",
+              "termId": "1166",
+              "termName": "Insights and Education Content"
+            },
+            {
+              "vocabularyName": "Category",
+              "termId": "466",
+              "termName": "Trading"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Category",
+              "termId": "466",
+              "termName": "Trading"
+            },
+            {
+              "vocabularyName": "Section",
+              "termId": "1191",
+              "termName": "In the News"
+            }
+          ]
+        ],
+        "style": { "variant": "discovery_editorial" },
+        "index": 3
+      },
+      {
+        "role": "query_set",
+        "eyebrow": null,
+        "title": "Planning and retirement ",
+        "displayTitle": true,
+        "description": null,
+        "count": 6,
+        "links": [
+          {
+            "url": "/planning",
+            "type": null,
+            "linkText": "View more",
+            "attributes": null
+          }
+        ],
+        "offset": 0,
+        "sortBy": "default",
+        "featuredMedia": [],
+        "authorFilters": [],
+        "contentTypeFilters": [
+          {
+            "contentType": "story",
+            "editorialTypes": ["general-story", "podcast", "video"]
+          }
+        ],
+        "featuredContent": [],
+        "taxonomyFilters": [
+          [
+            {
+              "vocabularyName": "Category",
+              "termId": "561",
+              "termName": "Financial Planning"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Category",
+              "termId": "566",
+              "termName": "Education"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Category",
+              "termId": "586",
+              "termName": "Estate Planning"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Category",
+              "termId": "451",
+              "termName": "Tax Planning"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "User Goal",
+              "termId": "896",
+              "termName": "Save for retirement"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Life Event",
+              "termId": "841",
+              "termName": "In Retirement"
+            }
+          ]
+        ],
+        "style": { "variant": "discovery_editorial" },
+        "index": 4
+      },
+      {
+        "role": "query_set",
+        "eyebrow": null,
+        "title": "Schwab original podcasts",
+        "displayTitle": true,
+        "description": null,
+        "count": 6,
+        "links": [
+          {
+            "url": "/podcasts",
+            "type": null,
+            "linkText": "View more",
+            "attributes": null
+          }
+        ],
+        "offset": 0,
+        "sortBy": "default",
+        "featuredMedia": [
+          {
+            "role": "image",
+            "uuid": "1e2e8402-a0b0-4e15-a680-9ed2a56ec3f4",
+            "identifier": "29926",
+            "title": "Podcasts_3x2",
+            "url": "https://educationcontent.schwab.com/sites/g/files/eyrktu1071/files/Podcasts_3x2.jpg",
+            "altText": "",
+            "attribution": null,
+            "aspectRatio": "3:2",
+            "disclosure": null,
+            "caption": null,
+            "index": 0
+          }
+        ],
+        "authorFilters": [],
+        "contentTypeFilters": [
+          { "contentType": "story", "editorialTypes": ["podcast"] }
+        ],
+        "featuredContent": [],
+        "taxonomyFilters": [
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "321",
+              "termName": "Choiceology"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "316",
+              "termName": "Financial Decoder"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "1101",
+              "termName": "Washington Wise"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "1531",
+              "termName": "On Investing"
+            }
+          ]
+        ],
+        "style": { "variant": "foundational_editorial" },
+        "index": 5
+      },
+      {
+        "role": "query_set",
+        "eyebrow": null,
+        "title": "Onward magazine",
+        "displayTitle": true,
+        "description": null,
+        "count": 6,
+        "links": [
+          {
+            "url": "/onward",
+            "type": null,
+            "linkText": "View more",
+            "attributes": null
+          }
+        ],
+        "offset": 0,
+        "sortBy": "default",
+        "featuredMedia": [
+          {
+            "role": "image",
+            "uuid": "7d2157d3-5c03-4df8-b999-836b65455573",
+            "identifier": "19966",
+            "title": "BrandJ_30PT_Onward Cover_3x2.jpg",
+            "url": "https://educationcontent.schwab.com/sites/g/files/eyrktu1071/files/LEAP_30PT_Q323_Cover_3x2.jpg",
+            "altText": "",
+            "attribution": null,
+            "aspectRatio": "3:2",
+            "disclosure": null,
+            "caption": null,
+            "index": 1
+          }
+        ],
+        "authorFilters": [],
+        "contentTypeFilters": [
+          {
+            "contentType": "story",
+            "editorialTypes": ["general-story", "podcast", "video"]
+          }
+        ],
+        "featuredContent": [],
+        "taxonomyFilters": [
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "1061",
+              "termName": "Onward Features"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "1036",
+              "termName": "Onward Perspectives"
+            }
+          ],
+          [
+            {
+              "vocabularyName": "Section",
+              "termId": "1051",
+              "termName": "Onward Family Matters"
+            }
+          ]
+        ],
+        "style": { "variant": "foundational_editorial" },
+        "index": 6
+      },
+      {
+        "role": "term_list",
+        "title": "Explore more topics",
+        "displayTitle": true,
+        "taxonomy": {
+          "vocabulary": "category",
+          "vocabularyName": "Category",
+          "vocabularyUuid": "ae1d0088-cf2f-44f0-8727-66515c1f25cb",
+          "terms": [
+            {
+              "termId": "411",
+              "termUuid": "13b5327e-a3f6-4d49-8411-10e134b4d57e",
+              "urlAlias": "/topic/retirement",
+              "isPrimary": null,
+              "termName": "Retirement",
+              "parentTermId": null,
+              "parentTermUuid": null,
+              "parentTermName": null,
+              "locale": "en"
+            },
+            {
+              "termId": "446",
+              "termUuid": "2b64015f-0cec-4a92-a305-c6449d8294c8",
+              "urlAlias": "/topic/taxes",
+              "isPrimary": null,
+              "termName": "Taxes",
+              "parentTermId": null,
+              "parentTermUuid": null,
+              "parentTermName": null,
+              "locale": "en"
+            },
+            {
+              "termId": "466",
+              "termUuid": "b92c3232-5b0f-47ec-8d17-6be10547943a",
+              "urlAlias": "/topic/trading",
+              "isPrimary": null,
+              "termName": "Trading",
+              "parentTermId": null,
+              "parentTermUuid": null,
+              "parentTermName": null,
+              "locale": "en"
+            },
+            {
+              "termId": "511",
+              "termUuid": "5c46df3e-172b-45b2-8492-0bf876d8a0d4",
+              "urlAlias": "/topic/investments",
+              "isPrimary": null,
+              "termName": "Investments",
+              "parentTermId": null,
+              "parentTermUuid": null,
+              "parentTermName": null,
+              "locale": "en"
+            },
+            {
+              "termId": "636",
+              "termUuid": "f64b5519-63af-461d-a3ce-70d6fc176bc6",
+              "urlAlias": "/topic/markets-and-economy",
+              "isPrimary": null,
+              "termName": "Markets and Economy",
+              "parentTermId": null,
+              "parentTermUuid": null,
+              "parentTermName": null,
+              "locale": "en"
+            },
+            {
+              "termId": "561",
+              "termUuid": "10f95650-dd04-4353-8887-55bd228afc2d",
+              "urlAlias": "/topic/financial-planning",
+              "isPrimary": null,
+              "termName": "Financial Planning",
+              "parentTermId": null,
+              "parentTermUuid": null,
+              "parentTermName": null,
+              "locale": "en"
+            },
+            {
+              "termId": "376",
+              "termUuid": "b676e61b-0153-42b2-9f8b-971152ce7de9",
+              "urlAlias": "/topic/portfolio-management",
+              "isPrimary": null,
+              "termName": "Portfolio Management",
+              "parentTermId": null,
+              "parentTermUuid": null,
+              "parentTermName": null,
+              "locale": "en"
+            },
+            {
+              "termId": "406",
+              "termUuid": "76e8c243-3451-4485-b20f-e84645b0c0fa",
+              "urlAlias": "/topic/robo-advice",
+              "isPrimary": null,
+              "termName": "Robo Advice",
+              "parentTermId": "376",
+              "parentTermUuid": "b676e61b-0153-42b2-9f8b-971152ce7de9",
+              "parentTermName": "Portfolio Management",
+              "locale": "en"
+            }
+          ]
+        },
+        "index": 7
+      }
+    ],
+    "complianceCode": "0723-32A7",
+    "disclosure": "<p><span><span><span><span><span><span>The information provided here is for general informational purposes only and should not be considered an individualized recommendation or personalized investment advice. The investment strategies mentioned here may not be suitable for everyone. Each investor needs to review an investment strategy for his or her own particular situation before making any investment decision.&nbsp;</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>All expressions of opinion are subject to change without notice in reaction to shifting market conditions. Data contained herein from third-party providers is obtained from what are considered reliable sources. However, its accuracy, completeness or reliability cannot be guaranteed.&nbsp;</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Examples provided are for illustrative purposes only and not intended to be reflective of results you can expect to achieve.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Options carry a high level of risk and are not suitable for all investors. Certain requirements must be met to trade options through Schwab. Please read the Options Disclosure Document titled \"</span></span></span><span><a href=\"https://www.theocc.com/Company-Information/Documents-and-Archives/Options-Disclosure-Document\"><span><span><span>Characteristics and Risks of Standardized Options</span></span></span></a></span><span><span><span>\" &nbsp;before considering any option transaction. Call Schwab at 1</span></span></span><span><span><span>‐</span></span></span><span><span><span>800</span></span></span><span><span><span>‐</span></span></span><span><span><span>435</span></span></span><span><span><span>‐</span></span></span><span><span><span>4000 for a current copy. Supporting documentation for any claims or statistical information is available upon request.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Investing involves risks, including loss of principal. Hedging and protective strategies generally involve additional costs and do not assure a profit or guarantee against loss. With long options, investors may lose 100% of funds invested. Spread trading must be done in a margin account. Multiple leg options strategies will involve multiple per-contract charges. Covered calls provide downside protection only to the extent of the premium received and limit upside potential to the strike price plus premium received.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Futures and futures options trading involves substantial risk and is not suitable for all investors. Please read the </span></span></span><span><a href=\"https://www.schwab.com/Futures_RiskDisclosure\"><span><span>Risk Disclosure Statement for Futures and Options</span></span></a></span><span><span><span> prior to trading futures products. Futures and forex accounts are not protected by the Securities Investor Protection Corporation (SIPC). Futures, futures options, and forex trading services provided by Charles Schwab Futures and Forex LLC. Trading privileges subject to review and approval. Not all clients will qualify.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Charles Schwab Futures and Forex LLC (NFA Member) and Charles Schwab &amp; Co., Inc. (Member FINRA/SIPC) are separate but affiliated companies and subsidiaries of The Charles Schwab Corporation.</span></span></span></span></span></span></p>\r\n",
+    "enterpriseDisclosures": [],
+    "taxonomy": [
+      {
+        "vocabulary": "schwab_locale",
+        "vocabularyName": "Schwab Locale",
+        "vocabularyUuid": "26d5d68f-1efc-4142-967a-05bebe39aa8c",
+        "terms": [
+          {
+            "termId": "1436",
+            "termUuid": "9e59c383-7b8d-478b-b2b8-f4611f072099",
+            "urlAlias": "/taxonomy/term/1436",
+            "isPrimary": false,
+            "termName": "United States (English)",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "business_line",
+        "vocabularyName": "Business Line",
+        "vocabularyUuid": "a0c1c8f1-e3c0-45b8-afee-634d937077f7",
+        "terms": [
+          {
+            "termId": "1151",
+            "termUuid": "b278ea5c-5f8c-4da4-9293-becd5476d2b0",
+            "urlAlias": "/taxonomy/term/1151",
+            "isPrimary": false,
+            "termName": "Learning Experience and Publications",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "category",
+        "vocabularyName": "Category",
+        "vocabularyUuid": "ae1d0088-cf2f-44f0-8727-66515c1f25cb",
+        "terms": [
+          {
+            "termId": "411",
+            "termUuid": "13b5327e-a3f6-4d49-8411-10e134b4d57e",
+            "urlAlias": "/topic/retirement",
+            "isPrimary": false,
+            "termName": "Retirement",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "446",
+            "termUuid": "2b64015f-0cec-4a92-a305-c6449d8294c8",
+            "urlAlias": "/topic/taxes",
+            "isPrimary": false,
+            "termName": "Taxes",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "466",
+            "termUuid": "b92c3232-5b0f-47ec-8d17-6be10547943a",
+            "urlAlias": "/topic/trading",
+            "isPrimary": false,
+            "termName": "Trading",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "511",
+            "termUuid": "5c46df3e-172b-45b2-8492-0bf876d8a0d4",
+            "urlAlias": "/topic/investments",
+            "isPrimary": false,
+            "termName": "Investments",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "636",
+            "termUuid": "f64b5519-63af-461d-a3ce-70d6fc176bc6",
+            "urlAlias": "/topic/markets-and-economy",
+            "isPrimary": false,
+            "termName": "Markets and Economy",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "561",
+            "termUuid": "10f95650-dd04-4353-8887-55bd228afc2d",
+            "urlAlias": "/topic/financial-planning",
+            "isPrimary": false,
+            "termName": "Financial Planning",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "376",
+            "termUuid": "b676e61b-0153-42b2-9f8b-971152ce7de9",
+            "urlAlias": "/topic/portfolio-management",
+            "isPrimary": false,
+            "termName": "Portfolio Management",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "406",
+            "termUuid": "76e8c243-3451-4485-b20f-e84645b0c0fa",
+            "urlAlias": "/topic/robo-advice",
+            "isPrimary": false,
+            "termName": "Robo Advice",
+            "parentTermId": "376",
+            "parentTermUuid": "b676e61b-0153-42b2-9f8b-971152ce7de9",
+            "parentTermName": "Portfolio Management",
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "channel",
+        "vocabularyName": "Channel Suitability",
+        "vocabularyUuid": "67876cde-478a-49ea-a6d8-5ac8a84d8c41",
+        "terms": [
+          {
+            "termId": "811",
+            "termUuid": "fb3d2b85-f087-4166-bffd-6e41893b196f",
+            "urlAlias": "/taxonomy/term/811",
+            "isPrimary": false,
+            "termName": "Web Prospect",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "syndication_channel",
+        "vocabularyName": "Syndication Destination",
+        "vocabularyUuid": "a0fac133-bec4-40ee-976c-1133affed308",
+        "terms": [
+          {
+            "termId": "926",
+            "termUuid": "4cb9ca10-d1df-4800-b407-a55c800b5404",
+            "urlAlias": "/taxonomy/term/926",
+            "isPrimary": false,
+            "termName": "Prospect Drupal",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      }
+    ],
+    "apiMetadata": {
+      "cacheTags": "paragraph:23161,paragraph:23166,paragraph:32116,paragraph:100361,paragraph:23176,paragraph:23181,paragraph:23241,paragraph:23206,paragraph:23211,paragraph:23186,taxonomy_term:1151,taxonomy_term:411,taxonomy_term:446,taxonomy_term:466,taxonomy_term:511,taxonomy_term:636,taxonomy_term:561,taxonomy_term:376,taxonomy_term:406,taxonomy_term:811,taxonomy_term:926,node:2091",
+      "analytics": {
+        "adHocTags": [{ "key": "scroll50-dblclk", "value": "reii-homst" }],
+        "doubleClickTags": [{ "type": "reii", "category": "homlp" }],
+        "analyticsTitle": "insights_and_education",
+        "analyticsCategory": null
+      },
+      "searchMeta": {
+        "description": "Keeping you at the forefront of modern investing ",
+        "abstract": "Keeping you at the forefront of modern investing ",
+        "keywords": null
+      }
+    },
+    "resourceVersion": 2
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "story/how-to-calculate-stock-profit": {
+    "role": "story",
+    "identifier": "9366",
+    "uuid": "dde9fe7a-ae6c-491b-af2c-6b01add398f6",
+    "language": "en",
+    "moderationState": "published",
+    "urlAlias": "/story/how-to-calculate-stock-profit",
+    "hostname": "educationcontent.schwab.com",
+    "title": "How to Calculate Stock Profit",
+    "subtitle": null,
+    "shortTitle": "Calculating Stock Profit and Loss",
+    "summary": "Understand how to calculate stock profits by using metrics like (P/L) Open, (P/L) Day, (P/L) Year-to-Date, and (P/L) % to track your trading performance.",
+    "duration": null,
+    "excerpt": "",
+    "displayDate": "2023-08-28T16:00:00+00:00",
+    "lastPublished": "2023-09-25T19:01:04+00:00",
+    "editorialType": "general-story",
+    "featuredMedia": [
+      {
+        "role": "image",
+        "uuid": "11be6816-d0c9-4de1-b7c0-ffbbb4ce4287",
+        "identifier": "30271",
+        "title": "Getty_148249133_1x1",
+        "url": "https://educationcontent.schwab.com/sites/g/files/eyrktu1071/files/Getty_148249133_1x1_0.jpg",
+        "altText": "",
+        "attribution": null,
+        "aspectRatio": "1:1",
+        "disclosure": null,
+        "caption": null,
+        "index": 51
+      },
+      {
+        "role": "image",
+        "uuid": "954c73f4-7f9e-49bd-a57a-0eae54195515",
+        "identifier": "30276",
+        "title": "Getty_148249133_2x1",
+        "url": "https://educationcontent.schwab.com/sites/g/files/eyrktu1071/files/Getty_148249133_2x1_0.jpg",
+        "altText": "",
+        "attribution": null,
+        "aspectRatio": "300:157",
+        "disclosure": null,
+        "caption": null,
+        "index": 52
+      },
+      {
+        "role": "image",
+        "uuid": "446572c6-38e2-456b-ae3a-63427699b1e1",
+        "identifier": "30281",
+        "title": "Getty_148249133_3x2",
+        "url": "https://educationcontent.schwab.com/sites/g/files/eyrktu1071/files/Getty_148249133_3x2_0.jpg",
+        "altText": "",
+        "attribution": null,
+        "aspectRatio": "3:2",
+        "disclosure": null,
+        "caption": null,
+        "index": 53
+      }
+    ],
+    "authors": [],
+    "contributors": [],
+    "complianceCode": "0323-3CGF",
+    "disclosure": "<p>The information provided here is for general informational purposes only and should not be considered an individualized recommendation or personalized investment advice. The investment strategies mentioned here may not be suitable for everyone. Each investor needs to review an investment strategy for his or her own particular situation before making any investment decision.</p><p>Investing in stock can be volatile and involves risk, including loss of principal.</p><p>Examples provided are for illustrative purposes only and not intended to be reflective of results you can expect to achieve.</p>",
+    "components": [
+      {
+        "role": "text",
+        "text": "<p>Before mobile phones and coast-to-coast cell coverage, roadside diners and gas stations did good business selling foldout maps to travelers who passed through town. These maps were crucial instruments of navigation, showing you not only where you were, but also where you came from and where you're headed. For stock investors, measuring and tracking performance—derived from profit and loss—is the financial version of the foldout map.</p><p>The simplest way to track performance is to mark your starting account balance and then compare it to your current balance, excluding any funds deposited or withdrawn, on whatever period you wish, such as daily, monthly, quarterly, etc. Many investors typically start the New Year by noting their account balance and checking it periodically to measure how they're doing throughout the year.<br />&nbsp;</p>",
+        "index": 0
+      },
+      {
+        "role": "subheading",
+        "text": "Understanding stock profit calculations",
+        "level": "1",
+        "index": 1
+      },
+      {
+        "role": "text",
+        "text": "<p>However, if you're an active trader or want to drill deeper into your positions, there are other ways to track performance, but first, let's familiarize ourselves with some terms and how to access them on the thinkorswim<sup>®</sup> platform.&nbsp;</p><p><strong>Profit/Loss (P/L) Day</strong> is the amount of money made or lost on your position from last night's close to the current mark, plus any intraday profit and loss. You can see the current price for any stock or option in your position on the&nbsp;<strong>Position Statement</strong>.&nbsp;</p><p><strong>P/L Open</strong> is the amount of money made or lost on your position since the inception of the trade. You can see the execution price for any stock or option in your position by going to the&nbsp;<strong>Monitor</strong>&nbsp;tab and selecting the&nbsp;<strong>P/L Open</strong>&nbsp;dollar amount.</p><p><strong>P/L Year-to-Date (YTD)</strong> is the amount of money made or lost in a particular underlying security in the current calendar year. It includes the P/L for all open positions and any closed positions made for a specific stock or index done in a calendar year.&nbsp;</p><p><strong>P/L %</strong> calculates the percentage of money made or lost as a function of your execution price. This takes the P/L Open as the numerator and your execution price as the denominator. Keep in mind, when it comes to options, this will only calculate the P/L of single options and does not include spreads.</p><p>These four unique calculations can be used to measure your portfolio in various ways. For example, let's say on the first trading day of the year, you start with $100,000 in your account and no open positions. You then buy 500 shares each of QRS and XYZ stock, both of which are trading for $10. Assuming both stocks immediately go up $1, your P/L would look like this&nbsp;(please be mindful that this example excludes commissions and transaction fees).</p>",
+        "index": 2
+      },
+      {
+        "role": "contentTable",
+        "title": null,
+        "caption": "Table shows two columns for tickers QRS and XYZ with a P/L Day, P/L Open, and P/L YTD lines at plus $500 on each. The last line ",
+        "disclosureTitle": null,
+        "disclosure": null,
+        "showColumnHeader": true,
+        "showRowHeader": false,
+        "data": {
+          "descriptors": [
+            { "key": "calculations", "label": "Calculations" },
+            { "key": "ticker_qrs", "label": "Ticker QRS" },
+            { "key": "ticker_xyz", "label": "Ticker XYZ" }
+          ],
+          "records": [
+            {
+              "calculations": "P/L Day",
+              "ticker_qrs": "+$500",
+              "ticker_xyz": "+$500"
+            },
+            {
+              "calculations": "P/L Open<div><br></div>",
+              "ticker_qrs": "+$500",
+              "ticker_xyz": "+$500"
+            },
+            {
+              "calculations": "P/L YTD",
+              "ticker_qrs": "+$500",
+              "ticker_xyz": "+$500"
+            },
+            {
+              "calculations": "P/L %",
+              "ticker_qrs": "10%",
+              "ticker_xyz": "10%"
+            }
+          ]
+        },
+        "index": 3
+      },
+      {
+        "role": "text",
+        "text": "<p>Now, let's say the following day, shares of QRS drop $0.50 per share, and you decide to sell. Meanwhile, the XYZ share price was unchanged. Your P/L would like look like this.</p>",
+        "index": 4
+      },
+      {
+        "role": "contentTable",
+        "title": null,
+        "caption": "Chart shows two columns for tickers QRS and XYZ. For ticker QRS, the P/L Day is minus$250 with the P/L Open and P/L YTD at plus ",
+        "disclosureTitle": null,
+        "disclosure": null,
+        "showColumnHeader": true,
+        "showRowHeader": false,
+        "data": {
+          "descriptors": [
+            { "key": "calculations", "label": "Calculations" },
+            { "key": "ticker_qrs", "label": "Ticker QRS" },
+            { "key": "ticker_xyz", "label": "Ticker XYZ" }
+          ],
+          "records": [
+            {
+              "calculations": "P/L Day",
+              "ticker_qrs": "-$250&nbsp;",
+              "ticker_xyz": "+$0"
+            },
+            {
+              "calculations": "P/L Open",
+              "ticker_qrs": "+$250",
+              "ticker_xyz": "+$500"
+            },
+            {
+              "calculations": "P/L YTD",
+              "ticker_qrs": "+$250",
+              "ticker_xyz": "+$500"
+            },
+            {
+              "calculations": "P/L %",
+              "ticker_qrs": "+5%",
+              "ticker_xyz": "+10%"
+            }
+          ]
+        },
+        "index": 5
+      },
+      {
+        "role": "subheading",
+        "text": "Creating a performance matrix for stock profit calculations",
+        "level": "1",
+        "index": 6
+      },
+      {
+        "role": "text",
+        "text": "<p>As the examples above illustrate, you can mix and match these metrics to track the type of performance that matters most to you. If you're a day trader, you might be more focused on daily and open P/L, whereas a long-term investor might be more concerned with YTD P/L.</p><p>Another way to track performance is to differentiate between open and closed positions. With open positions, you can create subgroups focused on concepts like \"short-term,\" \"long-term,\" \"speculative,\" \"value,\" or any number of criteria, and then add the appropriate positions to each. This helps keep your positions organized and gives you the ability to track performance on each subgroup separate from one another.</p><p>For closed positions, one way to track performance is to download them into a spreadsheet and sort profitable trades from unprofitable ones.&nbsp;</p><p>Tracking investment performance can be one of the more powerful things you can do as an investor. It can be done in a very simple, straightforward manner, or you can make it as complex as you want. But no matter which you choose, consider making it a central part of your investing toolbox.</p>",
+        "index": 7
+      }
+    ],
+    "taxonomy": [
+      {
+        "vocabulary": "schwab_locale",
+        "vocabularyName": "Schwab Locale",
+        "vocabularyUuid": "26d5d68f-1efc-4142-967a-05bebe39aa8c",
+        "terms": [
+          {
+            "termId": "1436",
+            "termUuid": "9e59c383-7b8d-478b-b2b8-f4611f072099",
+            "urlAlias": "/taxonomy/term/1436",
+            "isPrimary": false,
+            "termName": "United States (English)",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "authoring_flags",
+        "vocabularyName": "Authoring Flags",
+        "vocabularyUuid": "82f09a08-b0a6-4a77-aa7c-09dd12398f7f",
+        "terms": [
+          {
+            "termId": "791",
+            "termUuid": "763c4985-3535-43f9-8b7d-b27c500a5330",
+            "urlAlias": "/taxonomy/term/791",
+            "isPrimary": false,
+            "termName": "Include in Schwab.com feeds",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "business_line",
+        "vocabularyName": "Business Line",
+        "vocabularyUuid": "a0c1c8f1-e3c0-45b8-afee-634d937077f7",
+        "terms": [
+          {
+            "termId": "1166",
+            "termUuid": "17c99e0f-0372-41d8-9c72-ae137d5808d8",
+            "urlAlias": "/taxonomy/term/1166",
+            "isPrimary": false,
+            "termName": "Insights and Education Content",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "category",
+        "vocabularyName": "Category",
+        "vocabularyUuid": "ae1d0088-cf2f-44f0-8727-66515c1f25cb",
+        "terms": [
+          {
+            "termId": "466",
+            "termUuid": "b92c3232-5b0f-47ec-8d17-6be10547943a",
+            "urlAlias": "/topic/trading",
+            "isPrimary": false,
+            "termName": "Trading",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "476",
+            "termUuid": "e6af2e2d-2673-46d9-b6d1-6bf2ba21dc6e",
+            "urlAlias": "/topic/technical-analysis",
+            "isPrimary": true,
+            "termName": "Technical Analysis",
+            "parentTermId": "466",
+            "parentTermUuid": "b92c3232-5b0f-47ec-8d17-6be10547943a",
+            "parentTermName": "Trading",
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "channel",
+        "vocabularyName": "Channel Suitability",
+        "vocabularyUuid": "67876cde-478a-49ea-a6d8-5ac8a84d8c41",
+        "terms": [
+          {
+            "termId": "1131",
+            "termUuid": "ffdadb65-a4d5-47e6-83c2-57e736077c38",
+            "urlAlias": "/taxonomy/term/1131",
+            "isPrimary": false,
+            "termName": "Omnichannel",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "content_purpose",
+        "vocabularyName": "Content Purpose",
+        "vocabularyUuid": "5b768745-8653-4ec5-b871-e7277967ceb1",
+        "terms": [
+          {
+            "termId": "906",
+            "termUuid": "3e294b4b-4022-40bc-88f9-2c66e775b745",
+            "urlAlias": "/taxonomy/term/906",
+            "isPrimary": false,
+            "termName": "How does it work",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          },
+          {
+            "termId": "901",
+            "termUuid": "d3a82804-8ddc-42a1-9d7e-39a871ea7a97",
+            "urlAlias": "/taxonomy/term/901",
+            "isPrimary": true,
+            "termName": "What is it",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "experience_level",
+        "vocabularyName": "Experience Level",
+        "vocabularyUuid": "827dd9be-086f-4146-8afa-6cb3707cefc3",
+        "terms": [
+          {
+            "termId": "1201",
+            "termUuid": "219f73ef-0f76-48f3-9420-9516b2a33fe5",
+            "urlAlias": "/taxonomy/term/1201",
+            "isPrimary": false,
+            "termName": "Beginner",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "vocabulary": "user_goal",
+        "vocabularyName": "User Goal",
+        "vocabularyUuid": "a12e1e0e-c2d4-4859-a2ce-971623686c0f",
+        "terms": [
+          {
+            "termId": "856",
+            "termUuid": "2cf4be09-14eb-4727-bdd6-69272bc07979",
+            "urlAlias": "/taxonomy/term/856",
+            "isPrimary": false,
+            "termName": "Learn to trade",
+            "parentTermId": null,
+            "parentTermUuid": null,
+            "parentTermName": null,
+            "locale": "en"
+          }
+        ]
+      }
+    ],
+    "apiMetadata": {
+      "cacheTags": "paragraph:120866,paragraph:120861,media:30271,media:30276,media:30281,taxonomy_term:476,taxonomy_term:901,taxonomy_term:1251,paragraph:120871,paragraph:120876,paragraph:120881,paragraph:120886,paragraph:120891,paragraph:120896,paragraph:120901,paragraph:120906,taxonomy_term:791,taxonomy_term:1166,taxonomy_term:466,taxonomy_term:1131,taxonomy_term:906,taxonomy_term:1201,taxonomy_term:856,paragraph:766,taxonomy_term:271,taxonomy_term:651,taxonomy_term:636,taxonomy_term:646,taxonomy_term:656,taxonomy_term:661,taxonomy_term:376,taxonomy_term:381,taxonomy_term:526,taxonomy_term:496,taxonomy_term:501,taxonomy_term:516,taxonomy_term:536,taxonomy_term:521,taxonomy_term:546,taxonomy_term:441,taxonomy_term:556,taxonomy_term:551,taxonomy_term:1106,taxonomy_term:386,taxonomy_term:391,taxonomy_term:401,taxonomy_term:511,taxonomy_term:561,taxonomy_term:566,taxonomy_term:571,taxonomy_term:576,taxonomy_term:1121,taxonomy_term:586,taxonomy_term:591,taxonomy_term:596,taxonomy_term:601,taxonomy_term:1126,taxonomy_term:606,taxonomy_term:616,taxonomy_term:626,taxonomy_term:411,taxonomy_term:416,taxonomy_term:421,taxonomy_term:426,taxonomy_term:436,taxonomy_term:431,node:9366",
+      "analytics": {
+        "adHocTags": [{ "key": "scroll50-dblclk", "value": "reii-genst" }],
+        "doubleClickTags": [{ "type": "reii", "category": "genlp" }],
+        "analyticsTitle": "How to Calculate Stock Profit",
+        "analyticsCategory": null
+      },
+      "searchMeta": {
+        "description": "Understand how to calculate stock profits by using metrics like (P/L) Open, (P/L) Day, (P/L) Year-to-Date, and (P/L) % to track your trading performance.",
+        "abstract": "Understand how to calculate stock profits by using metrics like (P/L) Open, (P/L) Day, (P/L) Year-to-Date, and (P/L) % to track your trading performance.",
+        "keywords": null
+      }
+    },
+    "style": { "hideFeaturedInTemplate": false },
+    "resourceVersion": 2
+  }
+}

@@ -1,16 +1,23 @@
+import { PortableText } from "@portabletext/react";
+import CustomPortableText from "./CustomPortableText";
+import SanityImage from "./SanityImage";
 export const query = (slug: string) =>
-  `*[_type == "story" && slug.current == '${slug}']{slug, title}`;
+  `*[_type == "story" && slug.current == '${slug}']{slug, title, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}}}`;
 
 export default function Story({ data }) {
-  console.log("data", data);
-  const { title, slug } = data[0];
+  const { title, slug, featuredImage, content } = data[0];
   return (
-    <main>
-      {title && (
-        <h1 className="text-white text-3xl font-bold tracking-tight">
-          {title}
-        </h1>
+    <main className="mx-auto mt-5 max-w-7xl px-5 xl:px-0">
+      <small className="text-schwab-blue text-lg font-semibold leading-7">
+        Story
+      </small>
+      {title && <h1 className="text-4xl font-bold tracking-tight">{title}</h1>}
+      {featuredImage && (
+        <div className="my-5">
+          <SanityImage value={featuredImage} />
+        </div>
       )}
+      <CustomPortableText value={content} />
     </main>
   );
 }

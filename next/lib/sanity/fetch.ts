@@ -5,7 +5,7 @@ import { draftMode } from "next/headers";
 
 import { client } from "./client";
 
-export const token = process.env.NEXT_PUBLIC_SANITY_API_READ_TOKEN;
+export const token = process.env.SANITY_API_READ_TOKEN;
 
 const DEFAULT_PARAMS = {} as QueryParams;
 const DEFAULT_TAGS = [] as string[];

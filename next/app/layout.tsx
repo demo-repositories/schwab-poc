@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import { draftMode } from "next/headers";
 import { token } from "@/lib/sanity/fetch";
+import { Inter as FontSans } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Navbar from "@/components/Navbar";
+import { cn } from "@/lib/utils";
 
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 const PreviewProvider = dynamic(() => import("@/components/PreviewProvider"));
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,13 +25,26 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {draftMode().isEnabled ? (
-          <PreviewProvider token={token}>{children}</PreviewProvider>
-        ) : (
-          children
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
         )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {draftMode().isEnabled ? (
+            <PreviewProvider token={token}>{children}</PreviewProvider>
+          ) : (
+            children
+          )}
+        </ThemeProvider>
       </body>
     </html>
   );
