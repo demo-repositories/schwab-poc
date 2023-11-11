@@ -2,7 +2,6 @@ export default {
     name: 'bynderBlock',
     type: 'object',
     title: 'Bynder block',
-    // icon: ()=>{return <p>'B'</p>},
     fields: [
         { name: 'title', title: 'Title', type: 'string' },
         {

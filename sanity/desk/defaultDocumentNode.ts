@@ -7,13 +7,14 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
 ) => {
     switch (schemaType) {
         case `story`:
+            // Preview pane
             return S.document().views([
                 S.view.form(),
                 S.view
                     .component(Iframe)
                     .options({
                         url: (doc) =>
-                            `http://localhost:3000/api/draft?secret=MY_SECRET_TOKEN&path=/stories/${doc.slug.current}`,
+                            `http://localhost:3000/api/draft?secret=MY_SECRET_TOKEN&path=/story/${doc.slug.current}`,
                     })
                     .title('Preview'),
             ])

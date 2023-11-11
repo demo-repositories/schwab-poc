@@ -4,10 +4,9 @@ import Button from "./Button";
 import { PortableText } from "@portabletext/react";
 
 export default function BynderBlock({ value }) {
-  console.log("value", value);
   const { title, caption, bynderAsset } = value;
   const { previewImg, aspectRatio } = bynderAsset;
-  const imgWidth = 300;
+  const imgWidth = 400;
   const fileURL = "/"; // this doesn't come back from Sanity's test space
   return (
     <section className="mx-auto my-7 flex max-w-7xl justify-center">
@@ -26,7 +25,6 @@ export default function BynderBlock({ value }) {
               value={caption}
               components={{
                 list: {
-                  // Ex. 1: customizing common list types
                   bullet: ({ children }) => (
                     <ul className="list-inside list-disc">{children}</ul>
                   ),

@@ -1,13 +1,13 @@
 "use client";
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
+  // NavigationMenuContent,
+  // NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
+  // NavigationMenuTrigger,
+  // NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ColorSchemeToggle } from "./ColorSchemeToggle";

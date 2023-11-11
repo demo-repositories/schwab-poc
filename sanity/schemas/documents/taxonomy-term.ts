@@ -1,5 +1,5 @@
-import { ToyBrick } from 'lucide-react'
 import { CornerDownRight } from 'lucide-react'
+
 export default {
     name: 'taxonomyTerm',
     title: 'Taxonomy term',

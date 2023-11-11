@@ -48,13 +48,15 @@ export default {
                             const missingTerms = taxonomy.filter((item) => {
                                 return !item.hasOwnProperty('terms')
                             })
-                            // If several items dont have terms (I dont think) we can tell which item is our parent
+
+                            // If several items dont have terms (I dont think) we can tell which item is our parent, so return everything as a fallback
                             if (missingTerms.length > 1) {
                                 return {
                                     filter: '_type=="taxonomyTerm" && defined(_id)',
                                     params: {},
                                 }
                             }
+
                             // Compare each taxonomyItem's "terms" array's entries with our "parent" object to find the right item to lookup
                             const parentAttribute = taxonomy.filter((item) => {
                                 return compareTwoArraysOfObjects(

@@ -1,25 +1,15 @@
 export default {
-  name: 'seoData',
-  title: 'SEO Data',
-  type: 'object',
-  description:
-    'Override for SEO and meta tags. Will automatically generate values from page content if left blank.',
-  fields: [
-    // {
-    //   name: 'title',
-    //   title: 'Title',
-    //   type: 'string',
-    // },
-    // {
-    //   name: 'description',
-    //   title: 'Description',
-    //   type: 'string',
-    // },
-    {
-      name: 'tags',
-      type: 'array',
-      title: 'Tag overrides',
-      of: [{type: 'seoItem'}],
-    },
-  ],
+    name: 'seoData',
+    title: 'SEO Data',
+    type: 'object',
+    description:
+        'Override for SEO and meta tags. Will automatically generate values from page content if left blank.',
+    fields: [
+        {
+            name: 'tags',
+            type: 'array',
+            title: 'Tag overrides',
+            of: [{ type: 'seoItem' }],
+        },
+    ],
 }

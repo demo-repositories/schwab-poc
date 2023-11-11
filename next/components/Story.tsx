@@ -1,8 +1,8 @@
-import { PortableText } from "@portabletext/react";
 import CustomPortableText from "./CustomPortableText";
 import SanityImage from "./SanityImage";
+
 export const query = (slug: string) =>
-  `*[_type == "story" && slug.current == '${slug}']{slug, title, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}}}`;
+  `*[_type == "story" && slug.current == '${slug}']{slug, title, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}}, seoData{...,}}`;
 
 export default function Story({ data }) {
   const { title, slug, featuredImage, content } = data[0];

@@ -1,3 +1,7 @@
+/**
+ * Ripped from https://www.schwab.com/
+ */
+
 export default function SchwabLogo() {
     return (
         <svg
