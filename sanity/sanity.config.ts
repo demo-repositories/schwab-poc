@@ -6,11 +6,12 @@ import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { bynderInputPlugin } from 'sanity-plugin-bynder-input'
 import { schemaTypes } from './schemas'
 import { defaultDocumentNode } from './desk/defaultDocumentNode'
+import SchwabLogo from './components/SchwabLogo'
 
 export default defineConfig({
     name: 'default',
     title: 'Schwab POC',
-
+    icon: SchwabLogo,
     projectId: 'fvuvea00',
     dataset: 'production',
 

@@ -11,6 +11,7 @@ export default {
             name: 'title',
             title: 'Title',
             type: 'string',
+            group: 'content',
         },
         {
             name: 'slug',
@@ -18,6 +19,7 @@ export default {
             source: 'title',
             title: 'Slug',
             validation: (rule: Rule) => rule.required(),
+            group: 'content',
         },
         {
             name: 'featuredImage',
@@ -31,6 +33,7 @@ export default {
                     validation: (rule: Rule) => rule.required(),
                 },
             ],
+            group: 'content',
         },
         {
             name: 'content',
@@ -53,6 +56,14 @@ export default {
                     type: 'bynderBlock',
                 },
             ],
+            group: 'content',
+        },
+        {
+            name: 'taxonomy',
+            title: 'Taxonomy',
+            type: 'array',
+            of: [{ type: 'taxonomyItem' }],
+            group: 'taxonomy',
         },
         {
             name: 'seoData',
@@ -63,8 +74,16 @@ export default {
     ],
     groups: [
         {
+            name: 'content',
+            title: 'Content',
+        },
+        {
             name: 'seo',
             title: 'SEO',
+        },
+        {
+            name: 'taxonomy',
+            title: 'Taxonomy',
         },
     ],
 }
@@ -88,7 +107,7 @@ const storyFromSchwab = {
     excerpt: 'string-formatted',
     displayDate: 'dateTime',
     lastPublished: 'dateTime',
-    editorialType: 'string',
+    contentType: 'string',
     featuredMedia: [
         {
             role: 'image',

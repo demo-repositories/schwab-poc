@@ -1,20 +1,24 @@
 import { PortableText } from "@portabletext/react";
 import DynamicCTA from "./DynamicCTA";
 import SanityImage from "./SanityImage";
+import PortableTable from "./PortableTable";
+import BynderBlock from "./BynderBlock";
 
 const components = {
   types: {
     image: SanityImage,
     dynamicCta: DynamicCTA,
+    table: PortableTable,
+    bynderBlock: BynderBlock,
   },
   block: {
     h1: ({ children }) => (
-      <h2 className="heading peer mt-3 text-3xl font-extrabold tracking-tight">
+      <h2 className="heading peer mb-2 mt-5 text-3xl font-extrabold tracking-tight">
         {children}
       </h2>
     ),
     h2: ({ children }) => (
-      <h2 className="heading peer mt-3 text-2xl font-bold tracking-tight">
+      <h2 className="heading peer mb-2 mt-5 text-2xl font-bold tracking-tight">
         {children}
       </h2>
     ),

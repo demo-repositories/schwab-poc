@@ -1,0 +1,1497 @@
+{
+  "role": "pattern_landing_page",
+  "identifier": "92895",
+  "uuid": "f32e145a-6c9e-4e1b-be23-74bbd3bf4ffa",
+  "language": "en",
+  "moderationState": "published",
+  "urlAlias": "/page/92895",
+  "hostname": "client.schwab.com",
+  "lastPublished": "2022-10-21T00:20:14+00:00",
+  "editorialType": "hub",
+  "title": "doloribus deleniti aliquid dicta possimus",
+  "summary": "Fugiat occaecati saepe officiis ipsam unde dignissimos eveniet similique corrupti perferendis recusandae temporibus veniam exercitationem vel repellendus quaerat facilis harum quis magni in sunt illo nisi quam ea consequatur distinctio facere corrupti magnam repellendus nisi.",
+  "components": [
+    {
+      "role": "fullxPanel",
+      "header": {
+        "heading": {
+          "text": "culpa ducimus sit dignissimos natus recusandae odit modi",
+          "styles": { "displayHeading": true }
+        },
+        "label": "string",
+        "body": {
+          "text": "Lorem bodo in the full-xo commodi aliquid vel hic reiciendis facere sequi quasi veniam aliquid distinctio aperiam reiciendis optio."
+        },
+        "icon": {
+          "role": "image",
+          "uuid": "bd8953ff-21f7-42cf-9a84-bd161d8b9ab0",
+          "identifier": "56075",
+          "caption": "Ipe illum dolore fugiat corrupti placeat perferendis eos quasi expedita dignissimos voluptas iste veritatis quaerat tenetur veritatis facilis nesciunt amet rem aut necessitatibus commodi ipsum maxime possimus mollitia voluptatum culpa aperiam.",
+          "title": "Icon corrupti natus illo numquam nesciunt",
+          "url": "https://doodleipsum.com/300x300/avatar-2",
+          "altText": "string",
+          "attribution": "Copyright @copy; Charles Schwab 2023",
+          "aspectRatio": "1:1",
+          "disclosure": "Lorem discloso sit cumque voluptates quia necessitatibus ab mollitia nesciunt ab iste."
+        },
+        "styles": { "align": "left" }
+      },
+      "components": [
+        {
+          "role": "fullxText",
+          "heading": {
+            "text": "string",
+            "styles": { "displayHeading": true, "type": "1" }
+          },
+          "body": {
+            "text": "string-formatted",
+            "styles": { "align": "string" }
+          },
+          "label": "string",
+          "disclosure": "string-formatted",
+          "buttons": [
+            {
+              "type": "_primary",
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Go There",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Go Here",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "links": [
+            {
+              "type": "_primary",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Show my options",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Less options",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "styles": { "palette": "05", "inset": false }
+        },
+        {
+          "role": "fullxMedia",
+          "media": {
+            "role": "fullxImage",
+            "uuid": "2303a35e-63a4-41f4-924c-4f6bd7dc181d",
+            "identifier": "19321",
+            "caption": "string-formatted",
+            "title": "string",
+            "url": "https://picsum.photos/800/600",
+            "altText": "string",
+            "attribution": "string",
+            "aspectRatio": "4:3",
+            "disclosure": "Short disclosure goes here",
+            "styles": { "focalPoint": "string" }
+          }
+        },
+        {
+          "role": "fullxVideo",
+          "uuid": "830b8af2-0ca1-4279-9201-5ab70ce1f463",
+          "identifier": "44034",
+          "title": "Chuck Schwab and USAA Chariman",
+          "url": "http://content.schwab.com/media/video/SWB_Chuck-and-USAA_V07-720/SWB_Chuck-and-USAA_V07-720.mp4",
+          "srt": "http://content.schwab.com/media/video/SWB_Chuck-and-USAA_V07-720/SWB_Chuck-and-USAA_V07-720.srt",
+          "duration": "00:02:55",
+          "transcript": "<p>Transcript copy goes here. It can be reallllllyyyyyy looooooong. And, HTML formatted.</p>",
+          "aspectRatio": "16:9",
+          "attribution": "Copyright 2023 &copy; Charles Schwab",
+          "caption": "This is just the short caption copy you need.",
+          "poster": {
+            "role": "image",
+            "title": "This is a video with a 16:9 poster image",
+            "url": "https://picsum.photos/900/506",
+            "altText": "Random picsum photo",
+            "attribution": "Picsum.com",
+            "aspectRatio": "16:9",
+            "disclosure": "Tiny disclosure, only can be null."
+          },
+          "styles": {
+            "display": "04",
+            "palette": "string",
+            "_comment": "How is card orientation (vertical vs. horizontal), media placement (top vs. bottom) expressed? "
+          }
+        }
+      ],
+      "footer": {
+        "details": "Sis detailo dolorem fugiat unde voluptatum numquam sit necessitatibus doloremque tempora molestiae molestias quis asperiores omnis ullam aperiam aspernatur natus aut tempora amet asperiores natus.",
+        "disclosure": "Lorem discloso exercitationem dicta repellendus provident nulla voluptates ut doloribus odit laboriosam illo sed iusto voluptas cum impedit perferendis.",
+        "styles": { "align": "right" }
+      },
+      "background": {
+        "role": "fullxImage",
+        "uuid": "419faabe-d4ab-4c55-9c9e-6aba550364a0",
+        "identifier": "3901",
+        "caption": "string-formatted",
+        "title": "string",
+        "url": "https://picsum.photos/600/800",
+        "altText": "string",
+        "attribution": "string",
+        "aspectRatio": "4:3",
+        "disclosure": "Lorem discloso delectus harum quo officiis quaerat id ipsam perspiciatis sed sit fugit magni cupiditate deserunt placeat.",
+        "styles": {
+          "focalPoint": "string",
+          "mobileDisplay": "string",
+          "mobileMediaPinned": false
+        }
+      },
+      "styles": {
+        "itemsPerRow": "2",
+        "bleed": false,
+        "inset": false,
+        "margin": true,
+        "width": "50%",
+        "palette": "04",
+        "borderColor": "05",
+        "borderWidth": "none",
+        "classes": "string",
+        "_comment": "missing halign, valign, minheight, column widths"
+      },
+      "index": 0
+    },
+    {
+      "role": "fullxPanel",
+      "header": {
+        "heading": {
+          "text": "tempora quisquam nesciunt esse hic veritatis assumenda",
+          "styles": { "displayHeading": true }
+        },
+        "label": "string",
+        "body": {
+          "text": "Lorem bodo in the full-xo tenetur necessitatibus officia expedita quasi magnam sed dolor voluptatem esse nulla porro incidunt."
+        },
+        "icon": {
+          "role": "image",
+          "uuid": "da8ca73e-c59f-4685-825b-ac015659f3c2",
+          "identifier": "88566",
+          "caption": "Ipe ipsam libero aperiam explicabo incidunt placeat ducimus doloribus suscipit numquam ex tempora aut magnam occaecati error asperiores voluptate nam soluta vel unde perferendis voluptates labore aut sunt sunt voluptatum.",
+          "title": "Icon atque perferendis consequuntur voluptatibus iure",
+          "url": "https://doodleipsum.com/300x300/avatar-2",
+          "altText": "string",
+          "attribution": "Copyright @copy; Charles Schwab 2023",
+          "aspectRatio": "1:1",
+          "disclosure": "Lorem discloso error cumque et possimus porro exercitationem tempora quibusdam quia in vel magni dolorem incidunt hic rerum fuga."
+        },
+        "styles": { "align": "right" }
+      },
+      "components": [
+        {
+          "role": "fullxText",
+          "heading": {
+            "text": "string",
+            "styles": { "displayHeading": true, "type": "2" }
+          },
+          "body": {
+            "text": "string-formatted",
+            "styles": { "align": "string" }
+          },
+          "label": "string",
+          "disclosure": "string-formatted",
+          "buttons": [],
+          "links": [
+            {
+              "type": "_primary",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Less options",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "More options",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "styles": { "palette": "05", "inset": false }
+        },
+        {
+          "role": "fullxMedia",
+          "media": {
+            "role": "fullxImage",
+            "uuid": "6cb373ed-b750-4e94-b802-0b57f1fa9696",
+            "identifier": "61288",
+            "caption": "string-formatted",
+            "title": "string",
+            "url": "https://picsum.photos/800/600",
+            "altText": "string",
+            "attribution": "string",
+            "aspectRatio": "4:3",
+            "disclosure": "Short disclosure goes here",
+            "styles": { "focalPoint": "string" }
+          }
+        },
+        {
+          "role": "fullxVideo",
+          "uuid": "3e1329e5-8040-4821-8db6-2665def6c79b",
+          "identifier": "13077",
+          "title": "Chuck Schwab and USAA Chariman",
+          "url": "http://content.schwab.com/media/video/SWB_Chuck-and-USAA_V07-720/SWB_Chuck-and-USAA_V07-720.mp4",
+          "srt": "http://content.schwab.com/media/video/SWB_Chuck-and-USAA_V07-720/SWB_Chuck-and-USAA_V07-720.srt",
+          "duration": "00:02:55",
+          "transcript": "<p>Transcript copy goes here. It can be reallllllyyyyyy looooooong. And, HTML formatted.</p>",
+          "aspectRatio": "16:9",
+          "attribution": "Copyright 2023 &copy; Charles Schwab",
+          "caption": "This is just the short caption copy you need.",
+          "poster": {
+            "role": "image",
+            "title": "This is a video with a 16:9 poster image",
+            "url": "https://picsum.photos/900/506",
+            "altText": "Random picsum photo",
+            "attribution": "Picsum.com",
+            "aspectRatio": "16:9",
+            "disclosure": "Tiny disclosure, only can be null."
+          },
+          "styles": {
+            "display": "05",
+            "palette": "string",
+            "_comment": "How is card orientation (vertical vs. horizontal), media placement (top vs. bottom) expressed? "
+          }
+        }
+      ],
+      "footer": {
+        "details": "Sis detailo est fugit mollitia soluta atque nobis odio expedita odio eaque eligendi totam harum iste architecto necessitatibus odit eos inventore in assumenda atque ipsam impedit magni praesentium eveniet aut dolore culpa.",
+        "disclosure": "Lorem discloso modi veniam iste sint veniam temporibus excepturi reprehenderit beatae architecto reprehenderit modi nam assumenda omnis rerum voluptatum nulla veniam temporibus dolorem eius accusantium ex quis cupiditate neque fugit.",
+        "styles": { "align": "right" }
+      },
+      "background": {
+        "role": "fullxImage",
+        "uuid": "b0788a1b-f9c6-47bd-ba8f-164cd1536522",
+        "identifier": "8143",
+        "caption": "string-formatted",
+        "title": "string",
+        "url": "https://picsum.photos/600/800",
+        "altText": "string",
+        "attribution": "string",
+        "aspectRatio": "4:3",
+        "disclosure": "Lorem discloso doloremque odio quo culpa alias veritatis ipsum dolorum expedita aliquam reiciendis officiis iure occaecati.",
+        "styles": {
+          "focalPoint": "string",
+          "mobileDisplay": "string",
+          "mobileMediaPinned": false
+        }
+      },
+      "styles": {
+        "itemsPerRow": "1",
+        "bleed": false,
+        "inset": false,
+        "margin": true,
+        "width": "66%",
+        "palette": "04",
+        "borderColor": "05",
+        "borderWidth": "xs",
+        "classes": "string",
+        "_comment": "missing halign, valign, minheight, column widths"
+      },
+      "index": 1
+    },
+    {
+      "role": "fullxMarquee",
+      "header": {
+        "heading": {
+          "text": "labore vitae quo excepturi iure similique repellendus reprehenderit",
+          "styles": { "displayHeading": true }
+        },
+        "label": "string",
+        "body": {
+          "text": "Lorem bodo in the full-xo optio id dignissimos ducimus doloribus a quod harum aspernatur illum veniam a possimus ut reprehenderit officia molestias nesciunt quis totam magni quisquam sed necessitatibus assumenda."
+        },
+        "icon": {
+          "role": "image",
+          "uuid": "fc4bf0c9-8b53-4917-92c1-e94bb678fae1",
+          "identifier": "1378",
+          "caption": "Ipe sequi magnam beatae cupiditate consequuntur ex necessitatibus omnis facere libero.",
+          "title": "Icon fugit placeat facilis temporibus sequi",
+          "url": "https://doodleipsum.com/300x300/avatar-2",
+          "altText": "string",
+          "attribution": "Copyright @copy; Charles Schwab 2023",
+          "aspectRatio": "1:1",
+          "disclosure": "Lorem discloso amet odit quis recusandae nostrum deleniti reprehenderit quibusdam dolorem atque accusantium totam magni occaecati inventore ab minus ipsum sapiente dolores praesentium provident neque voluptates quibusdam cupiditate perferendis nostrum in."
+        },
+        "styles": { "align": "center" }
+      },
+      "components": [
+        {
+          "role": "fullxText",
+          "heading": {
+            "text": "Short content headline",
+            "styles": { "displayHeading": true, "type": "string" }
+          },
+          "body": {
+            "text": "string-formatted",
+            "styles": { "align": "string" }
+          },
+          "label": "string",
+          "disclosure": "string-formatted",
+          "buttons": [
+            {
+              "type": "_primary",
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Click Button",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Go Here",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "links": [
+            {
+              "type": "_primary",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Link text",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "More options",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "styles": { "palette": "08", "inset": false }
+        },
+        {
+          "role": "fullxMedia",
+          "media": {
+            "role": "fullxImage",
+            "uuid": "4c5081c5-c103-4125-b215-c015480e4a48",
+            "identifier": "62785",
+            "caption": null,
+            "title": "Random picsum",
+            "url": "https://picsum.photos/400/300",
+            "altText": "Picsum image",
+            "attribution": "Picsum.photos",
+            "aspectRatio": "4:3",
+            "disclosure": null,
+            "styles": { "focalPoint": "string" }
+          }
+        },
+        {
+          "role": "fullxVideo",
+          "uuid": "05b980c8-4482-4796-8214-7d04f60d0763",
+          "identifier": "50909",
+          "title": "Chuck Schwab and USAA Chariman",
+          "url": "http://content.schwab.com/media/video/SWB_Chuck-and-USAA_V07-720/SWB_Chuck-and-USAA_V07-720.mp4",
+          "srt": "http://content.schwab.com/media/video/SWB_Chuck-and-USAA_V07-720/SWB_Chuck-and-USAA_V07-720.srt",
+          "duration": "00:02:55",
+          "transcript": "<p>Transcript copy goes here. It can be reallllllyyyyyy looooooong. And, HTML formatted.</p>",
+          "aspectRatio": "16:9",
+          "attribution": "Copyright 2023 &copy; Charles Schwab",
+          "caption": "This is just the short caption copy you need.",
+          "poster": {
+            "role": "image",
+            "title": "This is a video with a 16:9 poster image",
+            "url": "https://picsum.photos/900/506",
+            "altText": "Random picsum photo",
+            "attribution": "Picsum.com",
+            "aspectRatio": "16:9",
+            "disclosure": "Tiny disclosure, only can be null."
+          },
+          "styles": {
+            "display": "02",
+            "palette": "string",
+            "_comment": "How is card orientation (vertical vs. horizontal), media placement (top vs. bottom) expressed? "
+          }
+        }
+      ],
+      "footer": {
+        "details": "Sis detailo ab odio perspiciatis natus aliquam fugit pariatur at perferendis quae dolor magni minima commodi eaque.",
+        "disclosure": "Lorem discloso sapiente numquam vel atque aperiam natus consequatur nobis accusantium dignissimos expedita totam provident tenetur dolores ratione placeat molestias necessitatibus nostrum maxime saepe earum ipsum nesciunt corporis numquam.",
+        "styles": { "align": "left" }
+      },
+      "background": {
+        "role": "fullxImage",
+        "uuid": "33b14f77-5e40-4859-af56-e263f94c88a0",
+        "identifier": "18157",
+        "caption": "string-formatted",
+        "title": "string",
+        "url": "https://picsum.photos/600/800",
+        "altText": "string",
+        "attribution": "string",
+        "aspectRatio": "4:3",
+        "disclosure": "Lorem discloso deleniti ipsam accusantium doloremque repellat consectetur ad odit fugit omnis quasi eius amet quisquam earum numquam voluptas eius porro provident dolorum cum temporibus.",
+        "styles": {
+          "focalPoint": "string",
+          "mobileDisplay": "string",
+          "mobileMediaPinned": false
+        }
+      },
+      "styles": {
+        "itemsPerRow": "1",
+        "bleed": false,
+        "inset": false,
+        "margin": true,
+        "width": "auto",
+        "palette": "02",
+        "borderColor": "07",
+        "borderWidth": "none",
+        "classes": "string",
+        "_comment": "missing halign, valign, minheight, column widths"
+      },
+      "index": 2
+    },
+    {
+      "role": "fullxMarquee",
+      "header": {
+        "heading": {
+          "text": "beatae itaque dolore natus voluptatum",
+          "styles": { "displayHeading": true }
+        },
+        "label": "string",
+        "body": {
+          "text": "Lorem bodo in the full-xo nihil sint aliquam ipsam necessitatibus nisi est quia neque asperiores et repudiandae neque adipisci esse dolores sapiente quae exercitationem voluptas blanditiis in."
+        },
+        "icon": {
+          "role": "image",
+          "uuid": "3f9f45b3-ddac-48ca-996a-d2983f0377a5",
+          "identifier": "19440",
+          "caption": "Ipe suscipit repellat vero mollitia voluptatibus nobis nemo tempore magni corrupti reiciendis voluptas mollitia ipsum officia voluptate sunt repudiandae laborum maiores vero sit numquam.",
+          "title": "Icon perferendis asperiores sed beatae dolor",
+          "url": "https://doodleipsum.com/300x300/avatar-2",
+          "altText": "string",
+          "attribution": "Copyright @copy; Charles Schwab 2023",
+          "aspectRatio": "1:1",
+          "disclosure": "Lorem discloso minus id necessitatibus tenetur provident nemo repellendus aspernatur eaque impedit dolorem similique reprehenderit."
+        },
+        "styles": { "align": "right" }
+      },
+      "components": [
+        {
+          "role": "fullxText",
+          "heading": {
+            "text": "Short content headline",
+            "styles": { "displayHeading": true, "type": "string" }
+          },
+          "body": {
+            "text": "string-formatted",
+            "styles": { "align": "string" }
+          },
+          "label": "string",
+          "disclosure": "string-formatted",
+          "buttons": [
+            {
+              "type": "_primary",
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Get Started",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "links": [
+            {
+              "type": "_primary",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "More options",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Link text",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "styles": { "palette": "01", "inset": false }
+        },
+        {
+          "role": "fullxMedia",
+          "media": {
+            "role": "fullxImage",
+            "uuid": "6704f2d3-f311-44c8-9add-9bee085519bf",
+            "identifier": "3412",
+            "caption": null,
+            "title": "Random picsum",
+            "url": "https://picsum.photos/400/300",
+            "altText": "Picsum image",
+            "attribution": "Picsum.photos",
+            "aspectRatio": "4:3",
+            "disclosure": null,
+            "styles": { "focalPoint": "string" }
+          }
+        },
+        {
+          "role": "fullxVideo",
+          "uuid": "f5c1bb46-89df-4106-bcbe-ef4675c9a43f",
+          "identifier": "36822",
+          "title": "Chuck Schwab and USAA Chariman",
+          "url": "http://content.schwab.com/media/video/SWB_Chuck-and-USAA_V07-720/SWB_Chuck-and-USAA_V07-720.mp4",
+          "srt": "http://content.schwab.com/media/video/SWB_Chuck-and-USAA_V07-720/SWB_Chuck-and-USAA_V07-720.srt",
+          "duration": "00:02:55",
+          "transcript": "<p>Transcript copy goes here. It can be reallllllyyyyyy looooooong. And, HTML formatted.</p>",
+          "aspectRatio": "16:9",
+          "attribution": "Copyright 2023 &copy; Charles Schwab",
+          "caption": "This is just the short caption copy you need.",
+          "poster": {
+            "role": "image",
+            "title": "This is a video with a 16:9 poster image",
+            "url": "https://picsum.photos/900/506",
+            "altText": "Random picsum photo",
+            "attribution": "Picsum.com",
+            "aspectRatio": "16:9",
+            "disclosure": "Tiny disclosure, only can be null."
+          },
+          "styles": {
+            "display": "03",
+            "palette": "string",
+            "_comment": "How is card orientation (vertical vs. horizontal), media placement (top vs. bottom) expressed? "
+          }
+        }
+      ],
+      "footer": {
+        "details": "Sis detailo ab qui a quia veritatis delectus odio voluptas mollitia illo molestias ullam ad consequuntur debitis cupiditate non optio ea vel aspernatur iure rem.",
+        "disclosure": "Lorem discloso cumque possimus sequi aperiam veritatis aspernatur iste corrupti beatae amet laborum quia quod debitis.",
+        "styles": { "align": "left" }
+      },
+      "background": {
+        "role": "fullxImage",
+        "uuid": "17f24292-11ca-447c-8d5c-c18d8fb9b1a0",
+        "identifier": "7899",
+        "caption": "string-formatted",
+        "title": "string",
+        "url": "https://picsum.photos/600/800",
+        "altText": "string",
+        "attribution": "string",
+        "aspectRatio": "4:3",
+        "disclosure": "Lorem discloso laborum quas minima nesciunt magni similique ipsa reiciendis fuga quisquam nulla quo vel aliquid dolorum.",
+        "styles": {
+          "focalPoint": "string",
+          "mobileDisplay": "string",
+          "mobileMediaPinned": false
+        }
+      },
+      "styles": {
+        "itemsPerRow": "1",
+        "bleed": false,
+        "inset": false,
+        "margin": true,
+        "width": "50%",
+        "palette": "09",
+        "borderColor": "06",
+        "borderWidth": "xs",
+        "classes": "string",
+        "_comment": "missing halign, valign, minheight, column widths"
+      },
+      "index": 3
+    },
+    {
+      "role": "fullxDeck",
+      "header": {
+        "heading": {
+          "text": "nisi sed illum consequuntur culpa",
+          "styles": { "displayHeading": true }
+        },
+        "label": "string",
+        "body": {
+          "text": "Lorem bodo in the full-xo eum impedit quisquam consequuntur blanditiis fugit facilis nostrum ipsa repellat mollitia eligendi eos dignissimos ducimus deleniti quas."
+        },
+        "icon": {
+          "role": "image",
+          "uuid": "061bc1c5-e862-4fc2-80a0-f44a7bb16301",
+          "identifier": "18796",
+          "caption": "Ipe saepe vel rerum enim architecto harum odio quam fugit asperiores eius debitis laudantium expedita aperiam nobis maxime eveniet doloremque rerum eaque asperiores quis maiores deleniti tempora excepturi.",
+          "title": "Icon nulla voluptatibus fugit asperiores illo",
+          "url": "https://doodleipsum.com/300x300/avatar-2",
+          "altText": "string",
+          "attribution": "Copyright @copy; Charles Schwab 2023",
+          "aspectRatio": "1:1",
+          "disclosure": "Lorem discloso et officia deleniti molestias consequatur consectetur dolorum fuga et nulla amet porro adipisci dolore repellendus illo facilis doloribus."
+        },
+        "styles": { "align": "center" }
+      },
+      "components": [
+        {
+          "role": "fullxCard",
+          "label": "suscipit dolorum quas",
+          "heading": {
+            "text": "quae quasi reiciendis incidunt perferendis rem",
+            "styles": {
+              "displayHeading": true,
+              "type": "1",
+              "_comment": "missing 'align' and 'headingStyle' classes"
+            }
+          },
+          "body": {
+            "text": "molestiae animi distinctio veniam ex quia libero temporibus praesentium iste esse porro molestiae odio autem consequuntur",
+            "styles": { "align": "left" }
+          },
+          "icon": {
+            "role": "image",
+            "uuid": "5e69a76a-3776-4985-9bd3-4b655856f38b",
+            "identifier": "34149",
+            "caption": "Ipe amet sit voluptatum vero error accusamus commodi iste natus dolorum.",
+            "title": "Icon rerum minus optio quidem beatae",
+            "url": "https://doodleipsum.com/300x300/avatar-2",
+            "altText": "string",
+            "attribution": "Copyright @copy; Charles Schwab 2023",
+            "aspectRatio": "1:1",
+            "disclosure": "Lorem discloso iste voluptates adipisci qui similique consequatur praesentium nobis illum doloremque praesentium dignissimos sint a distinctio voluptatibus atque inventore aspernatur."
+          },
+          "headingLink": {
+            "_comment": "can't find spec on this object",
+            "type": "other",
+            "link": {
+              "url": "https://www.schwab.com/",
+              "linkText": "Go Schwab",
+              "attributes": {
+                "target": "_blank",
+                "rel": "string",
+                "class": "hello-world",
+                "ariaLabel": "Aria Label for Link",
+                "dataTrack": "string",
+                "dataModal": "string",
+                "dataDefault": "string"
+              }
+            }
+          },
+          "video": {
+            "uuid": "573a65b8-824f-44ef-90ad-86c41e1e634d",
+            "identifier": "22836",
+            "title": "string",
+            "srt": "url",
+            "duration": "time",
+            "transcript": "string-formatted",
+            "aspectRatio": "string",
+            "attribution": "string",
+            "caption": "string-formatted",
+            "poster": {
+              "role": "image",
+              "title": "string",
+              "url": "https://picsum.photos/506/900",
+              "altText": "string",
+              "attribution": "string",
+              "aspectRatio": "string",
+              "disclosure": "string-formatted"
+            }
+          },
+          "mediaContent": {
+            "role": "fullxImage",
+            "uuid": "a341b952-d005-45f6-b967-5639faf46179",
+            "identifier": "22722",
+            "caption": "string-formatted",
+            "title": "string",
+            "url": "url",
+            "altText": "string",
+            "attribution": "string",
+            "aspectRatio": "string",
+            "disclosure": "string-formatted",
+            "styles": {
+              "focalPoint": "string",
+              "placement": "string",
+              "bleed": true
+            }
+          },
+          "details": "string-formatted",
+          "disclosure": "string-formatted",
+          "buttons": [
+            {
+              "type": "_primary",
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Get Started",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Click Button",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "links": [],
+          "styles": {
+            "inset": false,
+            "orientation": "string",
+            "palette": "string",
+            "borderColor": "string",
+            "borderWidth": "string"
+          },
+          "index": 0
+        },
+        {
+          "role": "fullxCard",
+          "label": "autem aperiam non",
+          "heading": {
+            "text": "quasi facilis minus illo mollitia temporibus nobis",
+            "styles": {
+              "displayHeading": true,
+              "type": "1",
+              "_comment": "missing 'align' and 'headingStyle' classes"
+            }
+          },
+          "body": {
+            "text": "quo occaecati temporibus animi magni hic nulla quae",
+            "styles": { "align": "center" }
+          },
+          "icon": {
+            "role": "image",
+            "uuid": "7af64379-00cb-4818-ae67-dc532e6f60c7",
+            "identifier": "3137",
+            "caption": "Ipe nam voluptatibus expedita nemo debitis numquam molestias dolores nihil beatae soluta nihil voluptatem reprehenderit in amet animi similique ab nobis.",
+            "title": "Icon quis ducimus similique occaecati sunt",
+            "url": "https://doodleipsum.com/300x300/avatar-2",
+            "altText": "string",
+            "attribution": "Copyright @copy; Charles Schwab 2023",
+            "aspectRatio": "1:1",
+            "disclosure": "Lorem discloso consectetur et sed odit perferendis facilis mollitia consequatur nemo veniam facilis laboriosam molestiae exercitationem labore blanditiis quibusdam possimus enim illum animi numquam ipsa corrupti maxime."
+          },
+          "headingLink": {
+            "_comment": "can't find spec on this object",
+            "type": "url",
+            "link": {
+              "url": "https://www.schwab.com/",
+              "linkText": "Go Schwab",
+              "attributes": {
+                "target": "_blank",
+                "rel": "string",
+                "class": "hello-world",
+                "ariaLabel": "Aria Label for Link",
+                "dataTrack": "string",
+                "dataModal": "string",
+                "dataDefault": "string"
+              }
+            }
+          },
+          "video": {
+            "uuid": "4a706d04-0957-4e84-9e80-c97c80817ed1",
+            "identifier": "980",
+            "title": "string",
+            "srt": "url",
+            "duration": "time",
+            "transcript": "string-formatted",
+            "aspectRatio": "string",
+            "attribution": "string",
+            "caption": "string-formatted",
+            "poster": {
+              "role": "image",
+              "title": "string",
+              "url": "https://picsum.photos/506/900",
+              "altText": "string",
+              "attribution": "string",
+              "aspectRatio": "string",
+              "disclosure": "string-formatted"
+            }
+          },
+          "mediaContent": {
+            "role": "fullxImage",
+            "uuid": "0ea07181-34bf-4410-9e2f-fdcb696d6bc6",
+            "identifier": "495",
+            "caption": "string-formatted",
+            "title": "string",
+            "url": "url",
+            "altText": "string",
+            "attribution": "string",
+            "aspectRatio": "string",
+            "disclosure": "string-formatted",
+            "styles": {
+              "focalPoint": "string",
+              "placement": "string",
+              "bleed": true
+            }
+          },
+          "details": "string-formatted",
+          "disclosure": "string-formatted",
+          "buttons": [
+            {
+              "type": "_primary",
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Go There",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "links": [
+            {
+              "type": "_primary",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "More options",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "styles": {
+            "inset": false,
+            "orientation": "string",
+            "palette": "string",
+            "borderColor": "string",
+            "borderWidth": "string"
+          },
+          "index": 1
+        },
+        {
+          "role": "fullxCard",
+          "label": "facere consectetur assumenda",
+          "heading": {
+            "text": "veritatis officiis aspernatur ipsum quas",
+            "styles": {
+              "displayHeading": true,
+              "type": "1",
+              "_comment": "missing 'align' and 'headingStyle' classes"
+            }
+          },
+          "body": {
+            "text": "voluptate temporibus tempore optio tempore est architecto nam facilis ipsa quasi esse voluptates suscipit libero voluptates voluptatibus tempora quasi perspiciatis perspiciatis sapiente alias",
+            "styles": { "align": "left" }
+          },
+          "icon": {
+            "role": "image",
+            "uuid": "940adb73-6cf0-492b-b6cd-fa33b85408ef",
+            "identifier": "43314",
+            "caption": "Ipe numquam minus ea maxime quas sequi quos dolore odit beatae similique perspiciatis magni quas commodi perferendis iure reprehenderit rem accusantium perspiciatis voluptas hic officia saepe temporibus.",
+            "title": "Icon corporis tempora velit expedita est",
+            "url": "https://doodleipsum.com/300x300/avatar-2",
+            "altText": "string",
+            "attribution": "Copyright @copy; Charles Schwab 2023",
+            "aspectRatio": "1:1",
+            "disclosure": "Lorem discloso nobis inventore omnis excepturi eveniet sed porro repellat itaque odio eum fuga ducimus."
+          },
+          "headingLink": {
+            "_comment": "can't find spec on this object",
+            "type": "other",
+            "link": {
+              "url": "https://www.schwab.com/",
+              "linkText": "Go Schwab",
+              "attributes": {
+                "target": "_blank",
+                "rel": "string",
+                "class": "hello-world",
+                "ariaLabel": "Aria Label for Link",
+                "dataTrack": "string",
+                "dataModal": "string",
+                "dataDefault": "string"
+              }
+            }
+          },
+          "video": {
+            "uuid": "38e65166-44bd-4298-9676-09952779d9ef",
+            "identifier": "34846",
+            "title": "string",
+            "srt": "url",
+            "duration": "time",
+            "transcript": "string-formatted",
+            "aspectRatio": "string",
+            "attribution": "string",
+            "caption": "string-formatted",
+            "poster": {
+              "role": "image",
+              "title": "string",
+              "url": "https://picsum.photos/506/900",
+              "altText": "string",
+              "attribution": "string",
+              "aspectRatio": "string",
+              "disclosure": "string-formatted"
+            }
+          },
+          "mediaContent": {
+            "role": "fullxImage",
+            "uuid": "70c274ef-99c1-497a-a278-24f5502a26b5",
+            "identifier": "24156",
+            "caption": "string-formatted",
+            "title": "string",
+            "url": "url",
+            "altText": "string",
+            "attribution": "string",
+            "aspectRatio": "string",
+            "disclosure": "string-formatted",
+            "styles": {
+              "focalPoint": "string",
+              "placement": "string",
+              "bleed": true
+            }
+          },
+          "details": "string-formatted",
+          "disclosure": "string-formatted",
+          "buttons": [],
+          "links": [
+            {
+              "type": "_primary",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Less options",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Less options",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "styles": {
+            "inset": false,
+            "orientation": "string",
+            "palette": "string",
+            "borderColor": "string",
+            "borderWidth": "string"
+          },
+          "index": 2
+        },
+        {
+          "role": "fullxCard",
+          "label": "iste quos dolor",
+          "heading": {
+            "text": "minus cupiditate nostrum eveniet ex",
+            "styles": {
+              "displayHeading": true,
+              "type": "1",
+              "_comment": "missing 'align' and 'headingStyle' classes"
+            }
+          },
+          "body": {
+            "text": "temporibus placeat ut et quis possimus et occaecati laborum animi iste nisi explicabo incidunt",
+            "styles": { "align": "center" }
+          },
+          "icon": {
+            "role": "image",
+            "uuid": "8d0f8d98-11eb-4e9d-9288-ed81f8decce6",
+            "identifier": "15477",
+            "caption": "Ipe asperiores reprehenderit voluptate libero repellendus molestiae maxime saepe molestias nisi soluta assumenda placeat nostrum maiores.",
+            "title": "Icon iure consequuntur doloribus beatae vitae",
+            "url": "https://doodleipsum.com/300x300/avatar-2",
+            "altText": "string",
+            "attribution": "Copyright @copy; Charles Schwab 2023",
+            "aspectRatio": "1:1",
+            "disclosure": "Lorem discloso molestiae atque eius vitae distinctio quasi ipsa ipsam dolor dolores culpa eligendi rem quo inventore."
+          },
+          "headingLink": {
+            "_comment": "can't find spec on this object",
+            "type": "entity",
+            "link": {
+              "url": "https://www.schwab.com/",
+              "linkText": "Go Schwab",
+              "attributes": {
+                "target": "_blank",
+                "rel": "string",
+                "class": "hello-world",
+                "ariaLabel": "Aria Label for Link",
+                "dataTrack": "string",
+                "dataModal": "string",
+                "dataDefault": "string"
+              }
+            }
+          },
+          "video": {
+            "uuid": "8fbadd22-64c9-499c-96ce-3cfd64a6caee",
+            "identifier": "14243",
+            "title": "string",
+            "srt": "url",
+            "duration": "time",
+            "transcript": "string-formatted",
+            "aspectRatio": "string",
+            "attribution": "string",
+            "caption": "string-formatted",
+            "poster": {
+              "role": "image",
+              "title": "string",
+              "url": "https://picsum.photos/506/900",
+              "altText": "string",
+              "attribution": "string",
+              "aspectRatio": "string",
+              "disclosure": "string-formatted"
+            }
+          },
+          "mediaContent": {
+            "role": "fullxImage",
+            "uuid": "c1440c73-640a-4c9f-b4b9-48172c1c5c01",
+            "identifier": "13575",
+            "caption": "string-formatted",
+            "title": "string",
+            "url": "url",
+            "altText": "string",
+            "attribution": "string",
+            "aspectRatio": "string",
+            "disclosure": "string-formatted",
+            "styles": {
+              "focalPoint": "string",
+              "placement": "string",
+              "bleed": true
+            }
+          },
+          "details": "string-formatted",
+          "disclosure": "string-formatted",
+          "buttons": [
+            {
+              "type": "_primary",
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Get Started",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Open an IRA",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "links": [
+            {
+              "type": "_primary",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Learn more",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Less options",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "link-class",
+                  "ariaLabel": "Aria Label Link",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "styles": {
+            "inset": false,
+            "orientation": "string",
+            "palette": "string",
+            "borderColor": "string",
+            "borderWidth": "string"
+          },
+          "index": 3
+        },
+        {
+          "role": "fullxCard",
+          "label": "deserunt doloribus fuga",
+          "heading": {
+            "text": "ab ratione voluptate doloribus labore",
+            "styles": {
+              "displayHeading": true,
+              "type": "1",
+              "_comment": "missing 'align' and 'headingStyle' classes"
+            }
+          },
+          "body": {
+            "text": "amet animi odit accusamus aliquam",
+            "styles": { "align": "left" }
+          },
+          "icon": {
+            "role": "image",
+            "uuid": "f964e6c7-eae6-4e30-8e60-8ead0ffb2347",
+            "identifier": "47839",
+            "caption": "Ipe aperiam ipsa veritatis sit qui eum explicabo ducimus nobis nobis tenetur quae dolore ullam laborum perferendis sint tenetur consectetur laudantium mollitia praesentium enim dolores corporis delectus.",
+            "title": "Icon deleniti iusto officia quo sint",
+            "url": "https://doodleipsum.com/300x300/avatar-2",
+            "altText": "string",
+            "attribution": "Copyright @copy; Charles Schwab 2023",
+            "aspectRatio": "1:1",
+            "disclosure": "Lorem discloso officia repellendus saepe iusto esse ut nulla omnis eveniet voluptatibus blanditiis molestiae sit dolores distinctio provident modi necessitatibus culpa rem."
+          },
+          "headingLink": {
+            "_comment": "can't find spec on this object",
+            "type": "other",
+            "link": {
+              "url": "https://www.schwab.com/",
+              "linkText": "Go Schwab",
+              "attributes": {
+                "target": "_blank",
+                "rel": "string",
+                "class": "hello-world",
+                "ariaLabel": "Aria Label for Link",
+                "dataTrack": "string",
+                "dataModal": "string",
+                "dataDefault": "string"
+              }
+            }
+          },
+          "video": {
+            "uuid": "2631b607-51a7-4386-b860-287160652f6b",
+            "identifier": "3727",
+            "title": "string",
+            "srt": "url",
+            "duration": "time",
+            "transcript": "string-formatted",
+            "aspectRatio": "string",
+            "attribution": "string",
+            "caption": "string-formatted",
+            "poster": {
+              "role": "image",
+              "title": "string",
+              "url": "https://picsum.photos/506/900",
+              "altText": "string",
+              "attribution": "string",
+              "aspectRatio": "string",
+              "disclosure": "string-formatted"
+            }
+          },
+          "mediaContent": {
+            "role": "fullxImage",
+            "uuid": "1e2808d5-57b6-40bf-b186-df452c08eedc",
+            "identifier": "11776",
+            "caption": "string-formatted",
+            "title": "string",
+            "url": "url",
+            "altText": "string",
+            "attribution": "string",
+            "aspectRatio": "string",
+            "disclosure": "string-formatted",
+            "styles": {
+              "focalPoint": "string",
+              "placement": "string",
+              "bleed": true
+            }
+          },
+          "details": "string-formatted",
+          "disclosure": "string-formatted",
+          "buttons": [
+            {
+              "type": "_primary",
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Get Started",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            },
+            {
+              "type": null,
+              "_comment": "Does button object require property 'is_link' per Storybook",
+              "link": {
+                "url": "https://www.schwab.com/",
+                "linkText": "Get Started",
+                "attributes": {
+                  "target": "_blank",
+                  "rel": "string",
+                  "class": "button-class",
+                  "ariaLabel": "Aria Label Button",
+                  "dataTrack": "string",
+                  "dataModal": "string",
+                  "dataDefault": "string"
+                }
+              }
+            }
+          ],
+          "links": [],
+          "styles": {
+            "inset": false,
+            "orientation": "string",
+            "palette": "string",
+            "borderColor": "string",
+            "borderWidth": "string"
+          },
+          "index": 4
+        }
+      ],
+      "footer": {
+        "details": "Sis detailo eaque error enim explicabo explicabo iste enim blanditiis deleniti natus corporis dolorum officiis eaque non laudantium dolorem repellat.",
+        "disclosure": "Lorem discloso asperiores in corporis amet officia incidunt eum aliquid officiis est expedita magnam labore nisi.",
+        "styles": { "align": "center" }
+      },
+      "background": {
+        "role": "fullxImage",
+        "uuid": "c04e62f1-52fc-42cf-be3a-6b816dab6f84",
+        "identifier": "34326",
+        "caption": "string-formatted",
+        "title": "string",
+        "url": "https://picsum.photos/600/800",
+        "altText": "string",
+        "attribution": "string",
+        "aspectRatio": "4:3",
+        "disclosure": "Lorem discloso id totam expedita sequi doloribus odit quam tempora cupiditate tempore repudiandae molestiae dignissimos.",
+        "styles": {
+          "focalPoint": "string",
+          "mobileDisplay": "string",
+          "mobileMediaPinned": false
+        }
+      },
+      "styles": {
+        "itemsPerRow": "2",
+        "bleed": false,
+        "inset": false,
+        "margin": true,
+        "width": "66%",
+        "palette": "02",
+        "borderColor": "05",
+        "borderWidth": "none",
+        "classes": "string",
+        "_comment": "missing halign, valign, minheight, column widths"
+      },
+      "index": 4
+    }
+  ],
+  "taxonomy": [
+    {
+      "vocabulary": "category",
+      "vocabularyName": "Category",
+      "vocabularyUuid": "ae1d0088-cf2f-44f0-8727-66515c1f25cb",
+      "terms": [
+        {
+          "termId": "1371",
+          "termUuid": "bc40cd17-6abe-4f89-97aa-41b7f7770e9e",
+          "urlAlias": "/topic/equity-compensation",
+          "isPrimary": true,
+          "termName": "Equity Compensation",
+          "parentTermId": "561",
+          "parentTermUuid": "10f95650-dd04-4353-8887-55bd228afc2d",
+          "parentTermName": "Financial Planning",
+          "locale": "en"
+        }
+      ]
+    }
+  ],
+  "apiMetadata": {
+    "cacheTags": "paragraph:52541,paragraph:52546,taxonomy_term:496,taxonomy_term:811,node:5366",
+    "analytics": {
+      "adHocTags": [{ "key": "scroll50-dblclk", "value": "reii-genst" }],
+      "doubleClickTags": [{ "type": "reii", "category": "genlp" }],
+      "analyticsTitle": "veniam perspiciatis quae non explicabo",
+      "analyticsCategory": null
+    },
+    "searchMeta": {
+      "description": "Veniam totam ad ad amet quo odio excepturi. Eveniet iure blanditiis molestiae eligendi quod necessitatibus facere quis. Odit eos ut voluptatem aliquid adipisci amet reprehenderit dolore. Laborum dolores officiis asperiores explicabo laboriosam. Accusamus ad eligendi cupiditate. Assumenda aut ipsum doloremque quis quis nihil id.",
+      "abstract": "Facilis at cumque. Tempora optio odit inventore. Officia odio rerum quaerat totam explicabo. Aut repellat omnis similique animi qui delectus totam repudiandae.",
+      "keywords": "minus excepturi doloremque"
+    }
+  },
+  "resourceVersion": 2
+}

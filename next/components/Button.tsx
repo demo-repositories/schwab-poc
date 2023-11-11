@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { buttonVariants } from "@/components/ui/button";
 
 type TToObject = {
@@ -8,12 +9,18 @@ type TToObject = {
   };
 };
 export type TButtonProps = {
-  text: string;
+  text?: string;
   to: TToObject;
   hrefOverride?: URL;
+  children: ReactNode;
 };
 
-export default function Button({ text, to, hrefOverride }: TButtonProps) {
+export default function Button({
+  text,
+  to,
+  hrefOverride,
+  children,
+}: TButtonProps) {
   /**
    * Map content types to their full URL based on paths in /app
    * Eventually if being used outside this button should probably go in /lib
@@ -33,7 +40,7 @@ export default function Button({ text, to, hrefOverride }: TButtonProps) {
       href={hrefOverride || hrefLookup(to)}
       className={buttonVariants({ variant: "default" })}
     >
-      {text}
+      {text || children}
     </Link>
   );
 }
