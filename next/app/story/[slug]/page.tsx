@@ -25,7 +25,9 @@ export async function generateMetadata(
   const { seoData, title } = data[0];
   const metadata = { title };
 
-  seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
+  if (seoData) {
+    seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
+  }
 
   // fetch data
   // const product = await fetch(`https://.../${id}`).then((res) => res.json());

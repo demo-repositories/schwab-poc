@@ -1,10 +1,10 @@
-import { CornerDownRight } from 'lucide-react'
+import { WholeWord } from 'lucide-react'
 
 export default {
     name: 'taxonomyTerm',
     title: 'Taxonomy term',
     type: 'document',
-    icon: CornerDownRight,
+    icon: WholeWord,
     fields: [
         {
             title: 'Name',

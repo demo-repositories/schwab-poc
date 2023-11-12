@@ -6,6 +6,7 @@ import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { bynderInputPlugin } from 'sanity-plugin-bynder-input'
 import { schemaTypes } from './schemas'
 import { defaultDocumentNode } from './desk/defaultDocumentNode'
+import { deskStructure } from './desk/deskStructure'
 import SchwabLogo from './components/SchwabLogo'
 
 export default defineConfig({
@@ -16,7 +17,10 @@ export default defineConfig({
     dataset: 'production',
 
     plugins: [
-        deskTool({ defaultDocumentNode }),
+        deskTool({
+            defaultDocumentNode,
+            structure: deskStructure,
+        }),
         visionTool(),
         table(),
         unsplashImageAsset(),

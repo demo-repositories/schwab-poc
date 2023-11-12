@@ -1,5 +1,5 @@
 import type { Rule } from 'sanity'
-import { BookText } from 'lucide-react'
+import { BookText, Table } from 'lucide-react'
 
 export default {
     name: 'story',
@@ -20,6 +20,11 @@ export default {
             title: 'Slug',
             validation: (rule: Rule) => rule.required(),
             group: 'content',
+        },
+        {
+            name: 'summary',
+            type: 'string',
+            title: 'Summary',
         },
         {
             name: 'featuredImage',

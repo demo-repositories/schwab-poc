@@ -10,8 +10,8 @@ export default function DynamicCTA({ value }: TDynamicCTAProps) {
   const { heading, button } = value;
 
   return (
-    <section className="flex items-center justify-center py-7">
-      <div className="dynamic-cta-container fles min-w-[66%] items-center justify-center bg-accent p-12">
+    <section className="my-9 flex items-center justify-center py-7">
+      <div className="dynamic-cta-container fles min-w-[66%] items-center justify-center border-y-2 border-accent p-12">
         <h3 className="text-center text-2xl font-bold tracking-tight">
           {heading}
         </h3>

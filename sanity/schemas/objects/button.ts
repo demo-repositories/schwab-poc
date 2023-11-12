@@ -20,7 +20,8 @@ export default {
             name: 'hrefOverride',
             title: 'HREF Override',
             type: 'url',
-            description: 'Use when linking externally.',
+            description:
+                'Use when linking externally. Will override any value in "to"',
         },
     ],
 }
