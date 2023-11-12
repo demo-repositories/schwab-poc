@@ -9,7 +9,7 @@ type TToObject = {
   };
 };
 export type TButtonProps = {
-  _id: string;
+  _id?: string;
   text?: string;
   to: TToObject;
   hrefOverride?: URL;

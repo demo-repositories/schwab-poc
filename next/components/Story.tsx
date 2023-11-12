@@ -15,7 +15,7 @@ export default function Story({ data }) {
       {summary && <p className="mb-2 max-w-[66ch] text-lg italic">{summary}</p>}
       {featuredImage && (
         <div className="my-5">
-          <SanityImage value={featuredImage} />
+          <SanityImage value={featuredImage} priority />
         </div>
       )}
       <CustomPortableText value={content} />

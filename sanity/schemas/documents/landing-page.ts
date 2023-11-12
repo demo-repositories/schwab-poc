@@ -1,3 +1,4 @@
+import type { Rule } from 'sanity'
 export default {
     name: 'landingPage',
     type: 'document',
@@ -15,6 +16,24 @@ export default {
             options: {
                 source: 'title',
             },
+        },
+        {
+            title: 'Summary',
+            name: 'summary',
+            type: 'string',
+        },
+        {
+            name: 'featuredImage',
+            title: 'Featured image',
+            type: `image`,
+            fields: [
+                {
+                    name: 'altText',
+                    title: 'Alt text',
+                    type: 'string',
+                    validation: (rule: Rule) => rule.required(),
+                },
+            ],
         },
         {
             name: 'components',

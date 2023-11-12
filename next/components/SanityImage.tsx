@@ -7,6 +7,7 @@ type TSanityImageProps = {
   value: any;
   width?: number;
   height?: number;
+  priority?: boolean;
 };
 
 const builder = urlBuilder(client);
@@ -15,6 +16,7 @@ export default function SanityImage({
   value,
   width,
   height,
+  priority,
 }: TSanityImageProps) {
   // console.log("value", value);
   const dimensions = getImageDimensions(value);
@@ -35,6 +37,7 @@ export default function SanityImage({
       width={width}
       height={height}
       alt={value.alt || ""}
+      priority={priority}
     />
   );
 }
