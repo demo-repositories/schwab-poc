@@ -7,12 +7,12 @@ Thus far I've been opening 2 side-by-side terminals in VSCode, then running `npm
 ## Project structure
 
 The 4 directories that make up this project are:
-.
-├── .vscode
-├── example-data
-├── next
-├── sanity
-└── .nvmrc
+./
+├─ .vscode/
+├─ next/
+├─ sanity/
+├─ .nvmrc
+├─ README.md
 
 The `/next` and `/sanity` directories each have their own `README` files that describe those projects more in depth
 
