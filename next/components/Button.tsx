@@ -5,6 +5,13 @@ import type { ReactNode } from "react";
 import { buttonVariants } from "@/components/ui/button";
 import gsap from "gsap";
 
+/**
+ * The 'Button' component is designed to map to the 'button' object type in Sanity.
+ * IE If the 'button' object is used as a field you should be able to pass it directly to this component.
+ *
+ * There is an additional `colorOverride` prop not exposed in Sanity for hard-coding the button colors.
+ */
+
 type TToObject = {
   _type: string;
   slug: {
@@ -31,16 +38,6 @@ export default function Button({
   colorOverride,
 }: TButtonProps) {
   /**
-   * Example gsap usage based on John's notes
-   */
-  const onEnter = ({ currentTarget }: MouseEvent) => {
-    gsap.to(currentTarget, { scale: 1.05 });
-  };
-
-  const onLeave = ({ currentTarget }: MouseEvent) => {
-    gsap.to(currentTarget, { scale: 1 });
-  };
-  /**
    * Map content types to their full URL based on paths in /app
    * Eventually if being used outside this button should probably go in /lib
    */
@@ -56,6 +53,18 @@ export default function Button({
         return `/`;
     }
   };
+
+  /**
+   * GSAP animation on hover
+   */
+  const onEnter = ({ currentTarget }: MouseEvent) => {
+    gsap.to(currentTarget, { scale: 1.05 });
+  };
+
+  const onLeave = ({ currentTarget }: MouseEvent) => {
+    gsap.to(currentTarget, { scale: 1 });
+  };
+
   return (
     <Link
       href={hrefOverride || hrefLookup(to)}

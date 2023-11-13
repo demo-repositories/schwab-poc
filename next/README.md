@@ -20,9 +20,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### shadcn/ui
 
+[shadcn/ui](https://ui.shadcn.com/) is used for various UI elements. `components/ui`, `lib/utils.ts`, and `components.json` all contribute to making those components work.
+
 ### Tailwind CSS
 
+shadcn/ui and the custom built components for this site leverage [Tailwind CSS](https://tailwindcss.com/) for styling.
+
 ### gsap
+
+GSAP was mentioned as a liked package by the Schwab team. At the time of writing (Nov 12, 2023) GSAP is only used subtly in Button.tsx.
 
 ## Project structure
 
@@ -114,6 +120,10 @@ Homepage
 ### components/
 
 Each component should have comments outlining how and where its used.
+
+#### components/ui
+
+Where all shadcn/ui components end up when installed using their CLI. Most components in here shouldn't need to be modified but part of shadcn/ui's philosophy is that you have these components in your app instead of a package, so this is where they live.
 
 ### lib/
 

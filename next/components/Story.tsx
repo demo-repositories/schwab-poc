@@ -1,6 +1,8 @@
 import CustomPortableText from "./CustomPortableText";
 import SanityImage from "./SanityImage";
-
+/**
+ * Renders 'story' document type from Sanity.
+ */
 export const query = (slug: string) =>
   `*[_type == "story" && slug.current == '${slug}']{slug, title, summary, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}}, seoData{...,}}`;
 

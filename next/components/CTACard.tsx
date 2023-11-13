@@ -1,5 +1,9 @@
 import Button, { TButtonProps } from "./Button";
 
+/**
+ * Used as a card type in 'CardDeck'. Maps to the 'card' object type in Sanity.
+ */
+
 type TIconCardProps = {
   title?: string;
   body: string;

@@ -9,7 +9,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
+/**
+ * Hits API endpoints to toggle Next+Sanity's draft mode
+ *
+ * Appears in 'Footer'
+ */
 export default function DraftModeToggle({ isEnabled }: { isEnabled: boolean }) {
   const [draftEnabled, setDraftEnabled] = useState(isEnabled);
   const pathname = usePathname();

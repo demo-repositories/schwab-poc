@@ -6,7 +6,16 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import { Image } from "@unpic/react";
 import hexToRgba from "hex-to-rgba";
 
-type TMarqueeProps = {
+/**
+ * Maps to 'marquee' object type in Sanity.
+ *
+ * This componet uses Sanity's image color palatte metadata to ensure text has proper contrast regardless of the image's color scheme.
+ *
+ * Appears in 'LandingPage' in the component lookup.
+ */
+
+export type TMarqueeProps = {
+  _id: string;
   title: string;
   description: string;
   eyebrow?: string;
@@ -73,6 +82,7 @@ export default function Marquee({
           </div>
         </div>
       </div>
+      {/* Gradient between image and text. Uses Sanity's image metadata to get a color that matches the image.*/}
       <div
         className="gradient"
         style={{

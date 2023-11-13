@@ -1,16 +1,23 @@
 import IconCard from "./IconCard";
 import CTACard from "./CTACard";
 
+/**
+ * Maps to the 'cardDeck' object type in Sanity, which appears in the 'landingPage' type.
+ *
+ * Ultimately is imported into 'LandingPage'
+ */
+
 type TCard = {
   title?: string;
   body: string;
   icon?: any;
   to: any;
 };
-type TCardDeckProps = {
+export type TCardDeckProps = {
   title?: string;
   cardType: string;
   ctaText: string;
+  _id: string;
   cards: TCard[];
 };
 
@@ -20,9 +27,6 @@ export default function CardDeck({
   cards,
   ctaText,
 }: TCardDeckProps) {
-  //   console.log("title", title);
-  //   console.log("cardType", cardType);
-
   return (
     <section className="mx-auto max-w-7xl flex-row items-center p-7">
       <div className="text-wrapper my-3">

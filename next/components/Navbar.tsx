@@ -1,20 +1,18 @@
 "use client";
 import {
   NavigationMenu,
-  // NavigationMenuContent,
-  // NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  // NavigationMenuTrigger,
-  // NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import SchwabLogo from "./SchwabLogo";
 import Link from "next/link";
 import SanityLogo from "./SanityLogo";
 import { Plus } from "lucide-react";
-
+/**
+ * Appears in layout.tsx and shows up at the top of every page
+ */
 export default function Navbar({}) {
   const links = [
     {
@@ -23,6 +21,7 @@ export default function Navbar({}) {
         slug: {
           current: "/story",
         },
+        // spoof type so we can use our 'Button' component
         _type: "landingPage",
       },
       _id: "1",
@@ -33,6 +32,7 @@ export default function Navbar({}) {
         slug: {
           current: "/landing-pages",
         },
+        // spoof type so we can use our 'Button' component
         _type: "landingPage",
       },
       _id: "2",

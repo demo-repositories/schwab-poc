@@ -1,6 +1,10 @@
 import { draftMode } from "next/headers";
 import DraftModeToggle from "./DraftModeToggle";
 
+/**
+ * Server component wrapper for DraftModeToggle to get draftMode header
+ */
+
 export default function PreviewModeWrapper({}) {
   const isEnabled = draftMode().isEnabled;
 

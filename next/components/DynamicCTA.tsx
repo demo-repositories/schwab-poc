@@ -1,5 +1,9 @@
 import Button, { TButtonProps } from "./Button";
-
+/**
+ * Maps to the 'dynamicCta' object type in Sanity.
+ *
+ * Gets pulled into 'CustomPortableText'
+ */
 type TDynamicCTAProps = {
   value: {
     heading: string;

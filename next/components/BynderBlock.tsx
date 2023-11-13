@@ -3,6 +3,12 @@ import { Download } from "lucide-react";
 import Button from "./Button";
 import { PortableText } from "@portabletext/react";
 
+/**
+ * Maps to the 'bynderBlock' type in Sanity.
+ *
+ * Gets pulled into 'CustomPortableText'
+ */
+
 export default function BynderBlock({ value }) {
   const { title, caption, bynderAsset } = value;
   const { previewImg, aspectRatio } = bynderAsset;

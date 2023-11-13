@@ -9,6 +9,10 @@ import {
 import SanityImage from "./SanityImage";
 import Button from "./Button";
 
+/**
+ * Used in both document type list pages to show the available documents.
+ */
+
 export default function Cards({ cards }) {
   return (
     <div className="gap-4 lg:flex">

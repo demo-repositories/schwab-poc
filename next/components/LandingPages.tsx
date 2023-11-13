@@ -1,10 +1,12 @@
 import StoryCards from "./StoryCards";
 
+/**
+ * List page for all 'landingPage' documents
+ */
+
 export const query = `*[_type == "landingPage" && slug.current != null] | order(_updatedAt){title, slug, summary, featuredImage, _id, _type}`;
 
 export default function LandingPages({ data }: { data: number }) {
-  // console.log("data", data);
-
   return (
     <main className="mx-auto mt-5 max-w-7xl px-5 xl:px-0">
       <section>

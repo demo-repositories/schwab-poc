@@ -1,14 +1,29 @@
 import {
   Table,
   TableBody,
-  // TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 
-export default function PortableTable({ value }) {
+/**
+ * Renders custom table block in portable text.
+ *
+ * Appears in 'CustomPortableText'.
+ */
+
+type TTableRow = {
+  _key: string;
+  cells: string[];
+};
+type TPortableTableProps = {
+  value: {
+    rows: TTableRow[];
+  };
+};
+
+export default function PortableTable({ value }: TPortableTableProps) {
   const { rows } = value;
   const headerRow = rows.shift();
   return (
@@ -24,18 +39,20 @@ export default function PortableTable({ value }) {
       </TableHeader>
       <TableBody className="text-sm">
         {rows &&
-          rows.map(({ _key, cells }, r: number) => {
-            return (
-              <TableRow key={_key}>
-                {cells &&
-                  cells.map((cell: string, c: number) => {
-                    return (
-                      <TableCell key={`${r}-${c}-${cell}`}>{cell}</TableCell>
-                    );
-                  })}
-              </TableRow>
-            );
-          })}
+          rows.map(
+            ({ _key, cells }: { _key: string; cells: string[] }, r: number) => {
+              return (
+                <TableRow key={_key}>
+                  {cells &&
+                    cells.map((cell: string, c: number) => {
+                      return (
+                        <TableCell key={`${r}-${c}-${cell}`}>{cell}</TableCell>
+                      );
+                    })}
+                </TableRow>
+              );
+            },
+          )}
       </TableBody>
     </Table>
   );

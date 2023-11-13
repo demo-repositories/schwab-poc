@@ -4,7 +4,6 @@ export default function SchwabLogo() {
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 56 56"
-      // className="h-[72px]"
       className="h-full"
     >
       <g id="XMLID_50_">

@@ -1,11 +1,12 @@
-import Link from "next/link";
 import StoryCards from "./StoryCards";
+
+/**
+ * List page for all 'story' documents
+ */
 
 export const query = `*[_type == "story" && slug.current != null] | order(_updatedAt){title, slug, summary, featuredImage, _id, _type}`;
 
 export default function Stories({ data }: { data: number }) {
-  // console.log("data", data);
-
   return (
     <main className="mx-auto mt-5 max-w-7xl px-5 xl:px-0">
       <section>

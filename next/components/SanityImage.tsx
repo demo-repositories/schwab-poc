@@ -2,7 +2,11 @@ import { client } from "@/lib/sanity/client";
 import urlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
 import { Image } from "@unpic/react";
-
+/**
+ * Perhaps the component most in need of refactoring. Maps to an 'image' type in Sanity.
+ *
+ * Uses unpic/img and Sanity's image pipeline to render most of the images on the site.
+ */
 type TSanityImageProps = {
   value: any;
   width?: number;
@@ -20,7 +24,6 @@ export default function SanityImage({
   priority,
   layout,
 }: TSanityImageProps) {
-  // console.log("value", value);
   const dimensions = getImageDimensions(value);
   const { aspectRatio } = dimensions;
   if (!width && !height) {
