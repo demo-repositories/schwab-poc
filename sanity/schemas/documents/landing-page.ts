@@ -39,7 +39,7 @@ export default {
             name: 'components',
             title: 'Components',
             type: 'array',
-            of: [{ type: 'marquee' }],
+            of: [{ type: 'marquee' }, { type: 'cardDeck' }],
         },
     ],
 }

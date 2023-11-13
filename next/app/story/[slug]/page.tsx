@@ -22,9 +22,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = params;
   const data = await pageData(slug);
-  const { seoData, title } = data[0];
-  const metadata = { title };
-
+  const { seoData, title, summary } = data[0];
+  const metadata = { title, description: summary };
   if (seoData) {
     seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
   }

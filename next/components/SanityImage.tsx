@@ -8,6 +8,7 @@ type TSanityImageProps = {
   width?: number;
   height?: number;
   priority?: boolean;
+  layout?: "fullWidth" | "constrained" | "fixed";
 };
 
 const builder = urlBuilder(client);
@@ -17,6 +18,7 @@ export default function SanityImage({
   width,
   height,
   priority,
+  layout,
 }: TSanityImageProps) {
   // console.log("value", value);
   const dimensions = getImageDimensions(value);
@@ -33,7 +35,7 @@ export default function SanityImage({
   return (
     <Image
       src={builder.image(value).width(width).fit("max").auto("format").url()}
-      layout="constrained"
+      layout={layout || "constrained"}
       width={width}
       height={height}
       alt={value.alt || ""}

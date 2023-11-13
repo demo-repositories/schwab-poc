@@ -16,21 +16,21 @@ const pageData = async (slug: string) =>
     tags: ["landingPage"],
   });
 
-// export async function generateMetadata(
-//   { params }: Props,
-//   parent: ResolvingMetadata,
-// ): Promise<Metadata> {
-//   const { slug } = params;
-//   const data = await pageData(slug);
-//   const { seoData, title } = data[0];
-//   const metadata = { title };
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const { slug } = params;
+  const data = await pageData(slug);
+  const { seoData, title, summary } = data[0];
+  const metadata = { title, description: summary };
 
-//   if (seoData) {
-//     seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
-//   }
+  if (seoData) {
+    seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
+  }
 
-//   return metadata;
-// }
+  return metadata;
+}
 
 export default async function LandingPagePage({ params }: Props) {
   const { slug } = params;

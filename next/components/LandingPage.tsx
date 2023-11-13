@@ -1,11 +1,13 @@
 import { createElement } from "react";
 import Marquee from "./Marquee";
+import CardDeck from "./CardDeck";
 
 const componentLookup = {
   marquee: Marquee,
+  cardDeck: CardDeck,
 };
 export const query = (slug: string) =>
-  `*[_type == "landingPage" && slug.current == '${slug}']{slug, title, components[]{...,image{...,"palette": asset->metadata.palette}}}`;
+  `*[_type == "landingPage" && slug.current == '${slug}']{slug, title, summary, components[]{..., cards[]{...,to->}, image{...,"palette": asset->metadata.palette}}}`;
 
 export default function LandingPage({ data }) {
   const { title, slug, components } = data[0];
@@ -14,7 +16,9 @@ export default function LandingPage({ data }) {
     <main className="mx-auto mb-12 mt-5 max-w-7xl px-5 xl:px-0">
       {components &&
         components.map((component) =>
-          createElement(componentLookup[component._type], component),
+          !componentLookup[component._type]
+            ? "No component"
+            : createElement(componentLookup[component._type], component),
         )}
     </main>
   );

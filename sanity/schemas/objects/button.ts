@@ -14,7 +14,7 @@ export default {
             name: 'to',
             title: 'to',
             type: 'reference',
-            to: [{ type: 'story' }],
+            to: [{ type: 'story' }, { type: 'landingPage' }],
         },
         {
             name: 'hrefOverride',

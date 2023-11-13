@@ -1,7 +1,9 @@
+import { Heading1 } from 'lucide-react'
 export default {
     name: 'marquee',
     title: 'Marquee',
     type: 'object',
+    icon: Heading1,
     fields: [
         {
             name: 'title',
