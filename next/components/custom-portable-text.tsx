@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
 import { PortableText } from "@portabletext/react";
-import DynamicCTA from "./DynamicCTA";
-import SanityImage from "./SanityImage";
-import PortableTable from "./PortableTable";
-import BynderBlock from "./BynderBlock";
+import { PortableTextBlock } from "@portabletext/types";
+import DynamicCTA from "./dynamic-cta";
+import SanityImage from "./sanity-image";
+import PortableTable from "./portable-table";
+import BynderBlock from "./bynder-block";
 /**
  * Renders the output of the portable text block in Sanity's 'story' type.
  *
@@ -60,6 +61,10 @@ const components = {
   },
 };
 
-export default function CustomPortableText({ value }) {
+export default function CustomPortableText({
+  value,
+}: {
+  value: PortableTextBlock[];
+}) {
   return <PortableText value={value} components={components} />;
 }

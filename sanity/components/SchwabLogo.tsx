@@ -8,7 +8,6 @@ export default function SchwabLogo() {
             id="Layer_1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 56 56"
-            // className="h-[72px]"
         >
             <g id="XMLID_50_">
                 <path id="XMLID_22_" fill="#00A0DF" d="M0 0h55.9v55.9H0z" />

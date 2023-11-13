@@ -1,11 +1,16 @@
 import { DefaultDocumentNodeResolver } from 'sanity/desk'
 import Iframe from 'sanity-plugin-iframe-pane'
 
+/**
+ * Overrides how the document editor appears for each document type
+ */
+
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (
     S,
     { schemaType }
 ) => {
     switch (schemaType) {
+        // Both 'story' and 'landingPage' get the preview iframe
         case `story`:
             // Preview pane
             return S.document().views([
@@ -36,6 +41,7 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
                     })
                     .title('Preview'),
             ])
+        // All other document types just show the default
         default:
             return S.document().views([S.view.form()])
     }

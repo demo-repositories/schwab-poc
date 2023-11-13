@@ -1,10 +1,14 @@
 import { draftMode } from "next/headers";
 import { LiveQuery } from "next-sanity/preview/live-query";
-import LandingPage, { query } from "@/components/LandingPage";
-import PreviewLandingPage from "@/components/PreviewLandingPage";
+import LandingPage, { query } from "@/components/landing-page";
+import PreviewLandingPage from "@/components/preview-landing-page";
 import { sanityFetch } from "@/lib/sanity/fetch";
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
+
+/**
+ * Renders all 'landingPage' documents from Sanity
+ */
 
 type Props = {
   params: { slug: string };
@@ -16,6 +20,7 @@ const pageData = async (slug: string) =>
     tags: ["landingPage"],
   });
 
+// SEO metadata from document and/or overrides from 'seoData' field
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata,

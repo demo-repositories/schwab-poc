@@ -2,7 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, ensure you have a .env file with the appropriate values from `.env.EXAMPLE` you'll need to generate a key from sanity.build/manage for `SANITY_API_READ_TOKEN`
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -18,6 +20,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Noteworthy integrations
 
+A few things you'll see pop up throughout this codebase that may be helpful to be familiar with.
+
 ### shadcn/ui
 
 [shadcn/ui](https://ui.shadcn.com/) is used for various UI elements. `components/ui`, `lib/utils.ts`, and `components.json` all contribute to making those components work.
@@ -26,9 +30,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 shadcn/ui and the custom built components for this site leverage [Tailwind CSS](https://tailwindcss.com/) for styling.
 
+### unpic-img
+
+[unpic-img](https://unpic.pics/img/learn/) is currenly used for loading imaged performantly across the site
+
 ### gsap
 
-GSAP was mentioned as a liked package by the Schwab team. At the time of writing (Nov 12, 2023) GSAP is only used subtly in Button.tsx.
+[GSAP](https://gsap.com/docs/v3/) was mentioned as a liked package by the Schwab team. At the time of writing (Nov 12, 2023) GSAP is only used subtly in Button.tsx.
 
 ## Project structure
 

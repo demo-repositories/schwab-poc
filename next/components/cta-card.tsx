@@ -1,4 +1,4 @@
-import Button, { TButtonProps } from "./Button";
+import Button, { TButtonProps } from "./button";
 
 /**
  * Used as a card type in 'CardDeck'. Maps to the 'card' object type in Sanity.

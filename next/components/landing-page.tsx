@@ -1,6 +1,6 @@
 import { createElement } from "react";
-import Marquee, { TMarqueeProps } from "./Marquee";
-import CardDeck, { TCardDeckProps } from "./CardDeck";
+import Marquee, { TMarqueeProps } from "./marquee";
+import CardDeck, { TCardDeckProps } from "./card-deck";
 /**
  * Recreation of 'Pattern Landing Page' from original charlesschwab.com.
  *
@@ -12,7 +12,7 @@ type TLandingPageItem = {
   slug: string;
   components: Array<TCardDeckProps | TMarqueeProps>;
 };
-type TLandingPageProps = {
+export type TLandingPageProps = {
   data: TLandingPageItem[];
 };
 type TComponentType = "marquee" | "cardDeck";
@@ -31,12 +31,16 @@ export default function LandingPage({ data }: TLandingPageProps) {
     <main className="mx-auto mb-12 mt-5 max-w-7xl px-5 xl:px-0">
       {components &&
         components.map((component) => {
-          return !componentLookup[component._type]
-            ? "No component"
-            : createElement(componentLookup[component._type], {
+          return !componentLookup[component._type] ? (
+            "No component"
+          ) : (
+            <div key={component._id}>
+              {createElement(componentLookup[component._type], {
                 ...component,
                 key: component._id,
-              });
+              })}
+            </div>
+          );
         })}
     </main>
   );

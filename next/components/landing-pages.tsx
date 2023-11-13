@@ -1,4 +1,4 @@
-import StoryCards from "./StoryCards";
+import StoryCards from "./story-cards";
 
 /**
  * List page for all 'landingPage' documents

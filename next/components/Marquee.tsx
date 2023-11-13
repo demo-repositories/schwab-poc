@@ -1,5 +1,4 @@
-import type { TButtonProps } from "./Button";
-import Button from "./Button";
+import Button, { TButtonProps } from "./button";
 import { client } from "@/lib/sanity/client";
 import urlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";

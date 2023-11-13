@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+/**
+ * Pseudo-404 page for site
+ */
+
 export default function NotFound() {
   return (
     <section className="mx-auto mt-5 max-w-3xl px-5 xl:px-0">

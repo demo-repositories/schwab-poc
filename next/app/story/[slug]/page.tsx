@@ -1,7 +1,7 @@
 import { draftMode } from "next/headers";
 import { LiveQuery } from "next-sanity/preview/live-query";
-import Story, { query } from "@/components/Story";
-import PreviewStory from "@/components/PreviewStory";
+import Story, { query, TStoryItem } from "@/components/story";
+import PreviewStory from "@/components/preview-story";
 import { sanityFetch } from "@/lib/sanity/fetch";
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
@@ -11,7 +11,7 @@ type Props = {
 };
 
 const pageData = async (slug: string) =>
-  await sanityFetch<number>({
+  await sanityFetch<TStoryItem[]>({
     query: query(slug),
     tags: ["story"],
   });

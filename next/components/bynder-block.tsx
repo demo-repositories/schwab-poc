@@ -1,6 +1,6 @@
 import { Image } from "@unpic/react";
 import { Download } from "lucide-react";
-import Button from "./Button";
+import Button from "./button";
 import { PortableText } from "@portabletext/react";
 
 /**

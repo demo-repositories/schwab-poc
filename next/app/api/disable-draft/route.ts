@@ -2,9 +2,11 @@ import { draftMode } from "next/headers";
 import { redirect } from "next/navigation";
 
 export async function GET(request: Request) {
+  // Parse query string parameters
   const { searchParams } = new URL(request.url);
   const path = searchParams.get("path");
 
+  // Enable Draft Mode by removing the cookie
   draftMode().disable();
 
   if (!path) {
@@ -12,6 +14,6 @@ export async function GET(request: Request) {
       "Draft mode is disabled, but no redirect path specified",
     );
   } else {
-    redirect(path);
+    return redirect(path);
   }
 }

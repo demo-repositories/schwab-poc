@@ -1,5 +1,5 @@
-import ColorSchemeToggle from "./ColorSchemeToggle";
-import PreviewModeWrapper from "./PreviewModeWrapper";
+import ColorSchemeToggle from "./color-scheme-toggle";
+import PreviewModeWrapper from "./preview-mode-wrapper";
 
 export default function Footer() {
   return (

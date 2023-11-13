@@ -4,16 +4,16 @@ import dynamic from "next/dynamic";
 import { draftMode } from "next/headers";
 import { token } from "@/lib/sanity/fetch";
 import { Inter as FontSans } from "next/font/google";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/navbar";
 import { cn } from "@/lib/utils";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
-const PreviewProvider = dynamic(() => import("@/components/PreviewProvider"));
+const PreviewProvider = dynamic(() => import("@/components/preview-provider"));
 
 export const metadata: Metadata = {
   title: "Charles Schwab",

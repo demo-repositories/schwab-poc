@@ -1,5 +1,5 @@
-import IconCard from "./IconCard";
-import CTACard from "./CTACard";
+import IconCard from "./icon-card";
+import CTACard from "./cta-card";
 
 /**
  * Maps to the 'cardDeck' object type in Sanity, which appears in the 'landingPage' type.

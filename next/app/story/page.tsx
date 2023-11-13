@@ -1,7 +1,7 @@
 import { draftMode } from "next/headers";
 import { LiveQuery } from "next-sanity/preview/live-query";
-import Stories, { query } from "@/components/Stories";
-import PreviewStories from "@/components/PreviewStories";
+import Stories, { query } from "@/components/stories";
+import PreviewStories from "@/components/preview-stories";
 import { sanityFetch } from "@/lib/sanity/fetch";
 
 export default async function StoriesPage() {

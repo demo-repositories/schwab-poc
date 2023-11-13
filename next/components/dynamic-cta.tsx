@@ -1,4 +1,4 @@
-import Button, { TButtonProps } from "./Button";
+import Button, { TButtonProps } from "./button";
 /**
  * Maps to the 'dynamicCta' object type in Sanity.
  *

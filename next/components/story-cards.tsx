@@ -6,8 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import SanityImage from "./SanityImage";
-import Button from "./Button";
+import SanityImage from "./sanity-image";
+import Button from "./button";
 
 /**
  * Used in both document type list pages to show the available documents.

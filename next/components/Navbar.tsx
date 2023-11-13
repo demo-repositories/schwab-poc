@@ -6,9 +6,9 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import SchwabLogo from "./SchwabLogo";
+import SchwabLogo from "./schwab-logo";
 import Link from "next/link";
-import SanityLogo from "./SanityLogo";
+import SanityLogo from "./sanity-logo";
 import { Plus } from "lucide-react";
 /**
  * Appears in layout.tsx and shows up at the top of every page

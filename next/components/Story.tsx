@@ -1,12 +1,26 @@
-import CustomPortableText from "./CustomPortableText";
-import SanityImage from "./SanityImage";
+import { PortableTextBlock } from "@portabletext/types";
+import CustomPortableText from "./custom-portable-text";
+import SanityImage, { TSanityImageProps } from "./sanity-image";
+
 /**
  * Renders 'story' document type from Sanity.
  */
+
+export type TStoryItem = {
+  title: string;
+  slug: string;
+  summary: string;
+  featuredImage: TSanityImageProps;
+  content: PortableTextBlock[];
+};
+type TStoryProps = {
+  data: TStoryItem[];
+};
+
 export const query = (slug: string) =>
   `*[_type == "story" && slug.current == '${slug}']{slug, title, summary, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}}, seoData{...,}}`;
 
-export default function Story({ data }) {
+export default function Story({ data }: TStoryProps) {
   const { title, slug, summary, featuredImage, content } = data[0];
   return (
     <main className="mx-auto mb-12 mt-5 max-w-7xl px-5 xl:px-0">

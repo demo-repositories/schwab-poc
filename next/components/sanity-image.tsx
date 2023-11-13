@@ -7,7 +7,7 @@ import { Image } from "@unpic/react";
  *
  * Uses unpic/img and Sanity's image pipeline to render most of the images on the site.
  */
-type TSanityImageProps = {
+export type TSanityImageProps = {
   value: any;
   width?: number;
   height?: number;

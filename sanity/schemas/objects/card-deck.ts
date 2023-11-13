@@ -1,10 +1,10 @@
-import { Component, Grid2X2 } from 'lucide-react'
+import { Component, LayoutGrid } from 'lucide-react'
 
 export default {
     name: 'cardDeck',
     title: 'Card deck',
     type: 'object',
-    icon: Grid2X2,
+    icon: LayoutGrid,
     fields: [
         {
             title: 'Title',
