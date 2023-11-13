@@ -18,6 +18,18 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
                     })
                     .title('Preview'),
             ])
+        case `landingPage`:
+            // Preview pane
+            return S.document().views([
+                S.view.form(),
+                S.view
+                    .component(Iframe)
+                    .options({
+                        url: (doc) =>
+                            `http://localhost:3000/api/draft?secret=MY_SECRET_TOKEN&path=/${doc.slug.current}`,
+                    })
+                    .title('Preview'),
+            ])
         default:
             return S.document().views([S.view.form()])
     }

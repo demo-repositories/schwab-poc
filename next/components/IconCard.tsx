@@ -5,6 +5,7 @@ type TIconCardProps = {
   body: string;
   icon?: any;
 };
+
 export default function IconCard({ title, body, icon }: TIconCardProps) {
   return (
     <div className="card mb-9 text-center lg:mb-0 lg:basis-[33%]">

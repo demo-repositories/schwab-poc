@@ -7,6 +7,7 @@ import { Inter as FontSans } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/Footer";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default async function RootLayout({
           ) : (
             children
           )}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

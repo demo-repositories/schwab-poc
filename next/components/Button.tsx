@@ -1,6 +1,9 @@
+"use client";
+import { MouseEvent } from "react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { buttonVariants } from "@/components/ui/button";
+import gsap from "gsap";
 
 type TToObject = {
   _type: string;
@@ -27,6 +30,16 @@ export default function Button({
   children,
   colorOverride,
 }: TButtonProps) {
+  /**
+   * Example gsap usage based on John's notes
+   */
+  const onEnter = ({ currentTarget }: MouseEvent) => {
+    gsap.to(currentTarget, { scale: 1.05 });
+  };
+
+  const onLeave = ({ currentTarget }: MouseEvent) => {
+    gsap.to(currentTarget, { scale: 1 });
+  };
   /**
    * Map content types to their full URL based on paths in /app
    * Eventually if being used outside this button should probably go in /lib
@@ -55,6 +68,8 @@ export default function Button({
             }
           : {}
       }
+      onMouseEnter={(e) => onEnter(e)}
+      onMouseLeave={(e) => onLeave(e)}
     >
       {text || children}
     </Link>

@@ -10,7 +10,6 @@ import {
   // NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { ColorSchemeToggle } from "./ColorSchemeToggle";
 import SchwabLogo from "./SchwabLogo";
 import Link from "next/link";
 import SanityLogo from "./SanityLogo";
@@ -68,7 +67,6 @@ export default function Navbar({}) {
               })}
           </NavigationMenuList>
         </NavigationMenu>
-        <ColorSchemeToggle />
       </div>
     </nav>
   );

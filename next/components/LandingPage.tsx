@@ -15,11 +15,14 @@ export default function LandingPage({ data }) {
   return (
     <main className="mx-auto mb-12 mt-5 max-w-7xl px-5 xl:px-0">
       {components &&
-        components.map((component) =>
-          !componentLookup[component._type]
+        components.map((component) => {
+          return !componentLookup[component._type]
             ? "No component"
-            : createElement(componentLookup[component._type], component),
-        )}
+            : createElement(componentLookup[component._type], {
+                ...component,
+                key: component._id,
+              });
+        })}
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import IconCard from "./IconCard";
 import CTACard from "./CTACard";
+
 type TCard = {
   title?: string;
   body: string;
@@ -21,7 +22,7 @@ export default function CardDeck({
 }: TCardDeckProps) {
   //   console.log("title", title);
   //   console.log("cardType", cardType);
-  console.log("cards", cards);
+
   return (
     <section className="mx-auto max-w-7xl flex-row items-center p-7">
       <div className="text-wrapper my-3">
