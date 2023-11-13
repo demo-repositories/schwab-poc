@@ -15,6 +15,9 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
                     .options({
                         url: (doc) =>
                             `http://localhost:3000/api/draft?secret=MY_SECRET_TOKEN&path=/story/${doc.slug.current}`,
+                        reload: {
+                            button: true,
+                        },
                     })
                     .title('Preview'),
             ])
@@ -27,6 +30,9 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
                     .options({
                         url: (doc) =>
                             `http://localhost:3000/api/draft?secret=MY_SECRET_TOKEN&path=/${doc.slug.current}`,
+                        reload: {
+                            button: true,
+                        },
                     })
                     .title('Preview'),
             ])

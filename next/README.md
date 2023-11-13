@@ -16,21 +16,137 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Noteworthy integrations
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### shadcn/ui
 
-## Learn More
+### Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+### gsap
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+.
+└── next/
+    ├── app/
+    │   └── ...
+    ├── components/
+    │   └── ...
+    ├── lib/
+    │   └── ...
+    ├── components.json
+    ├── next.config.js
+    ├── package.json
+    ├── postcss.config.js
+    ├── prettier.config.js
+    ├── README.md
+    ├── tailwind.config.ts
+    └── tsconfig.json
+```
 
-## Deploy on Vercel
+Things that seemed not self-explanatory are outlined below
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### app/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+At a high level this is a NextJS app using the [app router](https://nextjs.org/docs/getting-started/project-structure). The structure of the project is in line with what Next recommends.
+
+```
+.
+└── app/
+    ├── [slug]/
+    │   └── page.tsx
+    ├── api/
+    │   ├── disable-draft/
+    │   │   └── route.ts
+    │   └── draft/
+    │       └── route.ts
+    ├── landing-pages/
+    │   └── page.tsx
+    ├── story/
+    │   ├── [slug]/
+    │   │   └── page.tsx
+    │   └── page.tsx
+    ├── global.css
+    ├── layout.tsx
+    ├── not-found.tsx
+    └── page.tsx
+```
+
+#### [slug]/page.tsx
+
+Renders each individual 'landingPage' document.
+
+#### api /draft and /disable-draft
+
+Enables and disables NextJS' [draftMode](https://nextjs.org/docs/app/building-your-application/configuring/draft-mode) which is used by Sanity's preview.
+
+#### landing-pages/page.tsx
+
+Renders a list of all available 'landingPage' documents.
+
+#### story
+
+##### /[slug]/page.tsx
+
+Renders each individual 'story' document.
+
+##### /page.tsx
+
+Renders a list of all available 'story' documents.
+
+#### global.css
+
+CSS variables for theme + Tailwind
+
+#### layout.tsx
+
+Includes ThemeProvider, Navbar, Footer, and PreviewProvider.
+
+#### not-found.tsx
+
+404 page for entire site. Errors and not-found responses can be [controlled in more detail with the app router](https://nextjs.org/docs/app/building-your-application/routing/error-handling).
+
+#### page.tsx
+
+Homepage
+
+### components/
+
+Each component should have comments outlining how and where its used.
+
+### lib/
+
+```
+.
+└── lib/
+    ├── sanity/
+    │   ├── client.ts
+    │   └── fetch.ts
+    ├── twColor.ts
+    └── utils.ts
+```
+
+#### sanity/client.ts
+
+Sanity client instance re-used throughout front-end
+
+#### sanity/fetch.ts
+
+Basic logic for fetching from Content Lake using GROQ
+
+#### twColor.ts
+
+Helper function for turning hex codes from Sanity's image palette info into the nearest matching Tailwind class.
+
+#### utils.ts
+
+Helper functions for `shadcn/ui`. "utils" is not very descriptive but I dare not rename it.
+
+### components.json
+
+Schema for `shadcn/ui` to know about general configuration information (Tailwind, theme info).
+
+### tailwind.config.ts
+
+As you might expect, but includes theme information + variables.
