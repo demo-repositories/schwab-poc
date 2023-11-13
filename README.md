@@ -1,5 +1,7 @@
 # Charles Schwab + Sanity proof of concept NextJS app
 
+A single repository containing both the Sanity studio and NextJS front-end code. Both directories have their own README with more information about their respective setups.
+
 ## Running the project locally
 
 Thus far I've been opening 2 side-by-side terminals in VSCode, then running `npm install` and `npm run dev` in both. Ensure you create a `.env` file in `/next` that matches `.env.EXAMPLE`, but includes a read token you create in your project API settings at [sanity.io/manage](https://sanity.io/manage).
