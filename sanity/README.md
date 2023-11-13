@@ -86,6 +86,10 @@ If you follow the schema definition in `sanity.config.ts` back to the `schemas` 
 
 That should be all you need to be able to reference your new schema!
 
+## Lucide icons
+
+For content icons in the studio you can pass any Reaact component. Sanity exposes a large set of built-in components you can view [here](https://icons.sanity.build/all), but this workspace also has [Lucide icons](https://lucide.dev/icons/) installed to supplement the options from `@sanity/icons`.
+
 ## General Sanity docs and resources
 
 -   [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
