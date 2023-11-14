@@ -1,6 +1,12 @@
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { visionTool } from '@sanity/vision'
+import {
+    dashboardTool,
+    projectUsersWidget,
+    projectInfoWidget,
+} from '@sanity/dashboard'
+import { documentListWidget } from 'sanity-plugin-dashboard-widget-document-list'
 import { table } from '@sanity/table'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { bynderInputPlugin } from 'sanity-plugin-bynder-input'
@@ -17,6 +23,24 @@ export default defineConfig({
     dataset: 'production',
 
     plugins: [
+        dashboardTool({
+            widgets: [
+                projectInfoWidget(),
+                projectUsersWidget(),
+                documentListWidget({
+                    title: 'Last edited landing pages',
+                    order: '_updatedAt desc',
+                    types: ['landingPage'],
+                    layout: { width: 'small' },
+                }),
+                documentListWidget({
+                    title: 'Last edited stories',
+                    order: '_updatedAt desc',
+                    types: ['story'],
+                    layout: { width: 'small' },
+                }),
+            ],
+        }),
         deskTool({
             defaultDocumentNode,
             structure: deskStructure,

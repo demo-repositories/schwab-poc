@@ -1,5 +1,5 @@
 import type { Rule } from 'sanity'
-import { BookText, Table } from 'lucide-react'
+import { BookText } from 'lucide-react'
 
 export default {
     name: 'story',

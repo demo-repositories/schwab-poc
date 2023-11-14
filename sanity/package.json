@@ -15,6 +15,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/dashboard": "^3.1.5",
     "@sanity/table": "^1.0.1",
     "@sanity/vision": "^3.19.0",
     "lucide-react": "^0.292.0",
@@ -24,6 +25,7 @@
     "sanity": "^3.19.0",
     "sanity-plugin-asset-source-unsplash": "^1.1.2",
     "sanity-plugin-bynder-input": "^2.0.1",
+    "sanity-plugin-dashboard-widget-document-list": "^1.0.1",
     "sanity-plugin-iframe-pane": "^2.6.0",
     "styled-components": "^6.0.7"
   },
