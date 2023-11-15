@@ -44,7 +44,11 @@ export default {
             title: 'Components',
             type: 'array',
             group: 'content',
-            of: [{ type: 'marquee' }, { type: 'cardDeck' }],
+            of: [
+                { type: 'marquee' },
+                { type: 'cardDeck' },
+                { type: 'querySet' },
+            ],
         },
         {
             name: 'taxonomy',

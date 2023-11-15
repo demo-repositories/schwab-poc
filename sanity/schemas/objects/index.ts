@@ -6,6 +6,7 @@ import bynderBlock from './bynder-block'
 import taxonomyItem from './taxonomy-item'
 import marquee from './marquee'
 import cardDeck from './card-deck'
+import querySet from './query-set'
 
 export default [
     button,
@@ -16,4 +17,5 @@ export default [
     taxonomyItem,
     marquee,
     cardDeck,
+    querySet,
 ]

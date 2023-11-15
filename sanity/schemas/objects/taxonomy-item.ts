@@ -1,7 +1,6 @@
 /**
  * Wrapper for adding taxonomy attributes to documents
  */
-
 import { Waypoints } from 'lucide-react'
 
 const compareTwoArraysOfObjects = (arr1: object[], arr2: object[]) => {
@@ -40,10 +39,18 @@ export default {
                     type: 'reference',
                     to: [{ type: 'taxonomyTerm' }],
                     options: {
+                        disableNew: true,
+                        /**
+                         * This filter is assuming that this object is placed top-level in a document in a field named "taxonomy"
+                         *
+                         * To make this more global:
+                         * 1. Parent is arr1
+                         * 2. Loop through document + document children to see if any obj has type 'taxonomyAttribute' => check each against parent as arr2
+                         * 3. Whatever matches becomes parentAttribute/parentParams below
+                         *
+                         */
                         filter: async ({ document, parent, getClient }) => {
-                            /**
-                             * I don't believe this type of lookup is possible with Sanity but this filter for options should suffice for now
-                             */
+                            // I don't believe this type of lookup is possible with Sanity but this filter for options should suffice for now
                             const { taxonomy } = document
                             const missingTerms = taxonomy.filter((item) => {
                                 return !item.hasOwnProperty('terms')

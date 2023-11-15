@@ -76,7 +76,7 @@ Main entrypoint for all the settings and customizations in your studio. Learn mo
 
 ## Adding a new document or object type
 
-If you follow the schema definition in `sanity.config.ts` back to the `schemas` directory, you'll see 2 directories (`documents`, and `objects`) and an `index.ts` file. The `index.ts` file is importing the `index.ts`` files from `documents`and`objects`, where the files present in those directories are exported in an array. As such the process for adding a new document/object is:
+If you follow the schema definition in `sanity.config.ts` back to the `schemas` directory, you'll see 2 directories (`documents`, and `objects`) and an `index.ts` file. The `index.ts` file is importing the `index.ts` files from `documents` and `objects`, where the files present in those directories are exported in an array. As such the process for adding a new document/object is:
 
 1. Determine if you should be creating a document or object and place the file in the appropriate directory
     - Documents can be thought of as an 'item' of content, meant to be either a page or a reusable piece of content that you want to reference in other documents.
@@ -88,7 +88,7 @@ That should be all you need to be able to reference your new schema!
 
 ## Lucide icons
 
-For content icons in the studio you can pass any Reaact component. Sanity exposes a large set of built-in components you can view [here](https://icons.sanity.build/all), but this workspace also has [Lucide icons](https://lucide.dev/icons/) installed to supplement the options from `@sanity/icons`.
+For content icons in the studio you can pass any React component. Sanity exposes a large set of built-in icon components you can view [here](https://icons.sanity.build/all), but this workspace also has [Lucide icons](https://lucide.dev/icons/) installed to supplement the options from `@sanity/icons`.
 
 ## General Sanity docs and resources
 

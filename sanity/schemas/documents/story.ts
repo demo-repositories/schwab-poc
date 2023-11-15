@@ -41,6 +41,27 @@ export default {
             group: 'content',
         },
         {
+            name: 'editorialType',
+            title: 'Editorial type',
+            type: 'string',
+            options: {
+                list: [
+                    {
+                        title: 'General story',
+                        value: 'general-story',
+                    },
+                    {
+                        title: 'Podcast',
+                        value: 'podcast',
+                    },
+                    {
+                        title: 'Video',
+                        value: 'video',
+                    },
+                ],
+            },
+        },
+        {
             name: 'content',
             title: 'Content',
             type: 'array',

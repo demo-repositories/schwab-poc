@@ -4,6 +4,9 @@ export default {
     name: 'button',
     type: 'object',
     icon: Code,
+    options: {
+        collapsible: true,
+    },
     fields: [
         {
             name: 'text',
@@ -12,7 +15,7 @@ export default {
         },
         {
             name: 'to',
-            title: 'to',
+            title: 'To',
             type: 'reference',
             to: [{ type: 'story' }, { type: 'landingPage' }],
         },

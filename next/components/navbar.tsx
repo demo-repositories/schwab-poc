@@ -10,6 +10,7 @@ import SchwabLogo from "./schwab-logo";
 import Link from "next/link";
 import SanityLogo from "./sanity-logo";
 import { Plus } from "lucide-react";
+import { Separator } from "./ui/separator";
 /**
  * Appears in layout.tsx and shows up at the top of every page
  */
