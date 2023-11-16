@@ -33,7 +33,7 @@ export default function Marquee({
 }: TMarqueeProps) {
   const { width } = getImageDimensions(image);
   const {
-    palette: { dominant },
+    palette: { dominant, lightVibrant },
   } = image;
 
   return (
@@ -66,14 +66,21 @@ export default function Marquee({
           )}
           <div className="flex gap-3">
             {buttons &&
-              buttons.map((button) => {
+              buttons.map((button, i) => {
+                // Vary colors based on which button we're rendering
+                const colorOverride = i
+                  ? {
+                      background: lightVibrant.background,
+                      foreground: lightVibrant.foreground,
+                    }
+                  : {
+                      background: dominant.foreground,
+                      foreground: dominant.background,
+                    };
                 return (
                   <Button
                     key={button._id}
-                    colorOverride={{
-                      background: dominant.foreground,
-                      foreground: dominant.background,
-                    }}
+                    colorOverride={colorOverride}
                     {...button}
                   />
                 );

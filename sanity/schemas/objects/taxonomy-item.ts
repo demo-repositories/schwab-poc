@@ -40,37 +40,44 @@ export default {
                     to: [{ type: 'taxonomyTerm' }],
                     options: {
                         disableNew: true,
-                        /**
-                         * This filter is assuming that this object is placed top-level in a document in a field named "taxonomy"
-                         *
-                         * To make this more global:
-                         * 1. Parent is arr1
-                         * 2. Loop through document + document children to see if any obj has type 'taxonomyAttribute' => check each against parent as arr2
-                         * 3. Whatever matches becomes parentAttribute/parentParams below
-                         *
-                         */
                         filter: async ({ document, parent, getClient }) => {
-                            // I don't believe this type of lookup is possible with Sanity but this filter for options should suffice for now
-                            const { taxonomy } = document
-                            const missingTerms = taxonomy.filter((item) => {
-                                return !item.hasOwnProperty('terms')
-                            })
-
-                            // If several items dont have terms (I dont think) we can tell which item is our parent, so return everything as a fallback
-                            if (missingTerms.length > 1) {
-                                return {
-                                    filter: '_type=="taxonomyTerm" && defined(_id)',
-                                    params: {},
+                            const documentItems = []
+                            // Woof and I'm sorry
+                            function getTaxonomyItems(obj) {
+                                for (var property in obj) {
+                                    if (
+                                        property == '_type' &&
+                                        obj[property] == 'taxonomyItem'
+                                    ) {
+                                        return documentItems.push(obj)
+                                    }
+                                    if (Array.isArray(obj[property])) {
+                                        for (let item in obj[property]) {
+                                            getTaxonomyItems(
+                                                obj[property][item]
+                                            )
+                                        }
+                                    }
+                                    if (
+                                        typeof obj[property] == 'object' &&
+                                        !Array.isArray(obj[property])
+                                    ) {
+                                        getTaxonomyItems(obj[property])
+                                    }
                                 }
                             }
+                            getTaxonomyItems(document)
 
                             // Compare each taxonomyItem's "terms" array's entries with our "parent" object to find the right item to lookup
-                            const parentAttribute = taxonomy.filter((item) => {
-                                return compareTwoArraysOfObjects(
-                                    item.terms,
-                                    parent
-                                )
-                            })[0].taxonomyAttribute
+                            const parentAttribute = documentItems.filter(
+                                (item) => {
+                                    if (!item.terms) return false
+                                    return compareTwoArraysOfObjects(
+                                        item.terms,
+                                        parent
+                                    )
+                                }
+                            )[0].taxonomyAttribute
 
                             const client = getClient({
                                 apiVersion: '2023-11-10',

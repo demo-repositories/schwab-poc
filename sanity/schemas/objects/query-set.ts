@@ -47,7 +47,8 @@ export default {
         {
             name: 'taxonomyFilters',
             title: 'Taxonomy filters',
-            type: 'taxonomyItem',
+            type: 'array',
+            of: [{ type: 'taxonomyItem' }],
         },
         // featuredImage => only when 'foundational'
         // contentType

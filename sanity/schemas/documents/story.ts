@@ -18,6 +18,9 @@ export default {
             type: 'slug',
             source: 'title',
             title: 'Slug',
+            options: {
+                source: 'title',
+            },
             validation: (rule: Rule) => rule.required(),
             group: 'content',
         },
@@ -25,6 +28,11 @@ export default {
             name: 'summary',
             type: 'string',
             title: 'Summary',
+        },
+        {
+            name: 'displayDate',
+            title: 'Display date',
+            type: 'date',
         },
         {
             name: 'featuredImage',
@@ -71,6 +79,14 @@ export default {
                 },
                 {
                     type: 'image',
+                    fields: [
+                        {
+                            name: 'caption',
+                            title: 'Caption',
+                            type: 'array',
+                            of: [{ type: 'block' }],
+                        },
+                    ],
                 },
                 {
                     type: 'dynamicCta',

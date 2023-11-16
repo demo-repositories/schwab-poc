@@ -1,4 +1,5 @@
 import { Heading1 } from 'lucide-react'
+import { Rule } from 'sanity'
 export default {
     name: 'marquee',
     title: 'Marquee',
@@ -37,6 +38,7 @@ export default {
             title: 'Buttons',
             type: 'array',
             of: [{ type: 'button' }],
+            validation: (rule: Rule) => rule.max(2),
         },
     ],
 }

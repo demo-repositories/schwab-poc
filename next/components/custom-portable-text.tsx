@@ -3,6 +3,7 @@ import { PortableText } from "@portabletext/react";
 import { PortableTextBlock } from "@portabletext/types";
 import DynamicCTA from "./dynamic-cta";
 import SanityImage from "./sanity-image";
+import StoryImage from "./story-image";
 import PortableTable from "./portable-table";
 import BynderBlock from "./bynder-block";
 /**
@@ -13,7 +14,7 @@ import BynderBlock from "./bynder-block";
 const components = {
   // Custom block types require their own custom components
   types: {
-    image: SanityImage,
+    image: StoryImage,
     dynamicCta: DynamicCTA,
     table: PortableTable,
     bynderBlock: BynderBlock,

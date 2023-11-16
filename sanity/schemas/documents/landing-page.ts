@@ -30,6 +30,7 @@ export default {
             title: 'Featured image',
             type: `image`,
             group: 'content',
+            options: { collapsible: true },
             fields: [
                 {
                     name: 'altText',
