@@ -1,6 +1,5 @@
 import { draftMode } from "next/headers";
 import DraftModeToggle from "./draft-mode-toggle";
-
 /**
  * Server component wrapper for DraftModeToggle to get draftMode header
  */

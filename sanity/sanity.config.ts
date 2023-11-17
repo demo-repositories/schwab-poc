@@ -1,5 +1,6 @@
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
+import { presentationTool } from 'sanity/presentation'
 import { visionTool } from '@sanity/vision'
 import {
     dashboardTool,
@@ -11,10 +12,13 @@ import { table } from '@sanity/table'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { bynderInputPlugin } from 'sanity-plugin-bynder-input'
 import { schemaTypes } from './schemas'
-import { defaultDocumentNode } from './desk/defaultDocumentNode'
+
 import { deskStructure } from './desk/deskStructure'
 import SchwabLogo from './components/SchwabLogo'
+import { locate } from './presentation/locate'
 
+const SANITY_STUDIO_PREVIEW_URL =
+    process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
 export default defineConfig({
     name: 'default',
     title: 'Schwab POC',
@@ -42,8 +46,12 @@ export default defineConfig({
             ],
         }),
         deskTool({
-            defaultDocumentNode,
             structure: deskStructure,
+        }),
+        presentationTool({
+            // Required: set the base URL to the preview location in the front end
+            previewUrl: SANITY_STUDIO_PREVIEW_URL,
+            locate,
         }),
         visionTool(),
         table(),

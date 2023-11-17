@@ -51,7 +51,7 @@ export default {
             of: [{ type: 'taxonomyItem' }],
         },
         // featuredImage => only when 'foundational'
-        // contentType
+
         // taxonomy
         // author
         // style

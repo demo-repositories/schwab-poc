@@ -9,6 +9,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import EditButton from "./edit-button";
+import { cn } from "@/lib/utils";
 /**
  * Hits API endpoints to toggle Next+Sanity's draft mode
  *
@@ -22,24 +24,30 @@ export default function DraftModeToggle({ isEnabled }: { isEnabled: boolean }) {
     : `/api/draft?secret=MY_SECRET_TOKEN&path=${pathname}`;
 
   return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger>
-          <Link
-            href={linkHref}
-            className={badgeVariants({
-              variant: draftEnabled ? "default" : "outline",
-            })}
-            prefetch={false}
-            onClick={(e) => setDraftEnabled(!draftEnabled)} // hacky workaround to keep state accurate when the server component doesn't refresh
-          >
-            {`Preview mode is ${draftEnabled ? "on" : "off"}`}
-          </Link>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{`${draftEnabled ? "Disable" : "Enable"} preview mode`}</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+    <>
+      {/* {draftEnabled && <EditButton isEnabled={draftEnabled} />} */}
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>
+            <Link
+              href={linkHref}
+              className={cn(
+                badgeVariants({
+                  variant: draftEnabled ? "default" : "outline",
+                }),
+                "px-5 py-1 text-sm",
+              )}
+              prefetch={false}
+              onClick={(e) => setDraftEnabled(!draftEnabled)} // hacky workaround to keep state accurate when the server component doesn't refresh
+            >
+              {`Preview mode is ${draftEnabled ? "on" : "off"}`}
+            </Link>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{`${draftEnabled ? "Disable" : "Enable"} preview mode`}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </>
   );
 }

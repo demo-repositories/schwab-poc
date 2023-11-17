@@ -18,6 +18,7 @@ export type TCardDeckProps = {
   cardType: string;
   ctaText: string;
   _id: string;
+  _type: "cardDeck";
   cards: TCard[];
 };
 

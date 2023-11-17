@@ -20,6 +20,7 @@ export type TMarqueeProps = {
   eyebrow?: string;
   image: any;
   buttons: TButtonProps[];
+  _type: "marquee";
 };
 
 const builder = urlBuilder(client);

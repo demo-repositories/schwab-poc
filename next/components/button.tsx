@@ -68,6 +68,7 @@ export default function Button({
   return (
     <Link
       href={hrefOverride || hrefLookup(to)}
+      target={hrefOverride ? "_blank" : ""}
       className={buttonVariants({ variant: "default" })}
       style={
         colorOverride

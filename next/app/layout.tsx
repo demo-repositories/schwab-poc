@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
+import { VisualEditing } from "@/components/visual-editing";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default async function RootLayout({
           ) : (
             children
           )}
+          {draftMode().isEnabled && <VisualEditing />}
           <Footer />
         </ThemeProvider>
       </body>

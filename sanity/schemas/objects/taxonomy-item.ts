@@ -2,6 +2,7 @@
  * Wrapper for adding taxonomy attributes to documents
  */
 import { Waypoints } from 'lucide-react'
+import { Rule } from 'sanity'
 
 const compareTwoArraysOfObjects = (arr1: object[], arr2: object[]) => {
     return (
@@ -34,6 +35,7 @@ export default {
             type: 'array',
             description:
                 'Options under "Add item" pre-populated based on "Taxonomy attribute" above',
+            validation: (rule: Rule) => rule.min(1),
             of: [
                 {
                     type: 'reference',

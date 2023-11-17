@@ -6,7 +6,7 @@ export default function StoryImage(props) {
   const {
     value: { caption },
   } = props;
-\  return (
+  return (
     <div>
       <SanityImage {...props} />
       {caption && (
