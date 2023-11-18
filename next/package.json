@@ -22,6 +22,7 @@
     "@sanity/overlays": "^2.0.1",
     "@sanity/react-loader": "^1.0.2",
     "@unpic/react": "^0.0.41",
+    "@vercel/stega": "^0.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "flat": "^6.0.1",

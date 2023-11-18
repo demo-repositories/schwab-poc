@@ -41,10 +41,7 @@ export default function Story({ data }: TStoryProps) {
       })
     : null;
   return (
-    <main
-      className="mx-auto mb-12 mt-5 max-w-7xl px-5 xl:px-0"
-      data-sanity={JSON.stringify({ _id, _type })}
-    >
+    <main className="mx-auto mb-12 mt-5 max-w-7xl px-5 xl:px-0">
       <small className="text-lg font-semibold leading-7 text-schwab-blue">
         Story
       </small>

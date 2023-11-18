@@ -1,7 +1,7 @@
-// components/VisualEditing.tsx
-
 "use client";
-
+/**
+ * Helper component loaded in layout.tsx to provide info to 'Presentation' tool
+ */
 import { STUDIO_ORIGIN, useLiveMode } from "@/lib/sanity/store";
 import {
   HistoryAdapter,

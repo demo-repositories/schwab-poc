@@ -1,4 +1,4 @@
-import SanityImage from "./sanity-image";
+import SanityImage from "@/components/sanity-image";
 /**
  * Used as a card type in 'CardDeck'. Maps to the 'card' object type in Sanity.
  */

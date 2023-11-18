@@ -1,8 +1,14 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { useQuery } from "@/lib/sanity/store";
+import LandingPage, { TLandingPageItem, query } from "./landing-page";
 
-// Re-exported components using next/dynamic ensures they're not bundled
-// and sent to the browser unless actually used, with draftMode().enabled.
+export default function LandingPagePreview(props) {
+  const { params, initial, draftMode } = props;
+  const { slug } = params;
+  const { data } = useQuery<TLandingPageItem>(query(slug), params, {
+    initial,
+  });
 
-export default dynamic(() => import("./landing-page"));
+  return <LandingPage data={data!} draftMode={draftMode} />;
+}

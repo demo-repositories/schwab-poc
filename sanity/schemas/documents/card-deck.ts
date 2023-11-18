@@ -1,9 +1,10 @@
 import { Component, LayoutGrid } from 'lucide-react'
+import Sup from '../../components/preview/Sup'
 
 export default {
     name: 'cardDeck',
     title: 'Card deck',
-    type: 'object',
+    type: 'document',
     icon: LayoutGrid,
     fields: [
         {
@@ -58,24 +59,8 @@ export default {
                                     type: 'string',
                                 },
                             ],
-                            hidden: ({ parent, document }) => {
-                                const cardDecks = document.components.filter(
-                                    (component) => component._type == 'cardDeck'
-                                )
-                                const getCardDeck = (parentKey: string) =>
-                                    cardDecks.filter((deck) =>
-                                        deck.cards
-                                            .map((card) => card._key)
-                                            .includes(parentKey)
-                                    )
-                                const thisCardDeck =
-                                    cardDecks.length === 1
-                                        ? cardDecks[0]
-                                        : getCardDeck(parent._key)
-                                return thisCardDeck.cardType !== 'iconCard'
-
-                                // console.log('parent', parent)
-                                // console.log('document', document)
+                            hidden: ({ document }) => {
+                                return document.cardType !== 'iconCard'
                             },
                         },
                         {
@@ -86,7 +71,26 @@ export default {
                         {
                             title: 'Body',
                             name: 'body',
-                            type: 'string',
+                            type: 'array',
+                            of: [
+                                {
+                                    type: 'block',
+                                    styles: [
+                                        { title: 'Normal', value: 'normal' },
+                                        // { title: 'Sup', value: 'sup' },
+                                    ],
+                                    marks: {
+                                        decorators: [
+                                            {
+                                                title: 'Sup',
+                                                value: 'sup',
+                                                icon: () => 'S^',
+                                                component: Sup,
+                                            },
+                                        ],
+                                    },
+                                },
+                            ],
                         },
                         {
                             name: 'to',

@@ -47,7 +47,7 @@ export default {
             group: 'content',
             of: [
                 { type: 'marquee' },
-                { type: 'cardDeck' },
+                { type: 'reference', to: [{ type: 'cardDeck' }] },
                 { type: 'querySet' },
             ],
         },

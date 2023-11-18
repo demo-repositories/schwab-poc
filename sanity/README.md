@@ -22,6 +22,8 @@ You should be able to:
     ├── desk/
     │   ├── defaultDocumentNode.ts
     │   └── deskStructure.ts
+    ├── presentation/
+    │   └── locate.ts
     ├── schemas/
     │   ├── documents/
     │   │   └── ...
@@ -48,11 +50,19 @@ Customizations to the look and layout of the Sanity studio.
 
 #### defaultDocumentNode.ts
 
-Overrides how the document editing pane appears in the studio. Currently just adding the preview iframe pane to 'story' and 'landingPage' types.
+Overrides how the document editing pane appears in the studio. Was formerly just adding the preview iframe pane to 'story' and 'landingPage' types, but with the launch of Presentation is no longer used.
 
 #### deskStructure.ts
 
 Overrides the default listing of items in the 'Content' tab of the studio.
+
+### presentation
+
+Customizations for the new 'Presentation' tool
+
+#### locate.ts
+
+Logic for resolving where documents appear on the front-end
 
 ### schemas
 

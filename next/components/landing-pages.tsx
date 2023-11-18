@@ -1,12 +1,13 @@
-import StoryCards from "./story-cards";
+import { TLandingPageItem } from "./landing-page";
 
+import DocumentCards from "./document-cards";
 /**
  * List page for all 'landingPage' documents
  */
 
 export const query = `*[_type == "landingPage" && slug.current != null] | order(_updatedAt){title, slug, summary, featuredImage, _id, _type}`;
 
-export default function LandingPages({ data }: { data: number }) {
+export default function LandingPages({ data }: { data: TLandingPageItem[] }) {
   return (
     <main className="mx-auto mt-5 max-w-7xl px-5 xl:px-0">
       <section>
@@ -16,7 +17,7 @@ export default function LandingPages({ data }: { data: number }) {
       </section>
       <section>
         <div className="cards-container">
-          <StoryCards cards={data} />
+          <DocumentCards cards={data} />
         </div>
       </section>
     </main>

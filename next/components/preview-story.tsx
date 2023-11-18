@@ -1,8 +1,15 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { useQuery } from "@/lib/sanity/store";
+import Story, { TStoryItem, query } from "./story";
 
-// Re-exported components using next/dynamic ensures they're not bundled
-// and sent to the browser unless actually used, with draftMode().enabled.
+export default function StoryPreview(props) {
+  const { params, initial } = props;
+  const { slug } = params;
+  const { data } = useQuery<TStoryItem>(query(slug), params, {
+    initial,
+  });
 
-export default dynamic(() => import("./story"));
+  return <Story data={data!} />;
+}
+``

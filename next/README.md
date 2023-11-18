@@ -140,18 +140,23 @@ Where all shadcn/ui components end up when installed using their CLI. Most compo
 └── lib/
     ├── sanity/
     │   ├── client.ts
-    │   └── fetch.ts
+    │   ├── store.ts
+    │   └── types.ts
     ├── twColor.ts
     └── utils.ts
 ```
 
 #### sanity/client.ts
 
-Sanity client instance re-used throughout front-end
+Sanity client instance re-used throughout front-end for things like the image builder
 
-#### sanity/fetch.ts
+#### sanity/store.ts
 
-Basic logic for fetching from Content Lake using GROQ
+Creates an instance of @sanity/react-loader for querying Content Lake with GROQ in both client and server components.
+
+#### sanity/types.ts
+
+Shared types from Sanity that don't have a logical home in another file.
 
 #### twColor.ts
 

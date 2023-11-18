@@ -9,7 +9,6 @@ export async function GET(request: Request) {
   const path = searchParams.get("path");
 
   // Check the secret and next parameters
-  // This secret should only be known to this route handler and the CMS
   if (secret !== "MY_SECRET_TOKEN" || !path) {
     return new Response("Invalid token", { status: 401 });
   }

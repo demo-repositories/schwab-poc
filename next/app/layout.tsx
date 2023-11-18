@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import { draftMode } from "next/headers";
-import { token } from "@/lib/sanity/fetch";
 import { Inter as FontSans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
@@ -14,7 +13,6 @@ export const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
-const PreviewProvider = dynamic(() => import("@/components/preview-provider"));
 
 export const metadata: Metadata = {
   title: "Charles Schwab",
@@ -41,11 +39,12 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {draftMode().isEnabled ? (
+          {/* {draftMode().isEnabled ? (
             <PreviewProvider token={token}>{children}</PreviewProvider>
           ) : (
             children
-          )}
+          )} */}
+          {children}
           {draftMode().isEnabled && <VisualEditing />}
           <Footer />
         </ThemeProvider>

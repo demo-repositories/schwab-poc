@@ -2,7 +2,8 @@ import { DefaultDocumentNodeResolver } from 'sanity/desk'
 import Iframe from 'sanity-plugin-iframe-pane'
 
 /**
- * Overrides how the document editor appears for each document type
+ * Overrides how the document editor appears for each document type.
+ * Was used for old preview-kit way of doing things, but now is not imported
  */
 
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (

@@ -5,7 +5,6 @@ import seoData from './seo-data'
 import bynderBlock from './bynder-block'
 import taxonomyItem from './taxonomy-item'
 import marquee from './marquee'
-import cardDeck from './card-deck'
 import querySet from './query-set'
 
 export default [
@@ -16,6 +15,5 @@ export default [
     bynderBlock,
     taxonomyItem,
     marquee,
-    cardDeck,
     querySet,
 ]

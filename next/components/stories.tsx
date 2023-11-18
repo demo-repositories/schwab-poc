@@ -1,4 +1,4 @@
-import StoryCards from "./story-cards";
+import DocumentCards from "./document-cards";
 
 /**
  * List page for all 'story' documents
@@ -14,7 +14,7 @@ export default function Stories({ data }: { data: number }) {
       </section>
       <section>
         <div className="cards-container">
-          <StoryCards cards={data} />
+          <DocumentCards cards={data} />
         </div>
       </section>
     </main>

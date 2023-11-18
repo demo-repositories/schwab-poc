@@ -1,22 +1,17 @@
 import { draftMode } from "next/headers";
-import { LiveQuery } from "next-sanity/preview/live-query";
 import Story, { query, TStoryItem } from "@/components/story";
-import PreviewStory from "@/components/preview-story";
-// import { sanityFetch } from "@/lib/sanity/fetch";
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
 import { loadQuery } from "@/lib/sanity/store";
+import dynamic from "next/dynamic";
+
+const StoryPreview = dynamic(() => import("@/components/preview-story"));
 
 type Props = {
   params: { slug: string };
 };
 
 const pageData = async (slug: string) =>
-  // old preview-kit logic
-  // await sanityFetch<TStoryItem[]>({
-  //   query: query(slug),
-  //   tags: ["story"],
-  // });
   await loadQuery<TStoryItem[]>(query(slug));
 
 export async function generateMetadata(
@@ -36,22 +31,16 @@ export async function generateMetadata(
 
 export default async function StoryPage({ params }: Props) {
   const { slug } = params;
-  const { data } = await pageData(slug);
-  console.log("data", data);
+  const initial = await pageData(slug);
+
+  if (draftMode().isEnabled) {
+    return <StoryPreview params={params} initial={initial} />;
+  }
   // 404 if no document in Sanity.
   // This can be done more granularly with the app router, but for now general 404 behavior
-  if (typeof data === "undefined") {
-    return notFound();
+  if (!initial.data) {
+    notFound();
   }
 
-  return (
-    <LiveQuery
-      enabled={draftMode().isEnabled}
-      query={query(slug)}
-      initialData={data}
-      as={PreviewStory}
-    >
-      <Story data={data} />
-    </LiveQuery>
-  );
+  return <Story data={initial.data} />;
 }

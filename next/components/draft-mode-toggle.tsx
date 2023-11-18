@@ -9,10 +9,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import EditButton from "./edit-button";
 import { cn } from "@/lib/utils";
 /**
- * Hits API endpoints to toggle Next+Sanity's draft mode
+ * Hits API endpoints to toggle Next's draft mode, which will enable Sanity's preview mode and overlays
  *
  * Appears in 'Footer'
  */
@@ -25,7 +24,6 @@ export default function DraftModeToggle({ isEnabled }: { isEnabled: boolean }) {
 
   return (
     <>
-      {/* {draftEnabled && <EditButton isEnabled={draftEnabled} />} */}
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>

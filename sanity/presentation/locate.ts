@@ -50,10 +50,10 @@ export const locate: DocumentLocationResolver = (params, context) => {
                             href: hrefLookup({ type, slug }),
                         }))
 
-                // Generate all the locations for person documents
+                // Generate all the locations for story documents
                 const storyLocations = generateLocations({ type: 'story' })
 
-                // Generate all the locations for post documents
+                // Generate all the locations for page documents
                 const pageLocations: Array<any> = generateLocations({
                     type: 'landingPage',
                 })
@@ -62,15 +62,15 @@ export const locate: DocumentLocationResolver = (params, context) => {
                     locations: [
                         ...storyLocations,
                         ...pageLocations,
-                        // Add a link to the "All posts" page when there are post documents
+                        // Add a link to the "All stories" page when there are story documents
                         storyLocations.length > 0 && {
                             title: 'All stories',
                             href: '/story',
                         },
-                        // Add a link to the "All authors" page when there are person documents
+                        // Add a link to the "All pages" page when there are landing page documents
                         pageLocations.length > 0 && {
                             title: 'All pages',
-                            href: '/pages',
+                            href: '/landing-pages',
                         },
                     ].filter(Boolean),
                 } satisfies DocumentLocationsState
