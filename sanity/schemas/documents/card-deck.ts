@@ -110,8 +110,6 @@ export default {
                             body: 'body',
                         },
                         prepare({ title, body }) {
-                            console.log('body', body)
-
                             const formattedBody = body[0].children
                                 .map((item) => item.text)
                                 .join('')

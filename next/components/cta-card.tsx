@@ -1,6 +1,6 @@
 import Button, { TButtonProps } from "@/components/button";
 
-import { CardDeckPortableText } from "./render";
+import { CardDeckPortableText } from "./card-deck";
 /**
  * Used as a card type in 'CardDeck'. Maps to the 'card' object type in Sanity.
  */

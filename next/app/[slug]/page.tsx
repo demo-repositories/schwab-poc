@@ -39,11 +39,9 @@ export async function generateMetadata(
 export default async function LandingPagePage({ params }: Props) {
   const { slug } = params;
   const initial = await pageData(slug);
-  const isDraft = draftMode().isEnabled;
-  if (isDraft) {
-    return (
-      <PagePreview params={params} initial={initial} draftMode={isDraft} />
-    );
+
+  if (draftMode().isEnabled) {
+    return <PagePreview params={params} initial={initial} d />;
   }
   // 404 if no document in Sanity.
   // This can be done more granularly with the app router, but for now general 404 behavior
@@ -52,7 +50,7 @@ export default async function LandingPagePage({ params }: Props) {
     notFound();
   }
 
-  return <LandingPage data={initial.data} draftMode={isDraft} />;
+  return <LandingPage data={initial.data} />;
 }
 /**
  * Steps to make a thing a thing:

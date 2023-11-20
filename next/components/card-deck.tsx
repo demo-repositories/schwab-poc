@@ -1,9 +1,10 @@
+"use client";
 import IconCard from "./icon-card";
 import CTACard from "./cta-card";
-import { groq } from "next-sanity";
+import { Skeleton } from "./ui/skeleton";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
-
+import { useQuery } from "@/lib/sanity/store";
 /**
  * Maps to the 'cardDeck' object type in Sanity, which appears in the 'landingPage' type.
  *
@@ -40,7 +41,17 @@ export function CardDeckPortableText({ value }) {
 export const query = (_id: string) =>
   `*[_type == "cardDeck" && _id == "${_id}"]{...,}`;
 export default function RenderCardDeck(props: TCardDeckProps) {
-  const { title, cardType, ctaText, cards } = props;
+  const { data, loading } = useQuery(query(props._ref));
+  if (loading) {
+    return (
+      <section className="mx-auto max-w-7xl flex-row items-center p-7">
+        <div className="text-wrapper my-3">
+          <Skeleton className="h-[20px] w-[100px] rounded-full" />
+        </div>
+      </section>
+    );
+  }
+  const { title, cardType, ctaText, cards } = data[0];
   return (
     <section className="mx-auto max-w-7xl flex-row items-center p-7">
       <div className="text-wrapper my-3">

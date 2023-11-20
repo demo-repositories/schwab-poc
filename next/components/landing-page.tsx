@@ -35,7 +35,7 @@ const componentLookup: Record<TComponentType, JSX.Element> = {
 export const query = (slug: string) =>
   groq`*[_type == "landingPage" && slug.current == '${slug}']{slug, title, summary, _id, _type, _key, seoData{...,}, components[]{..., _ref, _id, _type, image{...,"palette": asset->metadata.palette},"refType":*[_id==^._ref]._type}}`;
 
-export default function LandingPage({ data, draftMode }: TLandingPageProps) {
+export default function LandingPage({ data }: TLandingPageProps) {
   const { title, slug, components, _id, _type, _key } = data[0];
 
   return (
@@ -50,13 +50,7 @@ export default function LandingPage({ data, draftMode }: TLandingPageProps) {
             case "marquee":
               return <Marquee key={component._key} {...component} />;
             case "cardDeck":
-              return (
-                <CardDeck
-                  key={component._key}
-                  {...component}
-                  draftMode={draftMode}
-                />
-              );
+              return <CardDeck key={component._key} {...component} />;
             case "querySet":
               return <QuerySet key={component._key} {...component} />;
             default:
