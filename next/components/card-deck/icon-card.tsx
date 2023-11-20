@@ -1,4 +1,6 @@
 import SanityImage from "@/components/sanity-image";
+import { CardDeckPortableText } from "./render";
+
 /**
  * Used as a card type in 'CardDeck'. Maps to the 'card' object type in Sanity.
  */
@@ -16,7 +18,7 @@ export default function IconCard({ title, body, icon }: TIconCardProps) {
         <SanityImage value={icon} width={100} height={100} layout="fixed" />
       </div>
       {title && <strong className="mb-2 mt-4 block">{title}</strong>}
-      {body && <p>{body}</p>}
+      {body && <CardDeckPortableText value={body} />}
     </div>
   );
 }

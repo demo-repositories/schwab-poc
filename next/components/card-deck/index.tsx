@@ -1,7 +1,7 @@
 import RenderCardDeck, { query, TCardDeckProps } from "./render";
-
 import { loadQuery } from "@/lib/sanity/store";
 import dynamic from "next/dynamic";
+
 const CardDeckPreview = dynamic(() => import("@/components/card-deck/preview"));
 
 const componentData = async (_id: string) =>

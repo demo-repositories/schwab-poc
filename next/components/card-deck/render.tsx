@@ -2,6 +2,7 @@ import IconCard from "./icon-card";
 import CTACard from "./cta-card";
 import { groq } from "next-sanity";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
 
 /**
  * Maps to the 'cardDeck' object type in Sanity, which appears in the 'landingPage' type.
@@ -25,7 +26,17 @@ export type TCardDeckProps = {
   _type: "cardDeck";
   cards: TCard[];
 };
-
+export function CardDeckPortableText({ value }) {
+  const components: PortableTextComponents = {
+    marks: {
+      sup: ({ children }) => <sup>{children}</sup>,
+    },
+    block: {
+      sup: ({ children }) => <sup>{children}</sup>,
+    },
+  };
+  return <PortableText value={value} components={components} />;
+}
 export const query = (_id: string) =>
   `*[_type == "cardDeck" && _id == "${_id}"]{...,}`;
 export default function RenderCardDeck(props: TCardDeckProps) {

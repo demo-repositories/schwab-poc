@@ -1,5 +1,6 @@
 import Button, { TButtonProps } from "@/components/button";
-import { PortableText, PortableTextComponents } from "@portabletext/react";
+
+import { CardDeckPortableText } from "./render";
 /**
  * Used as a card type in 'CardDeck'. Maps to the 'card' object type in Sanity.
  */
@@ -15,14 +16,7 @@ type TIconCardProps = {
     };
   };
 };
-const components: PortableTextComponents = {
-  marks: {
-    sup: ({ children }) => <sup>{children}</sup>,
-  },
-  block: {
-    sup: ({ children }) => <sup>{children}</sup>,
-  },
-};
+
 export default function CTACard({ title, body, ctaText, to }: TIconCardProps) {
   return (
     <div className="card mb-9 grid grid-rows-4 bg-schwab-blue p-5 lg:mb-0">
@@ -30,7 +24,7 @@ export default function CTACard({ title, body, ctaText, to }: TIconCardProps) {
         {title && <strong className="my-2 block text-xl">{title}</strong>}
         {body && (
           <div className="mb-2">
-            <PortableText value={body} components={components} />
+            <CardDeckPortableText value={body} />
           </div>
         )}
       </div>
