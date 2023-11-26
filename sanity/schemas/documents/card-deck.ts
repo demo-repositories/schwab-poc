@@ -77,7 +77,6 @@ export default {
                                     type: 'block',
                                     styles: [
                                         { title: 'Normal', value: 'normal' },
-                                        // { title: 'Sup', value: 'sup' },
                                     ],
                                     marks: {
                                         decorators: [

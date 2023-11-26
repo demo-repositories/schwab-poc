@@ -5,6 +5,7 @@ import { Skeleton } from "./ui/skeleton";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import { useQuery } from "@/lib/sanity/store";
+import { groq } from "next-sanity";
 /**
  * Maps to the 'cardDeck' object type in Sanity, which appears in the 'landingPage' type.
  *
@@ -39,7 +40,7 @@ export function CardDeckPortableText({ value }) {
   return <PortableText value={value} components={components} />;
 }
 export const query = (_id: string) =>
-  `*[_type == "cardDeck" && _id == "${_id}"]{...,}`;
+  groq`*[_type == "cardDeck" && _id == "${_id}"]{...,}`;
 export default function RenderCardDeck(props: TCardDeckProps) {
   const { data, loading } = useQuery(query(props._ref));
   if (loading) {
