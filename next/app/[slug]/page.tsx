@@ -45,18 +45,9 @@ export default async function LandingPagePage({ params }: Props) {
   }
   // 404 if no document in Sanity.
   // This can be done more granularly with the app router, but for now general 404 behavior
-
   if (!initial.data) {
     notFound();
   }
 
   return <LandingPage data={initial.data} />;
 }
-/**
- * Steps to make a thing a thing:
- * 0. overall need 2 server components (wrapper + renderer) and 1 client component (preview)
- * 1. in the wrapper component fetch 'initial' with the server side loadquery
- * 2. if draftMode in wrapper return preview client component from wrapper being passed initial data + ID
- * 3. in preview client component use queryhook
- * 4. if not draftmode return the server renderer component + pass it server-side data
- */

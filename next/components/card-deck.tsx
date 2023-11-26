@@ -1,10 +1,8 @@
-"use client";
 import IconCard from "./icon-card";
 import CTACard from "./cta-card";
-import { Skeleton } from "./ui/skeleton";
+import { loadQuery } from "@/lib/sanity/store";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
-import { useQuery } from "@/lib/sanity/store";
 import { groq } from "next-sanity";
 /**
  * Maps to the 'cardDeck' object type in Sanity, which appears in the 'landingPage' type.
@@ -28,6 +26,9 @@ export type TCardDeckProps = {
   _type: "cardDeck";
   cards: TCard[];
 };
+const componentData = async (params: string) =>
+  await loadQuery<TCardDeckProps>(query, params);
+
 export function CardDeckPortableText({ value }) {
   const components: PortableTextComponents = {
     marks: {
@@ -39,19 +40,11 @@ export function CardDeckPortableText({ value }) {
   };
   return <PortableText value={value} components={components} />;
 }
-export const query = (_id: string) =>
-  groq`*[_type == "cardDeck" && _id == "${_id}"]{...,}`;
-export default function RenderCardDeck(props: TCardDeckProps) {
-  const { data, loading } = useQuery(query(props._ref));
-  if (loading) {
-    return (
-      <section className="mx-auto max-w-7xl flex-row items-center p-7">
-        <div className="text-wrapper my-3">
-          <Skeleton className="h-[20px] w-[100px] rounded-full" />
-        </div>
-      </section>
-    );
-  }
+export const query = groq`*[_type == "cardDeck" && _id == $_id]{...,}`;
+export default async function RenderCardDeck(props: TCardDeckProps) {
+  const params = { _id: props._ref };
+  // console.log("props", props);
+  const { data } = await componentData(params);
   const { title, cardType, ctaText, cards } = data[0];
   return (
     <section className="mx-auto max-w-7xl flex-row items-center p-7">
