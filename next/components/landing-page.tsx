@@ -3,7 +3,7 @@ import CardDeck, { TCardDeckProps } from "./card-deck";
 import QuerySet, { TQuerySetProps } from "./query-set";
 import type { TSanitySEOData } from "@/lib/sanity/types";
 import { groq } from "next-sanity";
-
+import { Suspense } from "react";
 /**
  * Recreation of 'Pattern Landing Page' from original charlesschwab.com.
  *
@@ -50,7 +50,11 @@ export default function LandingPage({ data }: TLandingPageProps) {
             case "marquee":
               return <Marquee key={component._key} {...component} />;
             case "cardDeck":
-              return <CardDeck key={component._key} {...component} />;
+              return (
+                <Suspense>
+                  <CardDeck key={component._key} {...component} />
+                </Suspense>
+              );
             case "querySet":
               return <QuerySet key={component._key} {...component} />;
             default:

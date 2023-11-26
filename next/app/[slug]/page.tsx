@@ -41,7 +41,7 @@ export default async function LandingPagePage({ params }: Props) {
   const initial = await pageData(slug);
 
   if (draftMode().isEnabled) {
-    return <PagePreview params={params} initial={initial} d />;
+    return <PagePreview params={params} initial={initial} />;
   }
   // 404 if no document in Sanity.
   // This can be done more granularly with the app router, but for now general 404 behavior

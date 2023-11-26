@@ -4,6 +4,8 @@ import { loadQuery } from "@/lib/sanity/store";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import { groq } from "next-sanity";
+import { draftMode } from "next/headers";
+import PreviewCardDeck from "./preview-card-deck";
 /**
  * Maps to the 'cardDeck' object type in Sanity, which appears in the 'landingPage' type.
  *
@@ -40,12 +42,8 @@ export function CardDeckPortableText({ value }) {
   };
   return <PortableText value={value} components={components} />;
 }
-export const query = groq`*[_type == "cardDeck" && _id == $_id]{...,}`;
-export default async function RenderCardDeck(props: TCardDeckProps) {
-  const params = { _id: props._ref };
-  // console.log("props", props);
-  const { data } = await componentData(params);
-  const { title, cardType, ctaText, cards } = data[0];
+export function RenderCardDeck({ data }) {
+  const { title, cardType, ctaText, cards } = data;
   return (
     <section className="mx-auto max-w-7xl flex-row items-center p-7">
       <div className="text-wrapper my-3">
@@ -69,4 +67,13 @@ export default async function RenderCardDeck(props: TCardDeckProps) {
       </div>
     </section>
   );
+}
+export const query = groq`*[_type == "cardDeck" && _id == $_id]{...,}`;
+export default async function CardDeck(props: TCardDeckProps) {
+  const params = { _id: props._ref };
+  const initial = await componentData(params);
+  // if (draftMode().isEnabled) {
+  //   return <PreviewCardDeck params={params} initial={initial} />;
+  // }
+  return <RenderCardDeck data={initial.data[0]} />;
 }
