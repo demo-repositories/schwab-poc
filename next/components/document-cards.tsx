@@ -24,8 +24,9 @@ type TDocumentCards = {
   _type: string;
 };
 export default function DocumentCards({ cards }: { cards: TDocumentCards[] }) {
+  const cols = cards.length > 4 ? 4 : cards.length;
   return (
-    <div className="auto-rows-fr grid-cols-4 gap-4 lg:grid">
+    <div className={`auto-rows-fr grid-cols-${cols} my-4 gap-4 lg:grid`}>
       {cards &&
         cards.map(({ _id, title, summary, featuredImage, slug, _type }) => (
           <Card key={_id} className="mb-4 grid-rows-2 gap-0 lg:mb-0 lg:grid">
@@ -37,7 +38,9 @@ export default function DocumentCards({ cards }: { cards: TDocumentCards[] }) {
               <CardDescription>{summary}</CardDescription>
             </CardContent>
             <CardFooter>
-              <Button to={{ _type: _type, slug: slug }} text="Read" />
+              <div className="w-full text-right">
+                <Button to={{ _type: _type, slug: slug }} text="Read" />
+              </div>
             </CardFooter>
           </Card>
         ))}

@@ -1,18 +1,18 @@
 import { draftMode } from "next/headers";
-import Story, { query, TSanityStoryDocument } from "@/components/story";
+import Story, { query, ISanityStoryDocument } from "@/components/pages/story";
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
 import { loadQuery } from "@/lib/sanity/store";
 import dynamic from "next/dynamic";
 
-const StoryPreview = dynamic(() => import("@/components/preview-story"));
+const StoryPreview = dynamic(() => import("@/components/pages/story/preview"));
 
 type Props = {
   params: { slug: string };
 };
 
 const pageData = async (slug: string) =>
-  await loadQuery<TSanityStoryDocument[]>(query(slug));
+  await loadQuery<ISanityStoryDocument[]>(query(slug));
 
 export async function generateMetadata(
   { params }: Props,

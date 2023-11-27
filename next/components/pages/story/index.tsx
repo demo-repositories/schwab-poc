@@ -1,42 +1,25 @@
 import { PortableTextBlock } from "@portabletext/types";
 import CustomPortableText from "./custom-portable-text";
-import SanityImage, { TSanityImageProps } from "./sanity-image";
-import { TSanitySEOData } from "@/lib/sanity/types";
+import SanityImage from "@/components/sanity-image";
+import { ISanityPageDocument } from "@/lib/sanity/types";
 import { groq } from "next-sanity";
 /**
  * Renders 'story' document type from Sanity.
  */
 
-export type TSanityStoryDocument = {
-  title: string;
-  slug: string;
-  summary: string;
-  featuredImage: TSanityImageProps;
+export interface ISanityStoryDocument extends ISanityPageDocument {
   content: PortableTextBlock[];
   displayDate?: string;
-  _id: string;
-  _type: string;
-  _key: string;
-  seoData: TSanitySEOData;
-};
+}
 type TStoryProps = {
-  data: TSanityStoryDocument;
+  data: ISanityStoryDocument;
 };
 
 export const query = (slug: string) =>
   groq`*[_type == "story" && slug.current == '${slug}'][0]{slug, title, summary, displayDate, _id, _type, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}}, seoData{...,}}`;
 
 export default function Story({ data }: TStoryProps) {
-  const {
-    title,
-    slug,
-    summary,
-    featuredImage,
-    content,
-    displayDate,
-    _id,
-    _type,
-  } = data;
+  const { title, summary, featuredImage, content, displayDate } = data;
   const dateString = displayDate
     ? new Date(displayDate).toLocaleDateString("en-US", {
         timeZone: "UTC",

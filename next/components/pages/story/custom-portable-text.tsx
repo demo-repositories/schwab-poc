@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { PortableText } from "@portabletext/react";
 import { PortableTextBlock } from "@portabletext/types";
-import DynamicCTA from "./dynamic-cta";
-import SanityImage from "./sanity-image";
-import StoryImage from "./story-image";
+import DynamicCTA from "@/components/dynamic-cta";
 import PortableTable from "./portable-table";
-import BynderBlock from "./bynder-block";
+import BynderBlock from "@/components/bynder-block";
+import StoryImage from "./story-image";
+
 /**
  * Renders the output of the portable text block in Sanity's 'story' type.
  *

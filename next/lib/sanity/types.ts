@@ -1,4 +1,5 @@
 import { TToObject } from "@/components/button";
+import { TSanityImageProps } from "@/components/sanity-image";
 /**
  * Place for random sanity-specific types that dont have logical files to live in
  */
@@ -36,3 +37,20 @@ export type TSanityCardDeckDocument = {
   ctaText?: string;
   cards: TSanityCard[];
 };
+export interface ISanityDocument {
+  _id: string;
+  _type: string;
+  _updatedAt: string;
+  _createdAt: string;
+  _publishedAt: string;
+  _key: string;
+}
+export interface ISanityPageDocument extends ISanityDocument {
+  title: string;
+  summary?: string;
+  slug: {
+    current: string;
+  };
+  featuredImage?: TSanityImageProps;
+  seoData: TSanitySEOData;
+}

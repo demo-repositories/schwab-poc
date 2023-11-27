@@ -5,15 +5,15 @@
  * Components that do fetch their own data need a new 'Preview' component, an example implementation would be 'PreviewCardDeck'
  */
 import { useQuery } from "@/lib/sanity/store";
-import LandingPage, { TLandingPageDocument, query } from "./landing-page";
-import PreviewCardDeck from "./card-deck/preview";
-import PreviewQuerySet from "./query-set/preview";
-import Marquee from "./marquee";
+import LandingPage, { ISanityLandingPageDocument, query } from "./index";
+import PreviewCardDeck from "@/components/card-deck/preview";
+import PreviewQuerySet from "@/components/query-set/preview";
+import Marquee from "@/components/marquee";
 
 export default function LandingPagePreview(props) {
   const { params, initial } = props;
   const { slug } = params;
-  const { data } = useQuery<TLandingPageDocument>(query(slug), params, {
+  const { data } = useQuery<ISanityLandingPageDocument>(query(slug), params, {
     initial,
   });
   const { components } = data;

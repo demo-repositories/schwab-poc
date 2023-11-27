@@ -1,6 +1,6 @@
-import SanityImage from "./sanity-image";
+import SanityImage from "../../sanity-image";
 import { PortableText } from "@portabletext/react";
-import { Separator } from "./ui/separator";
+import { Separator } from "../../ui/separator";
 
 export default function StoryImage(props) {
   const {

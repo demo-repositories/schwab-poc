@@ -10,7 +10,6 @@ import PreviewResults from "./results/preview";
  */
 
 export default function PreviewQuerySet(props) {
-  console.log("preview props", props);
   const { _ref } = props;
   const { data, loading } = useQuery(
     query,

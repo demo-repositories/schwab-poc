@@ -13,15 +13,12 @@ export type TCardDeckProps = {
   _ref: string;
 };
 
-type TRenderCardDeckProps = {
-  data: TSanityCardDeckDocument;
-};
 // Params for query
 type TParams = {
   _id: string;
 };
 const componentData = async (params: TParams) =>
-  await loadQuery<TRenderCardDeckProps>(query, params);
+  await loadQuery<TSanityCardDeckDocument>(query, params);
 
 export default async function CardDeck(props: TCardDeckProps) {
   const params = { _id: props._ref };

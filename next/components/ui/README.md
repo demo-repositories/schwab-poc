@@ -1,0 +1,1 @@
+This folder is automatically populated from install scripts from shadcn/ui. Part of that library's philosophy is that you own your components so these _are_ yours to edit but be warned that they're probably used as building blocks all across the site!

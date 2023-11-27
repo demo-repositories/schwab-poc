@@ -1,21 +1,17 @@
-import { TLandingPageDocument } from "@/components/landing-page";
-import { TSanityStoryDocument } from "@/components/story";
-type TResult = TSanityStoryDocument | TLandingPageDocument;
+import { ISanityLandingPageDocument } from "@/components/landing-page";
+import SanityImage from "@/components/sanity-image";
+import Button from "@/components/button";
+import { ISanityStoryDocument } from "@/components/story";
+import DocumentCards from "@/components/document-cards";
+type TResult = ISanityStoryDocument | ISanityLandingPageDocument;
 type TRenderResultsProps = {
   results: TResult[];
 };
 
 export default function RenderResults({ results }: TRenderResultsProps) {
-  console.log("results", results);
-  return (
-    <div className="gap-4 lg:grid lg:grid-cols-3 ">
-      {results &&
-        results.map(({ title, _key, summary, featuredImage }: TResult) => (
-          <div key={_key}>
-            <strong className="block">{title}</strong>
-            <p>{summary}</p>
-          </div>
-        ))}
-    </div>
-  );
+  const typeLookup = {
+    story: "Story",
+    landingPage: "Landing page",
+  };
+  return <DocumentCards cards={results} />;
 }

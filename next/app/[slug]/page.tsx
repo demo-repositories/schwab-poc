@@ -1,8 +1,8 @@
 import { draftMode } from "next/headers";
 import LandingPage, {
   query,
-  TLandingPageDocument,
-} from "@/components/landing-page";
+  ISanityLandingPageDocument,
+} from "@/components/pages/landing-page";
 import CardDeck from "@/components/card-deck";
 import Marquee from "@/components/marquee";
 import QuerySet from "@/components/query-set";
@@ -10,7 +10,9 @@ import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
 import { loadQuery } from "@/lib/sanity/store";
 import dynamic from "next/dynamic";
-const PagePreview = dynamic(() => import("@/components/preview-landing-page"));
+const PagePreview = dynamic(
+  () => import("@/components/pages/landing-page/preview"),
+);
 /**
  * Renders all 'landingPage' documents from Sanity
  */
@@ -21,7 +23,7 @@ type Props = {
 };
 // Fetch for all landing page data
 const pageData = async (slug: string) =>
-  await loadQuery<TLandingPageDocument[]>(query(slug));
+  await loadQuery<ISanityLandingPageDocument[]>(query(slug));
 
 // SEO metadata from document and/or overrides from 'seoData' field
 export async function generateMetadata(

@@ -1,4 +1,4 @@
-import { TLandingPageDocument } from "./landing-page";
+import { ISanityLandingPageDocument } from "./landing-page";
 
 import DocumentCards from "./document-cards";
 import { groq } from "next-sanity";
@@ -11,7 +11,7 @@ export const query = groq`*[_type == "landingPage" && slug.current != null] | or
 export default function LandingPages({
   data,
 }: {
-  data: TLandingPageDocument[];
+  data: ISanityLandingPageDocument[];
 }) {
   return (
     <main className="mx-auto mt-5 max-w-7xl px-5 xl:px-0">

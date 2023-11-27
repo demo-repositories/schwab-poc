@@ -1,4 +1,4 @@
-import DocumentCards from "./document-cards";
+import DocumentCards from "@/components/document-cards";
 
 /**
  * List page for all 'story' documents

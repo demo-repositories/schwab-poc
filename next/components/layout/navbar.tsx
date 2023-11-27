@@ -6,11 +6,10 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import SchwabLogo from "./schwab-logo";
+import SchwabLogo from "@/components/schwab-logo";
 import Link from "next/link";
-import SanityLogo from "./sanity-logo";
+import SanityLogo from "@/components/sanity-logo";
 import { Plus } from "lucide-react";
-import { Separator } from "./ui/separator";
 /**
  * Appears in layout.tsx and shows up at the top of every page
  */

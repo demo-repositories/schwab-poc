@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import dynamic from "next/dynamic";
 import { draftMode } from "next/headers";
 import { Inter as FontSans } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/navbar";
+import { ThemeProvider } from "@/components/layout/theme-provider";
+import Navbar from "@/components/layout/navbar";
 import { cn } from "@/lib/utils";
-import Footer from "@/components/footer";
-import { VisualEditing } from "@/components/visual-editing";
+import Footer from "@/components/layout/footer";
+import { VisualEditing } from "@/components/layout/visual-editing";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
