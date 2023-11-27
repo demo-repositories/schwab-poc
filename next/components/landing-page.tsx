@@ -35,12 +35,13 @@ const componentLookup: Record<TComponentType, JSX.Element> = {
 export const query = (slug: string) =>
   groq`*[_type == "landingPage" && slug.current == '${slug}']{slug, title, summary, _id, _type, _key, seoData{...,}, components[]{..., _ref, _id, _type, image{...,"palette": asset->metadata.palette},"refType":*[_id==^._ref]._type}}`;
 
-export default function LandingPage({ data }: TLandingPageProps) {
+export default function LandingPage({ data, children }: TLandingPageProps) {
   const { title, slug, components, _id, _type, _key } = data[0];
 
   return (
     <main className="mx-auto mb-12 mt-5 max-w-7xl px-5 xl:px-0">
-      {components &&
+      {children}
+      {/* {components &&
         components.map((component, i) => {
           // if (!component || !componentLookup[component._type]) {
           //   console.log("component", component);
@@ -50,17 +51,13 @@ export default function LandingPage({ data }: TLandingPageProps) {
             case "marquee":
               return <Marquee key={component._key} {...component} />;
             case "cardDeck":
-              return (
-                <Suspense>
-                  <CardDeck key={component._key} {...component} />
-                </Suspense>
-              );
+              return <CardDeck key={component._key} {...component} />;
             case "querySet":
               return <QuerySet key={component._key} {...component} />;
             default:
               return <div key={`no-component-${i}`}>no component</div>;
           }
-        })}
+        })} */}
     </main>
   );
 }

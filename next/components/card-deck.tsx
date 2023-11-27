@@ -4,8 +4,10 @@ import { loadQuery } from "@/lib/sanity/store";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import { groq } from "next-sanity";
-import { draftMode } from "next/headers";
-import PreviewCardDeck from "./preview-card-deck";
+// import { draftMode } from "next/headers";
+import dynamic from "next/dynamic";
+const PreviewCardDeck = dynamic(() => import("@/components/preview-card-deck"));
+
 /**
  * Maps to the 'cardDeck' object type in Sanity, which appears in the 'landingPage' type.
  *

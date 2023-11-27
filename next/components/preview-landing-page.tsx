@@ -2,6 +2,7 @@
 
 import { useQuery } from "@/lib/sanity/store";
 import LandingPage, { TLandingPageItem, query } from "./landing-page";
+import PreviewCardDeck from "./preview-card-deck";
 
 export default function LandingPagePreview(props) {
   const { params, initial } = props;
@@ -10,5 +11,9 @@ export default function LandingPagePreview(props) {
     initial,
   });
 
-  return <LandingPage data={data!} />;
+  return (
+    <LandingPage data={data!}>
+      <PreviewCardDeck params={...initial.data[0].components[1]} />
+    </LandingPage>
+  );
 }

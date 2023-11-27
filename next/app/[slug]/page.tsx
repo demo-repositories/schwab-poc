@@ -3,6 +3,7 @@ import LandingPage, {
   query,
   TLandingPageItem,
 } from "@/components/landing-page";
+import CardDeck from "@/components/card-deck";
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
 import { loadQuery } from "@/lib/sanity/store";
@@ -49,5 +50,9 @@ export default async function LandingPagePage({ params }: Props) {
     notFound();
   }
 
-  return <LandingPage data={initial.data} />;
+  return (
+    <LandingPage data={initial.data}>
+      <CardDeck {...initial.data[0].components[1]} />
+    </LandingPage>
+  );
 }
