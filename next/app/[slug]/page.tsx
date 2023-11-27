@@ -30,11 +30,11 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = params;
   const { data } = await pageData(slug);
-  const { title, summary } = data[0];
+  const { title, summary } = data;
   const metadata = { title, description: summary };
 
-  if (data[0].seoData) {
-    data[0].seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
+  if (data.seoData) {
+    data.seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
   }
 
   return metadata;
@@ -43,7 +43,7 @@ export async function generateMetadata(
 export default async function LandingPagePage({ params }: Props) {
   const { slug } = params;
   const initial = await pageData(slug);
-  const { components } = initial.data[0];
+  const { components } = initial.data;
 
   // 404 if no document in Sanity.
   // This can be done more granularly with the app router, but for now general 404 behavior

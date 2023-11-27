@@ -3,7 +3,7 @@ import { SearchCode } from 'lucide-react'
 export default {
     name: 'querySet',
     title: 'Query set',
-    type: 'object',
+    type: 'document',
     icon: SearchCode,
     fields: [
         {

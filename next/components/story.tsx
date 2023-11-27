@@ -2,11 +2,12 @@ import { PortableTextBlock } from "@portabletext/types";
 import CustomPortableText from "./custom-portable-text";
 import SanityImage, { TSanityImageProps } from "./sanity-image";
 import { TSanitySEOData } from "@/lib/sanity/types";
+import { groq } from "next-sanity";
 /**
  * Renders 'story' document type from Sanity.
  */
 
-export type TStoryItem = {
+export type TSanityStoryDocument = {
   title: string;
   slug: string;
   summary: string;
@@ -15,14 +16,15 @@ export type TStoryItem = {
   displayDate?: string;
   _id: string;
   _type: string;
+  _key: string;
   seoData: TSanitySEOData;
 };
 type TStoryProps = {
-  data: TStoryItem[];
+  data: TSanityStoryDocument;
 };
 
 export const query = (slug: string) =>
-  `*[_type == "story" && slug.current == '${slug}']{slug, title, summary, displayDate, _id, _type, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}}, seoData{...,}}`;
+  groq`*[_type == "story" && slug.current == '${slug}'][0]{slug, title, summary, displayDate, _id, _type, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}}, seoData{...,}}`;
 
 export default function Story({ data }: TStoryProps) {
   const {
@@ -34,7 +36,7 @@ export default function Story({ data }: TStoryProps) {
     displayDate,
     _id,
     _type,
-  } = data[0];
+  } = data;
   const dateString = displayDate
     ? new Date(displayDate).toLocaleDateString("en-US", {
         timeZone: "UTC",

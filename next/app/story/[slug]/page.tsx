@@ -1,5 +1,5 @@
 import { draftMode } from "next/headers";
-import Story, { query, TStoryItem } from "@/components/story";
+import Story, { query, TSanityStoryDocument } from "@/components/story";
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
 import { loadQuery } from "@/lib/sanity/store";
@@ -12,7 +12,7 @@ type Props = {
 };
 
 const pageData = async (slug: string) =>
-  await loadQuery<TStoryItem[]>(query(slug));
+  await loadQuery<TSanityStoryDocument[]>(query(slug));
 
 export async function generateMetadata(
   { params }: Props,
@@ -20,7 +20,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = params;
   const { data } = await pageData(slug);
-  const { seoData, title, summary } = data[0];
+  const { seoData, title, summary } = data;
   const metadata = { title, description: summary };
   if (seoData) {
     seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));

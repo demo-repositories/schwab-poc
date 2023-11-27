@@ -1,9 +1,11 @@
+import { PropsWithChildren } from "react";
 import { TMarqueeProps } from "./marquee";
 import { TCardDeckProps } from "./card-deck";
 import { TQuerySetProps } from "./query-set";
 import type { TSanitySEOData } from "@/lib/sanity/types";
 import { groq } from "next-sanity";
-import { PropsWithChildren } from "react";
+import { TSanityImageProps } from "./sanity-image";
+
 /**
  * Recreation of 'Pattern Landing Page' from original charlesschwab.com.
  *
@@ -14,6 +16,7 @@ export type TLandingPageDocument = {
   title: string;
   summary?: string;
   slug: string;
+  featuredImage?: TSanityImageProps;
   seoData: TSanitySEOData;
   _id: string;
   _type: string;
@@ -22,7 +25,7 @@ export type TLandingPageDocument = {
 };
 
 export const query = (slug: string) =>
-  groq`*[_type == "landingPage" && slug.current == '${slug}']{slug, title, summary, _id, _type, _key, seoData{...,}, components[]{..., _ref, _id, _type, image{...,"palette": asset->metadata.palette},"refType":*[_id==^._ref]._type}}`;
+  groq`*[_type == "landingPage" && slug.current == '${slug}'][0]{slug, title, summary, _id, _type, _key, seoData{...,}, components[]{..., _ref, _id, _type, image{...,"palette": asset->metadata.palette},"refType":*[_id==^._ref]._type}}`;
 
 // Ultimately this component is a wrapper for the blocks provided by /app/[slug]/page.tsx
 export default function LandingPage({ children }: PropsWithChildren) {

@@ -27,5 +27,5 @@ export default async function CardDeck(props: TCardDeckProps) {
   const params = { _id: props._ref };
   const initial = await componentData(params);
 
-  return <RenderCardDeck {...initial.data[0]} />;
+  return <RenderCardDeck {...initial.data} />;
 }

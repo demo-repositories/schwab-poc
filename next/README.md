@@ -127,7 +127,11 @@ Homepage
 
 ### components/
 
-Each component should have comments outlining how and where its used.
+Each component should have comments outlining how and where its used. However a note on directories in the components directory:
+
+#### Directories inside /components/
+
+Most components have their own .tsx file, but any component that's _addressable_ has a directory with several files inside of it to handle rendering the UI but also handle the server/client relationship for data fetching and preview.
 
 #### components/ui
 

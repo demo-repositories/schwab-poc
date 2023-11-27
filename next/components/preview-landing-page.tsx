@@ -7,6 +7,7 @@
 import { useQuery } from "@/lib/sanity/store";
 import LandingPage, { TLandingPageDocument, query } from "./landing-page";
 import PreviewCardDeck from "./card-deck/preview";
+import PreviewQuerySet from "./query-set/preview";
 import Marquee from "./marquee";
 
 export default function LandingPagePreview(props) {
@@ -15,7 +16,7 @@ export default function LandingPagePreview(props) {
   const { data } = useQuery<TLandingPageDocument>(query(slug), params, {
     initial,
   });
-  const { components } = data[0];
+  const { components } = data;
   return (
     <LandingPage data={data!}>
       {components &&
@@ -24,11 +25,9 @@ export default function LandingPagePreview(props) {
             case "marquee":
               return <Marquee key={component._key} {...component} />;
             case "cardDeck":
-              return (
-                <PreviewCardDeck key={component._key} params={...component} />
-              );
+              return <PreviewCardDeck key={component._key} {...component} />;
             case "querySet":
-              return <QuerySet key={component._key} {...component} />;
+              return <PreviewQuerySet key={component._key} {...component} />;
             default:
               console.log("component", component);
               return (

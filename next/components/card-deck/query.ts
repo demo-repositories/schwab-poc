@@ -1,2 +1,2 @@
 import { groq } from "next-sanity";
-export default groq`*[_type == "cardDeck" && _id == $_id]{...,}`;
+export default groq`*[_type == "cardDeck" && _id == $_id][0]{...,}`;

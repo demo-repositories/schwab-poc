@@ -5,7 +5,6 @@ import seoData from './seo-data'
 import bynderBlock from './bynder-block'
 import taxonomyItem from './taxonomy-item'
 import marquee from './marquee'
-import querySet from './query-set'
 
 export default [
     button,
@@ -15,5 +14,4 @@ export default [
     bynderBlock,
     taxonomyItem,
     marquee,
-    querySet,
 ]

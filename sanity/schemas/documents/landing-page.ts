@@ -47,8 +47,10 @@ export default {
             group: 'content',
             of: [
                 { type: 'marquee' },
-                { type: 'reference', to: [{ type: 'cardDeck' }] },
-                { type: 'querySet' },
+                {
+                    type: 'reference',
+                    to: [{ type: 'cardDeck' }, { type: 'querySet' }],
+                },
             ],
         },
         {

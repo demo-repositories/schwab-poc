@@ -9,7 +9,11 @@ import query from "./query";
  */
 
 export default function PreviewCardDeck(props) {
-  const { params, initial } = props;
-  const { data, loading } = useQuery(query, { _id: params._ref }, { initial });
-  return loading ? <Spinner /> : <RenderCardDeck {...data[0]} />;
+  const { _ref } = props;
+  const { data, loading } = useQuery(
+    query,
+    { _id: _ref },
+    { initial: undefined },
+  );
+  return loading ? <Spinner /> : <RenderCardDeck {...data} />;
 }
