@@ -1,13 +1,18 @@
-import { TLandingPageItem } from "./landing-page";
+import { TLandingPageDocument } from "./landing-page";
 
 import DocumentCards from "./document-cards";
+import { groq } from "next-sanity";
 /**
  * List page for all 'landingPage' documents
  */
 
-export const query = `*[_type == "landingPage" && slug.current != null] | order(_updatedAt){title, slug, summary, featuredImage, _id, _type}`;
+export const query = groq`*[_type == "landingPage" && slug.current != null] | order(_updatedAt){title, slug, summary, featuredImage, _id, _type}`;
 
-export default function LandingPages({ data }: { data: TLandingPageItem[] }) {
+export default function LandingPages({
+  data,
+}: {
+  data: TLandingPageDocument[];
+}) {
   return (
     <main className="mx-auto mt-5 max-w-7xl px-5 xl:px-0">
       <section>

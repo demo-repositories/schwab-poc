@@ -1,15 +1,11 @@
 import SanityImage from "@/components/sanity-image";
-import { CardDeckPortableText } from "./card-deck";
-
+import CardDeckPortableText from "../portable-text";
+import { TSanityCard } from "@/lib/sanity/types";
 /**
  * Used as a card type in 'CardDeck'. Maps to the 'card' object type in Sanity.
  */
 
-type TIconCardProps = {
-  title?: string;
-  body: string;
-  icon?: any;
-};
+type TIconCardProps = Pick<TSanityCard, "title" | "body" | "icon">;
 
 export default function IconCard({ title, body, icon }: TIconCardProps) {
   return (

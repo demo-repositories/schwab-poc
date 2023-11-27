@@ -1,5 +1,5 @@
 import LandingPages, { query } from "@/components/landing-pages";
-import { TLandingPageProps } from "@/components/landing-page";
+import { TLandingPageDocument } from "@/components/landing-page";
 import { loadQuery } from "@/lib/sanity/store";
 
 /**
@@ -7,7 +7,7 @@ import { loadQuery } from "@/lib/sanity/store";
  */
 
 export default async function StoriesPage() {
-  const { data } = await loadQuery<TLandingPageItem[]>(query);
+  const { data } = await loadQuery<TLandingPageDocument[]>(query);
 
   return <LandingPages data={data} />;
 }

@@ -80,7 +80,7 @@ export default function Marquee({
                     };
                 return (
                   <Button
-                    key={button._id}
+                    key={button._key}
                     colorOverride={colorOverride}
                     {...button}
                   />

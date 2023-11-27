@@ -1,21 +1,13 @@
-import Button, { TButtonProps } from "@/components/button";
-
-import { CardDeckPortableText } from "./card-deck";
+import Button from "@/components/button";
+import CardDeckPortableText from "../portable-text";
+import { TSanityCard } from "@/lib/sanity/types";
 /**
  * Used as a card type in 'CardDeck'. Maps to the 'card' object type in Sanity.
  */
 
-type TIconCardProps = {
-  title?: string;
-  body: any[];
+interface TIconCardProps extends TSanityCard {
   ctaText: string;
-  to: {
-    _type: string;
-    slug: {
-      current: string;
-    };
-  };
-};
+}
 
 export default function CTACard({ title, body, ctaText, to }: TIconCardProps) {
   return (

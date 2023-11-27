@@ -12,7 +12,7 @@ import gsap from "gsap";
  * There is an additional `colorOverride` prop not exposed in Sanity for hard-coding the button colors.
  */
 
-type TToObject = {
+export type TToObject = {
   _type: string;
   slug: {
     current: string;
@@ -20,6 +20,7 @@ type TToObject = {
 };
 export type TButtonProps = {
   _id?: string;
+  _key?: string;
   text?: string;
   to: TToObject;
   hrefOverride?: URL;
