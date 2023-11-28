@@ -5,7 +5,7 @@ import { groq } from "next-sanity";
  * List page for all 'story' documents
  */
 
-export const query = groq`*[_type == "story" && slug.current != null] | order(_updatedAt){title, slug, summary, featuredImage, _id, _type}`;
+export const query = groq`*[_type == "story" && slug.current != null] | order(_updatedAt){title, slug, summary, featuredImage, _id, _type, _updatedAt}`;
 
 export default function Stories({ data }: { data: number }) {
   return (

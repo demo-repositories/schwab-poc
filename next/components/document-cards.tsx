@@ -18,6 +18,7 @@ type TDocumentCards = {
   title: string;
   summary: string;
   featuredImage: any;
+  _updatedAt?: string;
   slug: {
     current: string;
   };
@@ -28,22 +29,35 @@ export default function DocumentCards({ cards }: { cards: TDocumentCards[] }) {
   return (
     <div className={`my-4 auto-rows-fr ${gridCols} gap-4 lg:grid`}>
       {cards &&
-        cards.map(({ _id, title, summary, featuredImage, slug, _type }) => (
-          <Card key={_id} className="mb-4 grid-rows-2 gap-0 lg:mb-0 lg:grid">
-            <CardHeader>
-              <SanityImage value={featuredImage} height={150} layout="fixed" />
-            </CardHeader>
-            <CardContent>
-              <CardTitle className="mb-2">{title}</CardTitle>
-              <CardDescription>{summary}</CardDescription>
-            </CardContent>
-            <CardFooter>
-              <div className="w-full text-right">
-                <Button to={{ _type: _type, slug: slug }} text="Read" />
-              </div>
-            </CardFooter>
-          </Card>
-        ))}
+        cards.map(
+          ({ _id, title, summary, featuredImage, slug, _type, _updatedAt }) => (
+            <Card key={_id} className="mb-4 grid-rows-2 gap-0 lg:mb-0 lg:grid">
+              <CardHeader>
+                <SanityImage
+                  value={featuredImage}
+                  height={150}
+                  layout="fixed"
+                />
+              </CardHeader>
+              <CardContent>
+                <CardTitle className="mb-2">{title}</CardTitle>
+                <CardDescription>
+                  {_updatedAt && (
+                    <small className="block">
+                      {new Date(_updatedAt).toLocaleDateString()}
+                    </small>
+                  )}
+                  {summary}
+                </CardDescription>
+              </CardContent>
+              <CardFooter>
+                <div className="w-full text-right">
+                  <Button to={{ _type: _type, slug: slug }} text="Read" />
+                </div>
+              </CardFooter>
+            </Card>
+          ),
+        )}
     </div>
   );
 }
