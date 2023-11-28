@@ -36,7 +36,7 @@ shadcn/ui and the custom built components for this site leverage [Tailwind CSS](
 
 ### gsap
 
-[GSAP](https://gsap.com/docs/v3/) was mentioned as a liked package by the Schwab team. At the time of writing (Nov 12, 2023) GSAP is only used subtly in Button.tsx.
+[GSAP](https://gsap.com/docs/v3/) was mentioned as a liked package by the Schwab team. At the moment GSAP is only used subtly in Button.tsx and a basic implementation is shown in the GSAPProvider component.
 
 ## Project structure
 
