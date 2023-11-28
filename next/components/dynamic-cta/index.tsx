@@ -24,7 +24,6 @@ const componentData = async (params: TParams) =>
 export default async function DynamicCTA(props) {
   const params = { _id: props._ref };
   const initial = await componentData(params);
-  console.log("initial", initial);
 
   return <RenderDynamicCTA {...initial.data} />;
 }
