@@ -1,7 +1,7 @@
-import Stories, { query as storiesQuery } from "@/components/stories";
+import Stories, { query as storiesQuery } from "@/components/pages/stories";
 import LandingPages, {
   query as landingPagesQuery,
-} from "@/components/landing-pages";
+} from "@/components/pages/landing-pages";
 import { loadQuery } from "@/lib/sanity/store";
 
 export default async function HomePage() {

@@ -1,6 +1,6 @@
 import { ISanityLandingPageDocument } from "./landing-page";
 
-import DocumentCards from "./document-cards";
+import DocumentCards from "@/components/document-cards";
 import { groq } from "next-sanity";
 /**
  * List page for all 'landingPage' documents
