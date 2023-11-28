@@ -115,7 +115,7 @@ CSS variables for theme + Tailwind
 
 #### layout.tsx
 
-Includes ThemeProvider, Navbar, Footer, and PreviewProvider.
+Includes ThemeProvider, Navbar, and Footer.
 
 #### not-found.tsx
 
@@ -132,6 +132,8 @@ Each component should have comments outlining how and where its used. However a 
 #### Directories inside /components/
 
 Most components have their own .tsx file, but any component that's _addressable_ has a directory with several files inside of it to handle rendering the UI but also handle the server/client relationship for data fetching and preview.
+
+There's also a few logical groupings such as /pages and /layout, and /ui which is explained below.
 
 #### components/ui
 
