@@ -1,18 +1,5 @@
-import Button, { TButtonProps } from "./button";
-/**
- * Maps to the 'dynamicCta' object type in Sanity.
- *
- * Gets pulled into 'CustomPortableText'
- */
-type TDynamicCTAProps = {
-  value: {
-    heading: string;
-    button: TButtonProps;
-  };
-};
-export default function DynamicCTA({ value }: TDynamicCTAProps) {
-  const { heading, button } = value;
-
+import Button from "@/components/button";
+export default function RenderDynamicCTA({ heading, button }) {
   return (
     <section className="my-9 flex items-center justify-center py-7">
       <div className="dynamic-cta-container fles min-w-[66%] items-center justify-center border-y-2 border-accent p-12">

@@ -1,23 +1,22 @@
 import { ReactNode } from "react";
 import { PortableText } from "@portabletext/react";
 import { PortableTextBlock } from "@portabletext/types";
-import DynamicCTA from "@/components/dynamic-cta";
-import PortableTable from "./portable-table";
+import PortableTable from "../portable-table";
 import BynderBlock from "@/components/bynder-block";
-import StoryImage from "./story-image";
-
+import StoryImage from "../story-image";
+import ReferenceResolver from "../reference-resolver";
 /**
  * Renders the output of the portable text block in Sanity's 'story' type.
  *
  * Appears in 'Story'
  */
-const components = {
+export const components = {
   // Custom block types require their own custom components
   types: {
     image: StoryImage,
-    dynamicCta: DynamicCTA,
     table: PortableTable,
     bynderBlock: BynderBlock,
+    reference: ReferenceResolver,
   },
   // Wrap normal elements with Tailwind classes for styling
   block: {

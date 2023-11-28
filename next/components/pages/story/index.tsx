@@ -3,6 +3,7 @@ import CustomPortableText from "./custom-portable-text";
 import SanityImage from "@/components/sanity-image";
 import { ISanityPageDocument } from "@/lib/sanity/types";
 import { groq } from "next-sanity";
+import { PropsWithChildren } from "react";
 /**
  * Renders 'story' document type from Sanity.
  */
@@ -16,9 +17,12 @@ type TStoryProps = {
 };
 
 export const query = (slug: string) =>
-  groq`*[_type == "story" && slug.current == '${slug}'][0]{slug, title, summary, displayDate, _id, _type, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}}, seoData{...,}}`;
+  groq`*[_type == "story" && slug.current == '${slug}'][0]{slug, title, summary, displayDate, _id, _type, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}, "refType":*[_id==^._ref]._type}, seoData{...,}}`;
 
-export default function Story({ data }: TStoryProps) {
+export default function Story({
+  data,
+  children,
+}: PropsWithChildren<TStoryProps>) {
   const { title, summary, featuredImage, content, displayDate } = data;
   const dateString = displayDate
     ? new Date(displayDate).toLocaleDateString("en-US", {
@@ -46,7 +50,7 @@ export default function Story({ data }: TStoryProps) {
           <SanityImage value={featuredImage} priority />
         </div>
       )}
-      <CustomPortableText value={content} />
+      {children}
     </main>
   );
 }

@@ -4,6 +4,7 @@ import taxonomyTerm from './taxonomy-term'
 import taxonomyAttribute from './taxonomy-attribute'
 import cardDeck from './card-deck'
 import querySet from './query-set'
+import dynamicCta from './dynamic-cta'
 
 export default [
     story,
@@ -12,4 +13,5 @@ export default [
     landingPage,
     cardDeck,
     querySet,
+    dynamicCta,
 ]

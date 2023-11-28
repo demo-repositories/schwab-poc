@@ -6,7 +6,9 @@ import query from "./query";
 import PreviewResults from "./results/preview";
 
 /**
- * Ultimately this goes in 'preview-landing-page.tsx'
+ * Client component to enable Presentation in Sanity
+ *
+ * Ultimately this goes in 'components/pages/landing-page/preview.tsx'
  */
 
 export default function PreviewQuerySet(props) {

@@ -2,7 +2,9 @@ import RenderResults from "./component";
 import { loadQuery } from "@/lib/sanity/store";
 import query from "./query";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
-
+/**
+ * Entry point for list of results from queryset parameters
+ */
 const resultsData = async (params: TResultsDataParams) => {
   return await loadQuery(query, params);
 };

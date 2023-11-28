@@ -1,5 +1,6 @@
 import { draftMode } from "next/headers";
 import Story, { query, ISanityStoryDocument } from "@/components/pages/story";
+import CustomPortableText from "@/components/pages/story/custom-portable-text";
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
 import { loadQuery } from "@/lib/sanity/store";
@@ -42,5 +43,9 @@ export default async function StoryPage({ params }: Props) {
     notFound();
   }
 
-  return <Story data={initial.data} />;
+  return (
+    <Story data={initial.data}>
+      <CustomPortableText value={initial.data.content} />
+    </Story>
+  );
 }

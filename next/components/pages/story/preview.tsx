@@ -2,6 +2,7 @@
 
 import { useQuery } from "@/lib/sanity/store";
 import Story, { ISanityStoryDocument, query } from "./index";
+import PreviewCustomPortableText from "./custom-portable-text/preview";
 
 export default function StoryPreview(props) {
   const { params, initial } = props;
@@ -10,6 +11,10 @@ export default function StoryPreview(props) {
     initial,
   });
 
-  return <Story data={data!} />;
+  return (
+    <Story data={data!}>
+      <PreviewCustomPortableText value={data.content} />
+    </Story>
+  );
 }
 ``;

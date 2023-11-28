@@ -4,7 +4,7 @@ import { PreviewDynamicCTA } from '../../components/preview/PreviewDynamicCTA'
 
 export default {
     name: 'dynamicCta',
-    type: 'object',
+    type: 'document',
     title: 'Dynamic CTA',
     icon: LayoutTemplate,
     fields: [
@@ -21,13 +21,13 @@ export default {
             validation: (rule: Rule) => rule.required(),
         },
     ],
-    preview: {
-        select: {
-            heading: 'heading',
-            buttonText: 'button.text',
-        },
-    },
-    components: {
-        preview: PreviewDynamicCTA,
-    },
+    // preview: {
+    //     select: {
+    //         heading: 'heading',
+    //         buttonText: 'button.text',
+    //     },
+    // },
+    // components: {
+    //     preview: PreviewDynamicCTA,
+    // },
 }

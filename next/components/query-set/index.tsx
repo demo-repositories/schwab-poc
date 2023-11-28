@@ -7,7 +7,7 @@ import { TRenderQuerySetProps } from "./types";
 /**
  * Entry point for Queryset RSC. Fetches data + returns UI with that data.
  *
- * Ultimately is imported into 'LandingPage'
+ * Ultimately is imported into 'components/pages/landing-page/index.ts'
  */
 
 export type TQuerySetProps = {

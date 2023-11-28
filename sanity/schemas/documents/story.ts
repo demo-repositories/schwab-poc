@@ -89,7 +89,8 @@ export default {
                     ],
                 },
                 {
-                    type: 'dynamicCta',
+                    type: 'reference',
+                    to: [{ type: 'dynamicCta' }],
                 },
                 {
                     type: 'table',
