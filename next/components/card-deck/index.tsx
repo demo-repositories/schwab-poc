@@ -11,6 +11,7 @@ import { RenderCardDeck } from "./component";
 
 export type TCardDeckProps = {
   _ref: string;
+  _key: string;
 };
 
 // Params for query

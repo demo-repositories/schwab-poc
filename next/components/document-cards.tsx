@@ -24,9 +24,9 @@ type TDocumentCards = {
   _type: string;
 };
 export default function DocumentCards({ cards }: { cards: TDocumentCards[] }) {
-  const cols = cards.length > 4 ? 4 : cards.length;
+  const gridCols = cards.length >= 4 ? `grid-cols-4` : `grid-cols-3`;
   return (
-    <div className={`auto-rows-fr grid-cols-${cols} my-4 gap-4 lg:grid`}>
+    <div className={`my-4 auto-rows-fr ${gridCols} gap-4 lg:grid`}>
       {cards &&
         cards.map(({ _id, title, summary, featuredImage, slug, _type }) => (
           <Card key={_id} className="mb-4 grid-rows-2 gap-0 lg:mb-0 lg:grid">

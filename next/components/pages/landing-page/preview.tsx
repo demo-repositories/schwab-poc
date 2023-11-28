@@ -9,16 +9,23 @@ import LandingPage, { ISanityLandingPageDocument, query } from "./index";
 import PreviewCardDeck from "@/components/card-deck/preview";
 import PreviewQuerySet from "@/components/query-set/preview";
 import Marquee from "@/components/marquee";
-
-export default function LandingPagePreview(props) {
-  const { params, initial } = props;
+import { PageParams } from "../types";
+interface LandingPagePreviewProps extends PageParams {
+  initial: {
+    data: ISanityLandingPageDocument;
+  };
+}
+export default function LandingPagePreview({
+  params,
+  initial,
+}: LandingPagePreviewProps) {
   const { slug } = params;
   const { data } = useQuery<ISanityLandingPageDocument>(query(slug), params, {
     initial,
   });
-  const { components } = data;
+  const { components } = data!;
   return (
-    <LandingPage data={data!}>
+    <LandingPage>
       {components &&
         components.map((component, i) => {
           switch (component.refType[0] || component._type) {

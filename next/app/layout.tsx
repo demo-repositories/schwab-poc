@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/layout/footer";
 import { VisualEditing } from "@/components/layout/visual-editing";
+import GSAPProvider from "@/components/layout/gsap-provider";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -37,15 +38,12 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {/* {draftMode().isEnabled ? (
-            <PreviewProvider token={token}>{children}</PreviewProvider>
-          ) : (
-            children
-          )} */}
-          {children}
-          {draftMode().isEnabled && <VisualEditing />}
-          <Footer />
+          <GSAPProvider>
+            <Navbar />
+            {children}
+            {draftMode().isEnabled && <VisualEditing />}
+            <Footer />
+          </GSAPProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,12 @@
-import Button from "@/components/button";
-export default function RenderDynamicCTA({ heading, button }) {
+import Button, { TButtonProps } from "@/components/button";
+
+export default function RenderDynamicCTA({
+  heading,
+  button,
+}: {
+  heading: string;
+  button: TButtonProps;
+}) {
   return (
     <section className="my-9 flex items-center justify-center py-7">
       <div className="dynamic-cta-container fles min-w-[66%] items-center justify-center border-y-2 border-accent p-12">

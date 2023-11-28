@@ -75,4 +75,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  /** Used by GSAP Provider for illustrative purposes */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }

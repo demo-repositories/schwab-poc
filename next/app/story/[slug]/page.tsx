@@ -5,20 +5,16 @@ import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
 import { loadQuery } from "@/lib/sanity/store";
 import dynamic from "next/dynamic";
+import { PageParams } from "@/components/pages/types";
 
 const StoryPreview = dynamic(() => import("@/components/pages/story/preview"));
 
-type Props = {
-  params: { slug: string };
-};
-
 const pageData = async (slug: string) =>
-  await loadQuery<ISanityStoryDocument[]>(query(slug));
+  await loadQuery<ISanityStoryDocument>(query(slug));
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageParams): Promise<Metadata> {
   const { slug } = params;
   const { data } = await pageData(slug);
   const { seoData, title, summary } = data;
@@ -30,7 +26,7 @@ export async function generateMetadata(
   return metadata;
 }
 
-export default async function StoryPage({ params }: Props) {
+export default async function StoryPage({ params }: PageParams) {
   const { slug } = params;
   const initial = await pageData(slug);
 

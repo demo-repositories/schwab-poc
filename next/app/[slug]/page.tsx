@@ -7,9 +7,10 @@ import CardDeck from "@/components/card-deck";
 import Marquee from "@/components/marquee";
 import QuerySet from "@/components/query-set";
 import { notFound } from "next/navigation";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import { loadQuery } from "@/lib/sanity/store";
 import dynamic from "next/dynamic";
+import type { PageParams } from "@/components/pages/types";
 const PagePreview = dynamic(
   () => import("@/components/pages/landing-page/preview"),
 );
@@ -17,32 +18,27 @@ const PagePreview = dynamic(
  * Renders all 'landingPage' documents from Sanity
  */
 
-// Props provided from router data
-type Props = {
-  params: { slug: string };
-};
 // Fetch for all landing page data
 const pageData = async (slug: string) =>
-  await loadQuery<ISanityLandingPageDocument[]>(query(slug));
+  await loadQuery<ISanityLandingPageDocument>(query(slug));
 
 // SEO metadata from document and/or overrides from 'seoData' field
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageParams): Promise<Metadata> {
   const { slug } = params;
   const { data } = await pageData(slug);
-  const { title, summary } = data;
+  const { seoData, title, summary } = data;
   const metadata = { title, description: summary };
 
-  if (data.seoData) {
-    data.seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
+  if (seoData) {
+    seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
   }
 
   return metadata;
 }
 
-export default async function LandingPagePage({ params }: Props) {
+export default async function LandingPagePage({ params }: PageParams) {
   const { slug } = params;
   const initial = await pageData(slug);
   const { components } = initial.data;
@@ -72,7 +68,6 @@ export default async function LandingPagePage({ params }: Props) {
               return <div key={`no-component-${i}`}>no component</div>;
           }
         })}
-      {/* <CardDeck {...initial.data[0].components[1]} /> */}
     </LandingPage>
   );
 }

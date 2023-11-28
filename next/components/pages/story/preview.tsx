@@ -3,9 +3,13 @@
 import { useQuery } from "@/lib/sanity/store";
 import Story, { ISanityStoryDocument, query } from "./index";
 import PreviewCustomPortableText from "./custom-portable-text/preview";
-
-export default function StoryPreview(props) {
-  const { params, initial } = props;
+import { PageParams } from "../types";
+interface StoryPreview extends PageParams {
+  initial: {
+    data: ISanityStoryDocument;
+  };
+}
+export default function StoryPreview({ params, initial }: StoryPreview) {
   const { slug } = params;
   const { data } = useQuery<ISanityStoryDocument>(query(slug), params, {
     initial,
@@ -13,7 +17,7 @@ export default function StoryPreview(props) {
 
   return (
     <Story data={data!}>
-      <PreviewCustomPortableText value={data.content} />
+      <PreviewCustomPortableText value={data!.content} />
     </Story>
   );
 }

@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
-import { TMarqueeProps } from "./marquee";
-import { TCardDeckProps } from "./card-deck";
-import { TQuerySetProps } from "./query-set";
+import { TMarqueeProps } from "@/components/marquee";
+import { TCardDeckProps } from "@/components/card-deck";
+import { TQuerySetProps } from "@/components/query-set";
 import type { ISanityPageDocument } from "@/lib/sanity/types";
 import { groq } from "next-sanity";
 

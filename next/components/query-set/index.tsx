@@ -12,6 +12,7 @@ import { TRenderQuerySetProps } from "./types";
 
 export type TQuerySetProps = {
   _ref: string;
+  _key: string;
 };
 
 // Params for query

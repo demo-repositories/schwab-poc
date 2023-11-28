@@ -15,6 +15,7 @@ import hexToRgba from "hex-to-rgba";
 
 export type TMarqueeProps = {
   _id: string;
+  _key: string;
   title: string;
   description: string;
   eyebrow?: string;
