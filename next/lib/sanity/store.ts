@@ -4,7 +4,7 @@ import { createClient } from "@sanity/client/stega";
 import { createQueryStore } from "@sanity/react-loader";
 
 export const STUDIO_ORIGIN =
-  process.env.NEXT_PUBLIC_STUDIO_ORIGIN || "http://localhost:3333";
+  process.env.NEXT_PUBLIC_SANITY_STUDIO_URL || "http://localhost:3333";
 
 export const STEGA_ENABLED =
   process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV !== "production";
