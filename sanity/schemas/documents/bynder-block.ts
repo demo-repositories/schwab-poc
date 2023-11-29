@@ -1,6 +1,6 @@
 export default {
     name: 'bynderBlock',
-    type: 'object',
+    type: 'document',
     title: 'Bynder block',
     fields: [
         { name: 'title', title: 'Title', type: 'string' },

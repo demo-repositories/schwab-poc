@@ -90,7 +90,7 @@ export default {
                 },
                 {
                     type: 'reference',
-                    to: [{ type: 'dynamicCta' }],
+                    to: [{ type: 'dynamicCta' }, { type: 'bynderBlock' }],
                 },
                 {
                     type: 'table',

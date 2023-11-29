@@ -5,6 +5,7 @@ import taxonomyAttribute from './taxonomy-attribute'
 import cardDeck from './card-deck'
 import querySet from './query-set'
 import dynamicCta from './dynamic-cta'
+import bynderBlock from './bynder-block'
 
 export default [
     story,
@@ -14,4 +15,5 @@ export default [
     cardDeck,
     querySet,
     dynamicCta,
+    bynderBlock,
 ]
