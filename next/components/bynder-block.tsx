@@ -3,6 +3,7 @@ import { Download } from "lucide-react";
 import Button from "./button";
 import { PortableText } from "@portabletext/react";
 
+
 /**
  * Maps to the 'bynderBlock' type in Sanity.
  *

@@ -179,3 +179,11 @@ Schema for `shadcn/ui` to know about general configuration information (Tailwind
 ### tailwind.config.ts
 
 As you might expect, but includes theme information + variables.
+
+## Previewing "addressable" components in Sanity's Presentation tool
+
+### Concept / How previewing works with Presentation
+
+### Diagram
+
+Here's a diagram showing how to structure your components to enable the previewing of nested RSCs that fetch their own data (as is done in this app.)[Diagram](https://link.excalidraw.com/l/1zdJlrqwKLw/7t0bkT84VcA)

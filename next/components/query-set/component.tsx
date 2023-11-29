@@ -15,7 +15,7 @@ export default function RenderQuerySet({
       )}
       {featuredContent && (
         <div className="w-full lg:grid lg:grid-cols-2">
-          <SanityImage value={...featuredContent.featuredImage} />
+          <SanityImage value={{ ...featuredContent.featuredImage }} />
           <div className="text flex items-center justify-center">
             <div className="p-7">
               <strong className="block text-3xl font-extrabold">

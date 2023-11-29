@@ -25,7 +25,7 @@ type TPortableTableProps = {
 
 export default function PortableTable({ value }: TPortableTableProps) {
   const { rows } = value;
-  const headerRow = rows.shift();
+  const headerRow = rows[0];
   return (
     <Table className="text-md my-5">
       {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
@@ -41,6 +41,7 @@ export default function PortableTable({ value }: TPortableTableProps) {
         {rows &&
           rows.map(
             ({ _key, cells }: { _key: string; cells: string[] }, r: number) => {
+              if (!r) return;
               return (
                 <TableRow key={_key}>
                   {cells &&
