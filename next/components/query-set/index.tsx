@@ -27,10 +27,11 @@ export default async function QuerySet(props: TQuerySetProps) {
   // console.log("queryset props", props);
   const params = { _id: props._ref };
   const initial = await componentData(params);
-  const { contentTypes } = initial.data;
+  const { contentTypes, taxonomyFilters } = initial.data;
+
   return (
     <RenderQuerySet {...initial.data}>
-      <Results params={{ contentTypes }} />
+      <Results params={{ contentTypes, taxonomyFilters }} />
     </RenderQuerySet>
   );
 }

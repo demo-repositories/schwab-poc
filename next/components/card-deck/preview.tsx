@@ -3,6 +3,7 @@ import { useQuery } from "@/lib/sanity/store";
 import Spinner from "@/components/spinner";
 import { RenderCardDeck } from "./component";
 import query from "./query";
+import { TSanityCardDeckDocument } from "@/lib/sanity/types";
 
 /**
  * Ultimately this goes in 'preview-landing-page.tsx'
@@ -10,7 +11,7 @@ import query from "./query";
 
 export default function PreviewCardDeck(props) {
   const { _ref } = props;
-  const { data, loading } = useQuery(
+  const { data, loading } = useQuery<TSanityCardDeckDocument>(
     query,
     { _id: _ref },
     { initial: undefined },

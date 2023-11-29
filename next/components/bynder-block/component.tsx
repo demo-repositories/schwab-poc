@@ -2,6 +2,7 @@ import { Image } from "@unpic/react";
 import { Download } from "lucide-react";
 import Button from "@/components/button";
 import { PortableText } from "@portabletext/react";
+import { ISanityBynderBlockDocument } from ".";
 
 /**
  * Maps to the 'bynderBlock' type in Sanity.
@@ -9,7 +10,11 @@ import { PortableText } from "@portabletext/react";
  * Gets pulled into 'CustomPortableText'
  */
 
-export default function RenderBynderBlock({ title, caption, bynderAsset }) {
+export default function RenderBynderBlock({
+  title,
+  caption,
+  bynderAsset,
+}: ISanityBynderBlockDocument) {
   const { previewImg, aspectRatio } = bynderAsset;
   const imgWidth = 400;
   const fileURL = "/"; // this doesn't come back from Sanity's test space

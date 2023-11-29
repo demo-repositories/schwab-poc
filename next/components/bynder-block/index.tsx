@@ -1,6 +1,5 @@
 import RenderBynderBlock from "./component";
 import { loadQuery } from "@/lib/sanity/store";
-import { TButtonProps } from "@/components/button";
 import query from "./query";
 import { ISanityDocument } from "@/lib/sanity/types";
 /**
@@ -13,8 +12,10 @@ import { ISanityDocument } from "@/lib/sanity/types";
 type TParams = {
   _id: string;
 };
-interface ISanityBynderBlockDocument extends ISanityDocument {
-  content: any;
+export interface ISanityBynderBlockDocument extends ISanityDocument {
+  title: string;
+  caption: any[];
+  bynderAsset: any;
 }
 const componentData = async (params: TParams) =>
   await loadQuery<ISanityBynderBlockDocument>(query, params);
@@ -22,6 +23,6 @@ const componentData = async (params: TParams) =>
 export default async function DynamicCTA({ _ref }: { _ref: string }) {
   const params = { _id: _ref };
   const initial = await componentData(params);
-  console.log("intitial", initial);
+
   return <RenderBynderBlock {...initial.data} />;
 }

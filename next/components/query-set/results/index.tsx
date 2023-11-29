@@ -11,14 +11,15 @@ const resultsData = async (params: TResultsDataParams) => {
 };
 export type TResultsDataParams = {
   contentTypes: string[];
+  taxonomyFilters?: any[];
 };
 export default async function Results({
   params,
 }: {
   params: TResultsDataParams;
 }) {
-  const { contentTypes } = params;
-
+  const { contentTypes, taxonomyFilters } = params;
+  console.log("taxonomyFilters", taxonomyFilters);
   const initial = await resultsData({
     contentTypes: vercelStegaCleanAll(contentTypes), // I spent like 30 minutes missing this cleanAll thing
   });

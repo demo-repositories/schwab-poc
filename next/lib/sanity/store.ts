@@ -19,7 +19,7 @@ const client = createClient({
 
   // The 'stega' object groups stega-specific options
   stega: {
-    enabled: STEGA_ENABLED,
+    enabled: true, // TODO: hard-coded to true but should be set to STEGA_ENABLED before going live
     studioUrl: STUDIO_ORIGIN,
 
     // High fidelity control over what strings to stega-encode
