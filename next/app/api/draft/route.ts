@@ -1,20 +1,23 @@
 // route handler with secret and slug
 import { draftMode } from "next/headers";
 import { redirect } from "next/navigation";
+import { validatePreviewUrl } from "@sanity/preview-url-secret";
+import { client } from "@/lib/sanity/client";
 
-export async function GET(request: Request) {
-  // Parse query string parameters
-  const { searchParams } = new URL(request.url);
-  const secret = searchParams.get("secret");
-  const path = searchParams.get("path");
-
-  // Check the secret and next parameters
-  if (secret !== "MY_SECRET_TOKEN" || !path) {
-    return new Response("Invalid token", { status: 401 });
+const clientWithToken = client.withConfig({
+  // Required, otherwise the URL preview secret can't be validated
+  token: process.env.SANITY_API_READ_TOKEN,
+});
+export async function GET(req: Request) {
+  const { isValid, redirectTo = "/" } = await validatePreviewUrl(
+    clientWithToken,
+    req.url,
+  );
+  if (!isValid) {
+    return new Response("Invalid secret", { status: 401 });
   }
 
-  // Enable Draft Mode by setting the cookie
   draftMode().enable();
 
-  return redirect(path);
+  redirect(redirectTo);
 }

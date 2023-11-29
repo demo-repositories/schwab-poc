@@ -28,6 +28,8 @@ export async function generateMetadata({
 }: PageParams): Promise<Metadata> {
   const { slug } = params;
   const { data } = await pageData(slug);
+  if (!data) return {};
+
   const { seoData, title, summary } = data;
   const metadata = { title, description: summary };
 
@@ -41,17 +43,19 @@ export async function generateMetadata({
 export default async function LandingPagePage({ params }: PageParams) {
   const { slug } = params;
   const initial = await pageData(slug);
-  const { components } = initial.data;
 
   // 404 if no document in Sanity.
   // This can be done more granularly with the app router, but for now general 404 behavior
   if (!initial.data) {
     notFound();
   }
+
   // Return client component version of page for Presentation
   if (draftMode().isEnabled) {
     return <PagePreview params={params} initial={initial} />;
   }
+
+  const { components } = initial.data;
 
   return (
     <LandingPage>

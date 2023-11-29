@@ -15,7 +15,9 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/client": "^6.9.1",
     "@sanity/dashboard": "^3.1.5",
+    "@sanity/preview-url-secret": "^1.2.0",
     "@sanity/table": "^1.0.1",
     "@sanity/vision": "^3.19.0",
     "lucide-react": "^0.292.0",

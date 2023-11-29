@@ -24,28 +24,30 @@ export default function DraftModeToggle({ isEnabled }: { isEnabled: boolean }) {
 
   return (
     <>
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger>
-            <Link
-              href={linkHref}
-              className={cn(
-                badgeVariants({
-                  variant: draftEnabled ? "default" : "outline",
-                }),
-                "px-5 py-1 text-sm",
-              )}
-              prefetch={false}
-              onClick={(e) => setDraftEnabled(!draftEnabled)} // hacky workaround to keep state accurate when the server component doesn't refresh
-            >
-              {`Preview mode is ${draftEnabled ? "on" : "off"}`}
-            </Link>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>{`${draftEnabled ? "Disable" : "Enable"} preview mode`}</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+      {draftEnabled && (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <Link
+                href={linkHref}
+                className={cn(
+                  badgeVariants({
+                    variant: draftEnabled ? "default" : "outline",
+                  }),
+                  "px-5 py-1 text-sm",
+                )}
+                prefetch={false}
+                onClick={(e) => setDraftEnabled(!draftEnabled)} // hacky workaround to keep state accurate when the server component doesn't refresh
+              >
+                {`Preview mode is ${draftEnabled ? "on" : "off"}`}
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{`${draftEnabled ? "Disable" : "Enable"} preview mode`}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )}
     </>
   );
 }
