@@ -8,7 +8,7 @@ You should be able to:
 
 1. `cd sanity` from the project root
 2. `npm install`
-3. Open your studio at [http://localhost:3333/desk](http://localhost:3333/desk)
+3. Open your studio at [http://localhost:3333/structure](http://localhost:3333/structure)
 
 ## Project structure
 
