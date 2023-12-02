@@ -14,10 +14,28 @@ export default {
             type: 'string',
         },
         {
+            name: 'linkType',
+            title: 'Link type',
+            type: 'string',
+            options: {
+                list: [
+                    {
+                        title: 'External',
+                        value: 'external',
+                    },
+                    {
+                        title: 'Internal',
+                        value: 'internal',
+                    },
+                ],
+            },
+        },
+        {
             name: 'to',
             title: 'To',
             type: 'reference',
             to: [{ type: 'story' }, { type: 'landingPage' }],
+            hidden: ({ parent }) => parent.linkType !== 'internal',
         },
         {
             name: 'hrefOverride',
@@ -25,6 +43,7 @@ export default {
             type: 'url',
             description:
                 'Use when linking externally. Will override any value in "to"',
+            hidden: ({ parent }) => parent.linkType !== 'external',
         },
     ],
 }

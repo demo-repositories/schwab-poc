@@ -122,4 +122,15 @@ export default {
             ],
         },
     ],
+    preview: {
+        select: {
+            title: 'title',
+        },
+        prepare({ title }) {
+            return {
+                title,
+                subtitle: 'Card deck',
+            }
+        },
+    },
 }

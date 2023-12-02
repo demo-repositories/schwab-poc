@@ -41,4 +41,15 @@ export default {
             validation: (rule: Rule) => rule.max(2),
         },
     ],
+    preview: {
+        select: {
+            title: 'title',
+        },
+        prepare({ title }) {
+            return {
+                title,
+                subtitle: 'Marquee',
+            }
+        },
+    },
 }

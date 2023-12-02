@@ -59,4 +59,15 @@ export default {
         // => discovery
         // => perspectives
     ],
+    preview: {
+        select: {
+            title: 'title',
+        },
+        prepare({ title }) {
+            return {
+                title,
+                subtitle: 'Query set',
+            }
+        },
+    },
 }

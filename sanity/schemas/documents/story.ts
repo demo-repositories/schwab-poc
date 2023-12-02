@@ -26,7 +26,7 @@ export default {
         },
         {
             name: 'summary',
-            type: 'string',
+            type: 'text',
             title: 'Summary',
         },
         {
@@ -94,9 +94,6 @@ export default {
                 },
                 {
                     type: 'table',
-                },
-                {
-                    type: 'bynderBlock',
                 },
             ],
             group: 'content',
