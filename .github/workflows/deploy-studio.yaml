@@ -24,13 +24,5 @@ jobs:
           cache-dependency-path: sanity/package-lock.json
       - name: Install dependencies
         run: npm install
-      - name: Cache output
-        id: cache-node-modules
-        uses: actions/cache@v3
-        with:
-          path: sanity/node_modules
-          key: node-modules-${{ hashFiles('sanity/package-lock.json') }}
-      - name: Install dependencies
-        run: npm install
       - name: Deploy to Sanity
         run: npm run deploy
