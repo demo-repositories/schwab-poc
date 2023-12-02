@@ -19,7 +19,7 @@ The 4 directories that make up this project are:
 └── .nvmrc
 ```
 
-The `/next` and `/sanity` directories each have their own `README` files that describe those projects more in depth
+The `/next` and `/sanity` directories each have their own `README` files that describe those projects more in depth.
 
 ### .vscode
 
