@@ -17,14 +17,18 @@ jobs:
           node-version: "18"
           cache: npm
       - name: Install dependencies
-        run: cd sanity
+        run: npm install
+        working-directory: ./sanity
       - name: Restore cache
         id: cache-node-modules
         uses: actions/cache@v3
         with:
           path: node_modules
+          working-directory: ./sanity
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
+        working-directory: ./sanity
         run: npm install
       - name: Deploy to Sanity
+        working-directory: ./sanity
         run: npm run deploy
