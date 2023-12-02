@@ -58,7 +58,7 @@ Overrides the default listing of items in the 'Content' tab of the studio.
 
 ### presentation
 
-Customizations for the new 'Presentation' tool
+Customizations for the new 'Presentation' tool.
 
 #### locate.ts
 
