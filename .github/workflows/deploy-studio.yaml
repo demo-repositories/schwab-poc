@@ -2,6 +2,8 @@ name: Deploy sanity studio
 on:
   push:
     branches: [main]
+    paths:
+      - sanity/**
 jobs:
   # Deploy job
   deploy:
@@ -22,12 +24,12 @@ jobs:
           cache-dependency-path: sanity/package-lock.json
       - name: Install dependencies
         run: npm install
-      - name: Restore cache
+      - name: Cache output
         id: cache-node-modules
         uses: actions/cache@v3
         with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+          path: sanity/node_modules
+          key: node-modules-${{ hashFiles('sanity/package-lock.json') }}
       - name: Install dependencies
         run: npm install
       - name: Deploy to Sanity
