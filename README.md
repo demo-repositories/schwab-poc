@@ -4,7 +4,7 @@ A single repository containing both the Sanity studio and NextJS front-end code.
 
 ## Running the project locally
 
-Thus far I've been opening 2 side-by-side terminals in VSCode, then running `npm install` and `npm run dev` in both. Ensure you create a `.env` file in `/next` that matches `.env.EXAMPLE`, but includes a read token you create in your project API settings at [sanity.io/manage](https://sanity.io/manage).
+Thus far I've been opening 2 side-by-side terminals in VSCode, then running `npm install` and `npm run dev` in both. Ensure you create `.env` files in `/next` and `/sanity` that match each directory's `.env.EXAMPLE`. For the Next `.env` file you'll need a read token you create in your project API settings at [sanity.io/manage](https://sanity.io/manage).
 
 ## Project structure
 

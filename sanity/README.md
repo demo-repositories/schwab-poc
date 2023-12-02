@@ -42,7 +42,7 @@ Components for rendering custom blocks in the portable text editor.
 
 #### SchwabLogo.tsx
 
-SVG ripped from the website, used as the workspace icon if we ever get into multiple workspaces
+SVG ripped from the website, used as the workspace icon if we ever get into multiple workspaces.
 
 ### desk
 
