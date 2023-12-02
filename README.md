@@ -12,6 +12,7 @@ The 4 directories that make up this project are:
 
 ```
 .
+├── .github/workflows
 ├── .vscode
 ├── example-data
 ├── next
@@ -20,6 +21,14 @@ The 4 directories that make up this project are:
 ```
 
 The `/next` and `/sanity` directories each have their own `README` files that describe those projects more in depth.
+
+### .github/workflows
+
+Home for YAML configuration files that trigger GitHub Actions.
+
+#### deploy-studio.yaml
+
+Deploys the Sanity Studio when changes are pushed to the `/sanity` directory on the `main` branch.
 
 ### .vscode
 
