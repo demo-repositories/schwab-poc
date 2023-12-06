@@ -13,9 +13,10 @@ type TParams = {
   _id: string;
 };
 export interface ISanityDataTableDocument extends ISanityDocument {
-  title: string;
-  caption: any[];
-  bynderAsset: any;
+  heading: string;
+  tableType: string;
+  tickers: string[];
+  columnHeaders: string[];
 }
 const componentData = async (params: TParams) =>
   await loadQuery<ISanityDataTableDocument>(query, params);

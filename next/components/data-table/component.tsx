@@ -7,17 +7,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { vercelStegaCleanAll } from "@sanity/client/stega";
 
 export default async function RenderDataTable(props) {
   const { tickers } = props;
-
-  const tickersString = tickers.join(",");
-  console.log("tickersstring", tickersString);
-  const url = `http://localhost:3000/api/stock-tickers?tickers=${tickersString}`;
-  console.log("url", url);
+  const url = `https://schwab-poc.sanity.build/api/stock-tickers`;
   const fetcheroo = await fetch(url, {
-    headers: { "Content-Type": "application/json" },
+    method: "POST",
+    body: JSON.stringify({ tickers: vercelStegaCleanAll(tickers) }),
   });
+  const { data } = await fetcheroo.json();
 
   return (
     <Table>

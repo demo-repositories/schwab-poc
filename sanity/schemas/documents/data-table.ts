@@ -1,9 +1,7 @@
 import { Table } from 'lucide-react'
 import TickerSearch from '../../components/inputs/ticker-search'
-const tickerList = () => {
-    return [{ title: '1', value: '1' }]
-}
 import data from '../../data/stock-tickers.json'
+
 export default {
     name: 'dataTable',
     title: 'Data table',
@@ -56,6 +54,7 @@ export default {
             name: 'columnHeaders',
             title: 'Column headers',
             type: 'array',
+            description: 'Ticker name will always be shown',
             of: [
                 {
                     type: 'string',

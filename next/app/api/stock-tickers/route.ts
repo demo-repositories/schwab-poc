@@ -1,9 +1,15 @@
 import tickerData from "../../../../sanity/data/stock-tickers.json";
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const tickers = searchParams.get("tickers")?.split(",");
+
+/**
+ * Fake API for data table to show how we can select attributes in Sanity that inform an API call on the front end.
+ */
+
+export async function POST(req: Request) {
+  const { tickers } = await req.json();
+
   const filteredData = tickerData.filter((item) => {
-    return tickers.includes(item.Symbol);
+    return tickers.indexOf(item.Symbol) !== -1;
   });
+
   return Response.json({ data: filteredData });
 }
