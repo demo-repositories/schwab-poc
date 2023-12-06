@@ -4,7 +4,7 @@ import DraftModeToggle from "./draft-mode-toggle";
  * Server component wrapper for DraftModeToggle to get draftMode header
  */
 
-export default function PreviewModeWrapper({}) {
+export default function PreviewModeToggle({}) {
   const isEnabled = draftMode().isEnabled;
 
   return (

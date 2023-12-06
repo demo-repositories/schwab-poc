@@ -10,8 +10,8 @@ export default function GSAPProvider({ children }) {
   const wrapperRef = useRef();
   useLayoutEffect(() => {
     // Only animate on certain paths
-    const animatedPaths = ["/landing-pages", "/story", "/"];
-    if (animatedPaths.indexOf(pathname) == -1) return;
+    // const animatedPaths = ["/landing-pages", "/story", "/"];
+    // if (animatedPaths.indexOf(pathname) == -1) return;
     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
     let ctx = gsap.context(() => {
       // Our animations can use selector text like ".box"

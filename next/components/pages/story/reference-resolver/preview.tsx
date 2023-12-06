@@ -9,6 +9,8 @@ export default function PreviewReferenceResolver({ value }) {
       return <PreviewDynamicCTA {...value} />;
     case "bynderBlock":
       return <PreviewBynderBlock {...value} />;
+    case "dataTable":
+      return <PreviewBynderBlock {...value} />;
     default:
       console.log("no component for this", value);
       return null;

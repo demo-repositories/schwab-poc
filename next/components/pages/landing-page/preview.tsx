@@ -23,9 +23,9 @@ export default function LandingPagePreview({
   const { data } = useQuery<ISanityLandingPageDocument>(query(slug), params, {
     initial,
   });
-  const { components } = data!;
+  const { components, taxonomy } = data!;
   return (
-    <LandingPage>
+    <LandingPage taxonomy={taxonomy}>
       {components &&
         components.map((component, i) => {
           switch (component.refType[0] || component._type) {

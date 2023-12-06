@@ -4,7 +4,6 @@ export default {
     type: 'object',
     options: {
         collapsible: true,
-        collapsed: true,
     },
     description:
         'Override for SEO and meta tags. Will automatically generate values from page content if left blank.',

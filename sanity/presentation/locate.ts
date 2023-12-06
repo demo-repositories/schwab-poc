@@ -12,7 +12,7 @@ export const locate: DocumentLocationResolver = (params, context) => {
         and all documents that reference it
       */
         const doc$ = context.documentStore.listenQuery(
-            `*[_id==$id || references($id)]{_type,slug,title}`,
+            `*[_id==$id || references($id)]{_type,slug,title,_id}`,
             params,
             { perspective: 'previewDrafts' }
         ) as Observable<
@@ -57,6 +57,7 @@ export const locate: DocumentLocationResolver = (params, context) => {
                 const pageLocations: Array<any> = generateLocations({
                     type: 'landingPage',
                 })
+                // Generate all the locations for page documents
 
                 return {
                     locations: [
@@ -71,6 +72,10 @@ export const locate: DocumentLocationResolver = (params, context) => {
                         pageLocations.length > 0 && {
                             title: 'All pages',
                             href: '/landing-pages',
+                        },
+                        {
+                            title: 'Component preview',
+                            href: '/component-preview',
                         },
                     ].filter(Boolean),
                 } satisfies DocumentLocationsState

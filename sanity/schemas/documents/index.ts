@@ -6,6 +6,7 @@ import cardDeck from './card-deck'
 import querySet from './query-set'
 import dynamicCta from './dynamic-cta'
 import bynderBlock from './bynder-block'
+import dataTable from './data-table'
 
 export default [
     story,
@@ -16,4 +17,5 @@ export default [
     querySet,
     dynamicCta,
     bynderBlock,
+    dataTable,
 ]

@@ -35,7 +35,7 @@ export default {
             title: 'To',
             type: 'reference',
             to: [{ type: 'story' }, { type: 'landingPage' }],
-            hidden: ({ parent }) => parent.linkType !== 'internal',
+            hidden: ({ parent }) => parent?.linkType !== 'internal',
         },
         {
             name: 'hrefOverride',
@@ -43,7 +43,7 @@ export default {
             type: 'url',
             description:
                 'Use when linking externally. Will override any value in "to"',
-            hidden: ({ parent }) => parent.linkType !== 'external',
+            hidden: ({ parent }) => parent?.linkType !== 'external',
         },
     ],
 }

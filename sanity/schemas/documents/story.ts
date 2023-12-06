@@ -90,7 +90,11 @@ export default {
                 },
                 {
                     type: 'reference',
-                    to: [{ type: 'dynamicCta' }, { type: 'bynderBlock' }],
+                    to: [
+                        { type: 'dynamicCta' },
+                        { type: 'bynderBlock' },
+                        { type: 'dataTable' },
+                    ],
                 },
                 {
                     type: 'table',
@@ -116,6 +120,7 @@ export default {
         {
             name: 'content',
             title: 'Content',
+            default: true,
         },
         {
             name: 'seo',

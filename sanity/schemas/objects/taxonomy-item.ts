@@ -110,7 +110,22 @@ export default {
 
     preview: {
         select: {
-            title: 'taxonomyAttribute.name',
+            subtitle: 'taxonomyAttribute.name',
+            term0: 'terms.0.name',
+            term1: 'terms.1.name',
+            term2: 'terms.2.name',
+            term3: 'terms.3.name',
+        },
+        prepare({ subtitle, term0, term1, term2, term3 }) {
+            const terms = [term0, term1, term2].filter(Boolean)
+            const hasMoreTerms = Boolean(term3)
+
+            const title = terms.length > 0 ? `${terms.join(', ')}` : ''
+
+            return {
+                title: hasMoreTerms ? `${title}...` : title,
+                subtitle: subtitle,
+            }
         },
     },
 }

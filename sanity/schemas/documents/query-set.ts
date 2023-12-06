@@ -15,6 +15,7 @@ export default {
             name: 'featuredContent',
             title: 'Featured content',
             type: 'reference',
+            description: '',
             to: [{ type: 'story' }, { type: 'landingPage' }],
         },
         {

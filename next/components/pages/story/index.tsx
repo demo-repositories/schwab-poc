@@ -4,6 +4,7 @@ import SanityImage from "@/components/sanity-image";
 import { ISanityPageDocument } from "@/lib/sanity/types";
 import { groq } from "next-sanity";
 import { PropsWithChildren } from "react";
+import TaxonomyInfo from "@/components/taxonomy-info";
 /**
  * Renders 'story' document type from Sanity.
  */
@@ -17,13 +18,14 @@ type TStoryProps = {
 };
 
 export const query = (slug: string) =>
-  groq`*[_type == "story" && slug.current == '${slug}'][0]{slug, title, summary, displayDate, _id, _type, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}, "refType":*[_id==^._ref]._type}, seoData{...,}}`;
+  groq`*[_type == "story" && slug.current == '${slug}'][0]{slug, title, summary, displayDate, _id, _type, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}, "refType":*[_id==^._ref]._type}, seoData{...,}, taxonomy[]{...,taxonomyAttribute->{name}, terms[]->{name, _id}}}`;
 
 export default function Story({
   data,
   children,
 }: PropsWithChildren<TStoryProps>) {
-  const { title, summary, featuredImage, content, displayDate } = data;
+  const { title, summary, featuredImage, content, displayDate, taxonomy } =
+    data;
   const dateString = displayDate
     ? new Date(displayDate).toLocaleDateString("en-US", {
         timeZone: "UTC",
@@ -51,6 +53,7 @@ export default function Story({
         </div>
       )}
       {children}
+      <TaxonomyInfo items={taxonomy} />
     </main>
   );
 }

@@ -7,10 +7,10 @@ import { table } from '@sanity/table'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { bynderInputPlugin } from 'sanity-plugin-bynder-input'
 import { schemaTypes } from './schemas'
-
 import { deskStructure } from './desk/deskStructure'
 import SchwabLogo from './components/SchwabLogo'
 import { locate } from './presentation/locate'
+import { defaultDocumentNode } from './desk/defaultDocumentNode'
 
 const SANITY_STUDIO_PREVIEW_URL =
     process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
@@ -23,6 +23,7 @@ export default defineConfig({
     plugins: [
         deskTool({
             structure: deskStructure,
+            defaultDocumentNode: defaultDocumentNode,
         }),
         presentationTool({
             // Required: set the base URL to the preview location in the front end

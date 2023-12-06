@@ -1,12 +1,13 @@
 import type { Rule } from 'sanity'
-import { LayoutTemplate } from 'lucide-react'
-import { PreviewDynamicCTA } from '../../components/preview/PreviewDynamicCTA'
+import { RectangleHorizontal } from 'lucide-react'
+import DynamicCTAIcon from '../../components/icons/dynamic-cta'
+// import { PreviewDynamicCTA } from '../../components/preview/PreviewDynamicCTA'
 
 export default {
     name: 'dynamicCta',
     type: 'document',
     title: 'Dynamic CTA',
-    icon: LayoutTemplate,
+    icon: DynamicCTAIcon,
     fields: [
         {
             name: 'heading',
@@ -21,13 +22,16 @@ export default {
             validation: (rule: Rule) => rule.required(),
         },
     ],
-    // preview: {
-    //     select: {
-    //         heading: 'heading',
-    //         buttonText: 'button.text',
-    //     },
-    // },
-    // components: {
-    //     preview: PreviewDynamicCTA,
-    // },
+    preview: {
+        select: {
+            title: 'heading',
+        },
+        prepare({ title }) {
+            return {
+                title: title,
+                subtitle: 'Dynamic CTA',
+                media: DynamicCTAIcon,
+            }
+        },
+    },
 }
