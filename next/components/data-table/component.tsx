@@ -14,8 +14,8 @@ export default function RenderDataTable(props) {
   const { tickers, columnHeaders } = props;
   const [data, setData] = useState();
   useEffect(() => {
-    const host = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
+    const host = process.env.NEXT_PUBLIC_VERCEL_URL
+      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
       : "http://localhost:3000";
     const url = `${host}/api/stock-tickers`;
 
