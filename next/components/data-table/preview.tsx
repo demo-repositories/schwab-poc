@@ -4,6 +4,7 @@ import Spinner from "@/components/spinner";
 import RenderDataTable from "./component";
 import query from "./query";
 import { ISanityDataTableDocument } from ".";
+import { Suspense } from "react";
 /**
  * Ultimately this goes in 'components/pages/story/reference-resolver/preview'
  */
@@ -15,5 +16,11 @@ export default function PreviewDataTable(props) {
     { _id: _ref },
     { initial: undefined },
   );
-  return loading ? <Spinner /> : <RenderDataTable {...data} />;
+  return loading ? (
+    <Spinner />
+  ) : (
+    <Suspense>
+      <RenderDataTable {...data} />
+    </Suspense>
+  );
 }
