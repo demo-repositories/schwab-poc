@@ -10,7 +10,7 @@ import { vercelStegaCleanAll } from "@sanity/client/stega";
 
 export default async function RenderDataTable(props) {
   const { tickers, columnHeaders } = props;
-  const host = process.env.VERCEL_URL || "http://localhost:3000";
+  const host = `https://${process.env.VERCEL_URL}` || "http://localhost:3000";
   const url = `${host}/api/stock-tickers`;
   const fetcheroo = await fetch(url, {
     method: "POST",
