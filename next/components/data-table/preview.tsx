@@ -8,7 +8,7 @@ import { ISanityDataTableDocument } from ".";
  * Ultimately this goes in 'components/pages/story/reference-resolver/preview'
  */
 
-export default function PreviewBynderBlock(props) {
+export default function PreviewDataTable(props) {
   const { _ref } = props;
   const { data, loading } = useQuery<ISanityDataTableDocument>(
     query,
