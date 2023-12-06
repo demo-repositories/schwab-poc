@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 
 export default function RenderDataTable(props) {
   const { tickers, columnHeaders } = props;
+  console.log("tickers", tickers);
   const [data, setData] = useState();
   useEffect(() => {
     // Could use process.env.NEXT_PUBLIC_VERCEL_URL
@@ -27,6 +28,7 @@ export default function RenderDataTable(props) {
         body: JSON.stringify({ tickers: vercelStegaCleanAll(tickers) }),
       });
       const res = await fetchReq.json();
+      console.log("res.data", res.data);
       setData(res.data);
     }
     fetchData();

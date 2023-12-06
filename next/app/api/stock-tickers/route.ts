@@ -10,6 +10,12 @@ export async function POST(req: Request) {
   const filteredData = tickerData.filter((item) => {
     return tickers.indexOf(item.Symbol) !== -1;
   });
-
-  return Response.json({ data: filteredData });
+  const returnedData = [];
+  for (let i = 0; i < tickers.length; i++) {
+    const tickerItem = filteredData.filter(
+      (item) => item.Symbol === tickers[i],
+    )[0];
+    returnedData[i] = tickerItem;
+  }
+  return Response.json({ data: returnedData });
 }
