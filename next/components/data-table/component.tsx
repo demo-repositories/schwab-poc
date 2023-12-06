@@ -14,9 +14,11 @@ export default function RenderDataTable(props) {
   const { tickers, columnHeaders } = props;
   const [data, setData] = useState();
   useEffect(() => {
-    const host = process.env.NEXT_PUBLIC_VERCEL_URL
-      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-      : "http://localhost:3000";
+    // Could use process.env.NEXT_PUBLIC_VERCEL_URL
+    const host =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000"
+        : "https://schwab-poc.sanity.build";
     const url = `${host}/api/stock-tickers`;
 
     async function fetchData() {
