@@ -9,8 +9,10 @@ export default {
     icon: Table,
     fields: [
         {
-            name: 'heading',
-            title: 'Heading',
+            name: 'title',
+            title: 'Title',
+            description:
+                'Used to help identify the table internally. To add text above the table add headings in the Portable Text editor.',
             type: 'string',
         },
         {
@@ -84,4 +86,16 @@ export default {
         //     hidden: ({ parent }) => parent?.linkType !== 'external',
         // },
     ],
+    preview: {
+        select: {
+            title: 'title',
+        },
+        prepare({ title }) {
+            return {
+                title: title,
+                subtitle: 'Data table',
+                media: Table,
+            }
+        },
+    },
 }

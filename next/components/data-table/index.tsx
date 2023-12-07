@@ -3,9 +3,7 @@ import query from "./query";
 import { ISanityDocument } from "@/lib/sanity/types";
 import RenderDataTable from "./component";
 /**
- * Maps to the 'dataTable' object type in Sanity.
- *
- * Gets pulled into 'CustomPortableText'
+ * Maps to the 'dataTable' object type in Sanity, gets pulled into 'CustomPortableText'
  */
 
 // Params for query
@@ -13,7 +11,6 @@ type TParams = {
   _id: string;
 };
 export interface ISanityDataTableDocument extends ISanityDocument {
-  heading: string;
   tableType: string;
   tickers: string[];
   columnHeaders: string[];

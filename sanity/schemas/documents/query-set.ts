@@ -15,7 +15,8 @@ export default {
             name: 'featuredContent',
             title: 'Featured content',
             type: 'reference',
-            description: '',
+            description:
+                'Select content to show in the main spot on the component',
             to: [{ type: 'story' }, { type: 'landingPage' }],
         },
         {
@@ -30,20 +31,20 @@ export default {
             of: [
                 {
                     type: 'string',
-                    options: {
-                        list: [
-                            {
-                                title: 'Story',
-                                value: 'story',
-                            },
-                            {
-                                title: 'Landing page',
-                                value: 'landingPage',
-                            },
-                        ],
-                    },
                 },
             ],
+            options: {
+                list: [
+                    {
+                        title: 'Story',
+                        value: 'story',
+                    },
+                    {
+                        title: 'Landing page',
+                        value: 'landingPage',
+                    },
+                ],
+            },
         },
         {
             name: 'taxonomyFilters',

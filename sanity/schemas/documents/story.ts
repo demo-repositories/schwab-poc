@@ -28,11 +28,13 @@ export default {
             name: 'summary',
             type: 'text',
             title: 'Summary',
+            group: 'content',
         },
         {
             name: 'displayDate',
             title: 'Display date',
             type: 'date',
+            group: 'content',
         },
         {
             name: 'featuredImage',
@@ -68,6 +70,7 @@ export default {
                     },
                 ],
             },
+            group: 'content',
         },
         {
             name: 'content',

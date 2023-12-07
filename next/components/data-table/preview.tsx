@@ -9,7 +9,7 @@ import { Suspense } from "react";
  * Ultimately this goes in 'components/pages/story/reference-resolver/preview'
  */
 
-export default function PreviewDataTable(props) {
+export default function PreviewDataTable(props: { _ref: string }) {
   const { _ref } = props;
   const { data, loading } = useQuery<ISanityDataTableDocument>(
     query,

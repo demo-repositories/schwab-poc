@@ -45,7 +45,7 @@ export default async function LandingPagePage({ params }: PageParams) {
   const initial = await pageData(slug);
   // 404 if no document in Sanity.
   // This can be done more granularly with the app router, but for now general 404 behavior
-  if (!initial.data) {
+  if (slug == "home" || !initial.data) {
     notFound();
   }
 

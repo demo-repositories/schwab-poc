@@ -22,8 +22,8 @@ export type TButtonProps = {
   _id?: string;
   _key?: string;
   text?: string;
-  to: TToObject;
-  hrefOverride?: URL;
+  to?: TToObject;
+  hrefOverride?: string;
   children?: ReactNode;
   colorOverride?: {
     background: string;

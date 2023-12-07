@@ -1,13 +1,14 @@
 import DocumentCards from "@/components/document-cards";
 import { groq } from "next-sanity";
+import { ISanityStoryDocument } from "./story";
 
 /**
  * List page for all 'story' documents
  */
 
-export const query = groq`*[_type == "story" && slug.current != null] | order(_updatedAt){title, slug, summary, featuredImage, _id, _type, _updatedAt}`;
+export const query = groq`*[_type == "story" && slug.current != null && displayDate != null] | order(displayDate desc){title, slug, summary, featuredImage, _id, _type, displayDate}`;
 
-export default function Stories({ data }: { data: number }) {
+export default function Stories({ data }: { data: ISanityStoryDocument[] }) {
   return (
     <main className="mx-auto mt-5 max-w-7xl px-5 xl:px-0">
       <section>

@@ -8,29 +8,44 @@ import {
 } from "@/components/ui/card";
 import SanityImage from "./sanity-image";
 import Button from "./button";
+import { ISanityStoryDocument } from "./pages/story";
+import { ISanityLandingPageDocument } from "./pages/landing-page";
 
 /**
  * Used in both document type list pages to show the available documents.
  */
 
-type TDocumentCards = {
-  _id: string;
-  title: string;
-  summary: string;
-  featuredImage: any;
-  _updatedAt?: string;
-  slug: {
-    current: string;
-  };
-  _type: string;
-};
-export default function DocumentCards({ cards }: { cards: TDocumentCards[] }) {
+// type TDocumentCards = {
+//   _id: string;
+//   title: string;
+//   summary: string;
+//   featuredImage: any;
+//   _updatedAt?: string;
+//   slug: {
+//     current: string;
+//   };
+//   _type: string;
+// };
+export default function DocumentCards({
+  cards,
+}: {
+  cards: (ISanityStoryDocument | ISanityLandingPageDocument)[];
+}) {
   const gridCols = cards.length >= 4 ? `grid-cols-4` : `grid-cols-3`;
   return (
     <div className={`my-4 auto-rows-fr ${gridCols} gap-4 lg:grid`}>
       {cards &&
         cards.map(
-          ({ _id, title, summary, featuredImage, slug, _type, _updatedAt }) => (
+          ({
+            _id,
+            title,
+            summary,
+            featuredImage,
+            slug,
+            _type,
+            displayDate,
+            _updatedAt,
+          }) => (
             <Card key={_id} className="mb-4 grid-rows-2 gap-0 lg:mb-0 lg:grid">
               <CardHeader>
                 <SanityImage
@@ -42,9 +57,9 @@ export default function DocumentCards({ cards }: { cards: TDocumentCards[] }) {
               <CardContent>
                 <CardTitle className="mb-2">{title}</CardTitle>
                 <CardDescription>
-                  {_updatedAt && (
+                  {(displayDate || _updatedAt) && (
                     <small className="block">
-                      {new Date(_updatedAt).toLocaleDateString()}
+                      {new Date(displayDate || _updatedAt).toLocaleDateString()}
                     </small>
                   )}
                   {summary}

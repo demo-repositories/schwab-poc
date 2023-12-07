@@ -20,7 +20,7 @@ export function RenderCardDeck({
           <h2 className="text-2xl font-extrabold tracking-tight">{title}</h2>
         )}
       </div>
-      <div className="cards-wrapper grid auto-rows-fr grid-cols-3 gap-3">
+      <div className="cards-wrapper auto-rows-fr grid-cols-3 gap-3 md:grid">
         {cards &&
           cards.map((card) => {
             switch (vercelStegaCleanAll(cardType)) {
