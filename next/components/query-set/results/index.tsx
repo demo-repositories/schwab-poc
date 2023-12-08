@@ -19,9 +19,14 @@ export default async function Results({
   params: TResultsDataParams;
 }) {
   const { contentTypes, taxonomyFilters } = params;
+  // console.log("taxonomyFilters", taxonomyFilters);
+  // const attributes = taxonomyFilters?.map(
+  //   ({ taxonomyAttribute }) => taxonomyAttribute._id,
+  // );
 
   const initial = await resultsData({
     contentTypes: vercelStegaCleanAll(contentTypes), // I spent like 30 minutes missing this cleanAll thing
+    // taxonomyFilters: vercelStegaCleanAll(attributes),
   });
   return <RenderResults results={...initial.data} />;
 }

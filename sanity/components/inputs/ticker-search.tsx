@@ -1,6 +1,5 @@
-import { useCallback, useEffect } from 'react'
-import { set, unset } from 'sanity'
-import { Card, Autocomplete, Stack, Text, Box } from '@sanity/ui'
+import { set } from 'sanity'
+import { Autocomplete, Stack, Box } from '@sanity/ui'
 import { SearchIcon } from 'lucide-react'
 import data from '../../data/stock-tickers.json'
 

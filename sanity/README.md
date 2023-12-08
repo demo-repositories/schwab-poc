@@ -105,3 +105,12 @@ For content icons in the studio you can pass any React component. Sanity exposes
 -   [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
 -   [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
 -   [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+
+## Continuous deployment
+
+At the top level of this repository is a `.github/workflows` directory with a file `deploy-studio.yaml`. This is a [GitHub action](https://docs.github.com/en/actions) that will re-deploy the studio when:
+
+-   Changes are pushed to main AND
+-   Files in the `/sanity` directory are part of the change
+
+These settings can of course be adjusted in the YAML file.

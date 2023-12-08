@@ -11,6 +11,7 @@ jobs:
     defaults:
       run:
         working-directory: ./sanity
+    # Secrets stored in GitHub repo settings
     env:
       SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
       SANITY_STUDIO_PREVIEW_URL: ${{ secrets.SANITY_STUDIO_PREVIEW_URL}}
@@ -22,6 +23,7 @@ jobs:
         with:
           node-version: "18"
           cache: npm
+          # Doesn't respect working-directory above so pass full path
           cache-dependency-path: sanity/package-lock.json
       - name: Install dependencies
         run: npm install
