@@ -13,7 +13,7 @@ jobs:
         working-directory: ./sanity
     # Secrets stored in GitHub repo settings
     env:
-      SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
+      SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
       SANITY_STUDIO_PREVIEW_URL: ${{ secrets.SANITY_STUDIO_PREVIEW_URL}}
       SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID}}
     steps:
