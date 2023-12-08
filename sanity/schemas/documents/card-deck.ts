@@ -1,6 +1,21 @@
-import { Component, LayoutGrid } from 'lucide-react'
+import { Component, LayoutGrid, Image } from 'lucide-react'
+import { CardTypeInput } from '../../components/inputs/card-type'
 import Sup from '../../components/preview/Sup'
 
+export const cardTypes = [
+    {
+        title: 'Icon card',
+        value: 'iconCard',
+        description: 'Icon | Header | Body all centered',
+        icon: Image,
+    },
+    {
+        title: 'CTA card',
+        value: 'ctaCard',
+        description: 'Color background with CTA',
+        icon: Component,
+    },
+]
 export default {
     name: 'cardDeck',
     title: 'Card deck',
@@ -18,17 +33,10 @@ export default {
             title: 'Card type',
             type: 'string',
             options: {
-                list: [
-                    {
-                        title: 'Icon card',
-                        value: 'iconCard',
-                    },
-                    {
-                        title: 'CTA card',
-                        value: 'ctaCard',
-                    },
-                ],
+                list: cardTypes,
+                layout: 'radio',
             },
+            components: { input: CardTypeInput },
         },
         {
             name: 'ctaText',
