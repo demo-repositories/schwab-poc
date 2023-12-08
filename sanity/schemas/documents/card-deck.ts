@@ -1,4 +1,5 @@
-import { Component, LayoutGrid, Image } from 'lucide-react'
+import { Component, LayoutGrid, Image, MousePointerSquare } from 'lucide-react'
+
 import { CardTypeInput } from '../../components/inputs/card-type'
 import Sup from '../../components/preview/Sup'
 
@@ -13,7 +14,7 @@ export const cardTypes = [
         title: 'CTA card',
         value: 'ctaCard',
         description: 'Color background with CTA',
-        icon: Component,
+        icon: MousePointerSquare,
     },
 ]
 export default {

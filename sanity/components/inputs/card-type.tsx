@@ -15,12 +15,12 @@ export function CardTypeInput(props: StringInputProps) {
                     mode={value === plan.value ? `default` : `ghost`}
                     tone={value === plan.value ? `primary` : `default`}
                 >
-                    <Stack space={3} padding={2}>
+                    <Stack space={3} padding={1}>
                         <Text size={4} align="right">
                             {createElement(plan.icon)}
                         </Text>
                         <Label>{plan.title}</Label>
-                        <Text>{plan.description}</Text>
+                        <Text size={1}>{plan.description}</Text>
                     </Stack>
                 </Button>
             ))}
