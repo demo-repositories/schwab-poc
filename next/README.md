@@ -22,6 +22,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 A few things you'll see pop up throughout this codebase that may be helpful to be familiar with.
 
+### @sanity/overlays, @sanity/react-loader, and @vercel/stega
+
+These 2 packages are used
+
 ### shadcn/ui
 
 [shadcn/ui](https://ui.shadcn.com/) is used for various UI elements. `components/ui`, `lib/utils.ts`, and `components.json` all contribute to making those components work.
@@ -162,7 +166,7 @@ Creates an instance of @sanity/react-loader for querying Content Lake with GROQ 
 
 #### sanity/types.ts
 
-Shared types from Sanity that don't have a logical home in another file.
+Shared types from Sanity that don't have a logical home in another file. Most other Sanity-specific types live in the component file they end up rendered in.
 
 #### twColor.ts
 
@@ -182,8 +186,25 @@ As you might expect, but includes theme information + variables.
 
 ## Previewing "addressable" components in Sanity's Presentation tool
 
+- [Docs on Sanity loaders and overlays](https://www.sanity.io/docs/loaders-and-overlays)
+
 ### Concept / How previewing works with Presentation
 
-### Diagram
+Each top-level 'page' needs 2 versions of itself if using Sanity's Presentation tool with Next's app router and RSCs.
+
+1. The 'main' RSC version used in production and developed like any other NextJS page component.
+2. A 'preview' client component that replaces and takes over the data fetching for the page when being used in Presentation.
+
+#### Non-addressable child RSCs
+
+If the child components of your page are 'normal' RSCs that do not need to fetch their own data (marquee is an example in this repo), there's no other work to be done to get them to work with Presentation. The top-level page component will pass preview data as-is.
+
+#### Addressable child RSCs
+
+If a child RSC to your page fetches its own data from Sanity and you want to be able to edit that component in Presentation, you need to follow a similar approach to the top-level page component, where 2 different versions of data fetching are used based on the context the component is in.
+
+The diagram below shows in more detail how this is implemented, but the bynder block, card deck, data table, dynamic cta, and query set components are all examples using this structure. Query set also happens to show an addressable RSC in an addressable RSC.
+
+##### Diagram
 
 Here's a diagram showing how to structure your components to enable the previewing of nested RSCs that fetch their own data (as is done in this app.)[Diagram](https://link.excalidraw.com/l/1zdJlrqwKLw/7t0bkT84VcA)

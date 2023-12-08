@@ -10,9 +10,7 @@ export async function GET(request: Request) {
   draftMode().disable();
 
   if (!path) {
-    return new Response(
-      "Draft mode is disabled, but no redirect path specified",
-    );
+    return redirect("/");
   } else {
     return redirect(path);
   }
