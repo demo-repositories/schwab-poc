@@ -93,9 +93,11 @@ export default {
                 },
                 {
                     type: 'reference',
+                    title: 'Shared block',
+                    icon: undefined,
                     to: [
-                        { type: 'dynamicCta' },
                         { type: 'bynderBlock' },
+                        { type: 'dynamicCta' },
                         { type: 'dataTable' },
                     ],
                 },
