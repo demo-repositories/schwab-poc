@@ -30,6 +30,8 @@ Home for YAML configuration files that trigger GitHub Actions.
 
 Deploys the Sanity Studio when changes are pushed to the `/sanity` directory on the `main` branch.
 
+If you want to use this action you need to add secrets from `./sanity/.env` to GitHub for the Studio to build.
+
 ### .vscode
 
 A `settings.json` file for linting and formatting on save. Feel free to delete/modify to match the Schwab team's preferences.
