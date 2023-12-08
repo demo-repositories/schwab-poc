@@ -7,8 +7,9 @@ Congratulations, you have now installed the Sanity Content Studio, an open sourc
 You should be able to:
 
 1. `cd sanity` from the project root
-2. `npm install`
-3. Open your studio at [http://localhost:3333/structure](http://localhost:3333/structure)
+2. Create a `.env` file with the appropriate values if you haven't already
+3. `npm install`
+4. Open your studio at [http://localhost:3333/structure](http://localhost:3333/structure)
 
 ## Deployment
 

@@ -47,7 +47,9 @@ export default defineConfig({
         unsplashImageAsset(),
         // Get any asset from bynder
         bynderInputPlugin({
-            portalDomain: 'https://wave-trial.getbynder.com/',
+            portalDomain:
+                process.env.BYNDER_PORTAL_DOMAIN ||
+                'https://wave-trial.getbynder.com/',
         }),
         // Allow scheduled publishing
         scheduledPublishing(),

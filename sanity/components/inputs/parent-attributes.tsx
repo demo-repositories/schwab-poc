@@ -6,7 +6,7 @@ import { createClient } from '@sanity/client'
  * Used to show additional info on taxonomyTerm documents
  */
 const client = createClient({
-    projectId: 'fvuvea00',
+    projectId: process.env.SANITY_PROJECT_ID,
     dataset: 'production',
 })
 
