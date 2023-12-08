@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { ObjectInputProps } from 'sanity'
-import { Stack, Card, Label, Flex, Box, Text } from '@sanity/ui'
+import { Stack, Card, Text } from '@sanity/ui'
 import { createClient } from '@sanity/client'
+
 const client = createClient({
     projectId: 'fvuvea00',
     dataset: 'production',
 })
+
 export default function ParentAttributes(props: ObjectInputProps) {
     const [data, setData] = useState([])
     const {
@@ -18,14 +20,13 @@ export default function ParentAttributes(props: ObjectInputProps) {
                     `*[_type=='taxonomyAttribute' && $_id in values[]._ref]{values[]{...,}, _id, name}`,
                     { _id }
                 )
-                console.log('data', data)
+
                 setData(data)
             }
             getData()
         }
     }, [])
 
-    console.log('component props', props)
     return (
         <>
             <Stack marginBottom={5}>{props.renderDefault(props)}</Stack>

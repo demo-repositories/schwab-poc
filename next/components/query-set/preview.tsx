@@ -22,7 +22,12 @@ export default function PreviewQuerySet(props) {
     <Spinner />
   ) : (
     <RenderQuerySet {...data}>
-      <PreviewResults params={{ contentTypes: data.contentTypes }} />
+      <PreviewResults
+        params={{
+          contentTypes: data.contentTypes,
+          taxonomyFilters: data.taxonomyFilters,
+        }}
+      />
     </RenderQuerySet>
   );
 }

@@ -5,6 +5,7 @@ import RenderResults from "./component";
 import query from "./query";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
 import type { TResultsDataParams } from ".";
+import { Suspense } from "react";
 /**
  * Client-side version of queryset component to enable Presentation in Sanity.
  *
@@ -16,7 +17,7 @@ export default function PreviewResults({
 }: {
   params: TResultsDataParams;
 }) {
-  const { contentTypes } = params;
+  const { contentTypes, taxonomyFilters } = params;
 
   const { data, loading } = useQuery(
     query,
@@ -24,5 +25,11 @@ export default function PreviewResults({
     { initial: undefined },
   );
 
-  return loading ? <Spinner /> : <RenderResults results={...data} />;
+  return loading ? (
+    <Spinner />
+  ) : (
+    <Suspense>
+      <RenderResults results={...data} taxonomyFilters={taxonomyFilters} />
+    </Suspense>
+  );
 }

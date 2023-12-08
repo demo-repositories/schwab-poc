@@ -28,5 +28,10 @@ export default async function Results({
     contentTypes: vercelStegaCleanAll(contentTypes), // I spent like 30 minutes missing this cleanAll thing
     // taxonomyFilters: vercelStegaCleanAll(attributes),
   });
-  return <RenderResults results={...initial.data} />;
+  return (
+    <RenderResults
+      results={...initial.data}
+      taxonomyFilters={taxonomyFilters}
+    />
+  );
 }
