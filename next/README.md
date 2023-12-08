@@ -24,7 +24,13 @@ A few things you'll see pop up throughout this codebase that may be helpful to b
 
 ### @sanity/overlays, @sanity/react-loader, and @vercel/stega
 
-These 2 packages are used
+#### react-loader
+
+The main way our app talks to Sanity. Has helpers for both RSC and client-side fetching. Ends up in `/lib/sanity/store.ts`
+
+#### overlays and @vercel/stega
+
+Used together to enable [Presentation](https://www.sanity.io/docs/presentation) for content editors.
 
 ### shadcn/ui
 
@@ -207,4 +213,4 @@ The diagram below shows in more detail how this is implemented, but the bynder b
 
 ##### Diagram
 
-Here's a diagram showing how to structure your components to enable the previewing of nested RSCs that fetch their own data (as is done in this app.)[Diagram](https://link.excalidraw.com/l/1zdJlrqwKLw/7t0bkT84VcA)
+Here's a diagram showing how to structure your components to enable the previewing of nested RSCs that fetch their own data (as is done in this app.) [Diagram](https://link.excalidraw.com/l/1zdJlrqwKLw/7t0bkT84VcA)
