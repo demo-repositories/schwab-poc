@@ -3,6 +3,10 @@ import { Autocomplete, Stack, Box } from '@sanity/ui'
 import { SearchIcon } from 'lucide-react'
 import data from '../../data/stock-tickers.json'
 
+/**
+ * Used to provide options to dataTable's 'tickers' field
+ */
+
 export default function TickerSearch(props) {
     const { value, elementProps, onChange } = props
 
@@ -27,12 +31,6 @@ export default function TickerSearch(props) {
                 />
             </Box>
 
-            {/* <Container>
-                {value &&
-                    value.map((item) => {
-                        return <Text key={item}>{item}</Text>
-                    })}
-            </Container> */}
             {props.renderDefault(props)}
         </Stack>
     )

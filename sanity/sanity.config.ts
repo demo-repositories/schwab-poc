@@ -13,8 +13,10 @@ import { locate } from './presentation/locate'
 import { defaultDocumentNode } from './desk/defaultDocumentNode'
 import ParentAttributes from './components/inputs/parent-attributes'
 
+// URL to be used for previewing in presentation
 const SANITY_STUDIO_PREVIEW_URL =
     process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
+
 export default defineConfig({
     name: 'default',
     title: 'Schwab POC',
@@ -23,6 +25,7 @@ export default defineConfig({
     dataset: 'production',
     plugins: [
         deskTool({
+            // Override the layout of our studio and the document editor
             structure: deskStructure,
             defaultDocumentNode: defaultDocumentNode,
         }),
@@ -36,12 +39,17 @@ export default defineConfig({
             },
             locate,
         }),
+        // GROQ query sandbox
         visionTool(),
+        // Table type used in stories
         table(),
+        // Get images from unsplash
         unsplashImageAsset(),
+        // Get any asset from bynder
         bynderInputPlugin({
             portalDomain: 'https://wave-trial.getbynder.com/',
         }),
+        // Allow scheduled publishing
         scheduledPublishing(),
     ],
     document: {
@@ -52,9 +60,11 @@ export default defineConfig({
     schema: {
         types: schemaTypes,
     },
+    // Alternate way to override default document editor UI. Used for 'taxonomyTerm'
     form: {
         components: {
             input: (props) => {
+                // Override root document component for taxonomyTerms
                 if (
                     props.id === 'root' &&
                     props.schemaType.type?.name === 'document' &&
@@ -62,7 +72,7 @@ export default defineConfig({
                 ) {
                     return ParentAttributes(props)
                 }
-
+                // All other documents do the default
                 return props.renderDefault(props)
             },
         },

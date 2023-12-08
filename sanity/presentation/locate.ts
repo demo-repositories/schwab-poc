@@ -1,10 +1,11 @@
-// locate.ts
 import {
     DocumentLocationResolver,
     DocumentLocationsState,
 } from 'sanity/presentation'
 import { map, Observable } from 'rxjs'
-
+/**
+ * Tell Sanity's presentation tool where our documents live on the front-end
+ */
 export const locate: DocumentLocationResolver = (params, context) => {
     /* 
         Listen to all changes in the selected document 
@@ -23,7 +24,7 @@ export const locate: DocumentLocationResolver = (params, context) => {
           }[]
         | null
     >
-    // pipe the real-time results to RXJS's map function
+    // Pipe the real-time results to RXJS's map function
     return doc$.pipe(
         map((docs) => {
             if (!docs) {
@@ -49,7 +50,6 @@ export const locate: DocumentLocationResolver = (params, context) => {
                         href: hrefLookup({ type, slug }),
                     }))
 
-            const pageTypes = ['story', 'landingPage']
             // Generate all the locations for story documents
             const storyLocations = generatePageLocations({ type: 'story' })
 
@@ -57,36 +57,12 @@ export const locate: DocumentLocationResolver = (params, context) => {
             const pageLocations: Array<any> = generatePageLocations({
                 type: 'landingPage',
             })
-            // Generate component preview locations
-            // const componentLocations: Array<any> = docs
-            //     .filter(({ _type }) => !pageTypes.includes(_type))
-            //     .map(({ _id, title }) => ({
-            //         title: title || 'Title missing',
-            //         href: `/component-preview/${_id.replace(
-            //             'drafts.',
-            //             ''
-            //         )}`,
-            //     }))
 
             return {
-                locations: [
-                    ...storyLocations,
-                    ...pageLocations,
-                    // Add a link to the "All stories" page when there are story documents
-                    // storyLocations.length > 0 && {
-                    //     title: 'All stories',
-                    //     href: '/story',
-                    // },
-                    // Add a link to the "All pages" page when there are landing page documents
-                    // pageLocations.length > 0 && {
-                    //     title: 'All pages',
-                    //     href: '/landing-pages',
-                    // },
-                    // ...componentLocations,
-                ].filter(Boolean),
+                locations: [...storyLocations, ...pageLocations].filter(
+                    Boolean
+                ),
             } satisfies DocumentLocationsState
         })
     )
-
-    // return null
 }

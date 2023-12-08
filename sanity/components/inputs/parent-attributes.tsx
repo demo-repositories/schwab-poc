@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { ObjectInputProps } from 'sanity'
 import { Stack, Card, Text } from '@sanity/ui'
 import { createClient } from '@sanity/client'
-
+/**
+ * Used to show additional info on taxonomyTerm documents
+ */
 const client = createClient({
     projectId: 'fvuvea00',
     dataset: 'production',

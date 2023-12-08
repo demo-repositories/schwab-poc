@@ -1,3 +1,6 @@
+/**
+ * Used to confirm a slug is unique
+ */
 export async function isUniqueAcrossAllDocuments(slug, context) {
     const { document, getClient } = context
     const { _type } = document

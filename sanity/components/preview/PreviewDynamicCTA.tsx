@@ -1,7 +1,9 @@
 import type { PreviewProps } from 'sanity'
 import { Card, Text, Heading, Button, Flex, Container } from '@sanity/ui'
 /**
- * Used for showing an approximate recreation of the Dynamic CTA block in the portable text editor
+ * Used for showing an approximate recreation of the Dynamic CTA block in the portable text editor.
+ *
+ * Currently not being used but shows how component previews could be done in Portable text
  */
 interface IPreviewDynamicCTA extends PreviewProps {
     heading: string
