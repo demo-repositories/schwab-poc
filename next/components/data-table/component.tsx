@@ -40,7 +40,7 @@ export default function RenderDataTable(props: ISanityDataTableDocument) {
     const host =
       process.env.NODE_ENV === "development"
         ? "http://localhost:3000"
-        : "https://schwab-poc.sanity.build";
+        : "https://sanity-cs-poc.sanity.build";
     const url = `${host}/api/stock-tickers`; // Custom endpoint for our API
 
     // Get data from our 'fake' API and set it as state

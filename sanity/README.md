@@ -10,6 +10,12 @@ You should be able to:
 2. `npm install`
 3. Open your studio at [http://localhost:3333/structure](http://localhost:3333/structure)
 
+## Deployment
+
+The studio is automatically deployed whenever files in this directory are changed on the `main` branch.
+
+[Deployed studio](https://sanity-cs-poc.sanity.studio/structure)
+
 ## Project structure
 
 ```
