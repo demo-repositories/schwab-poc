@@ -22,7 +22,7 @@ export default async function HomePage() {
   );
 
   return (
-    <main className="mx-auto mb-12 mt-5 max-w-7xl px-5 xl:px-0">
+    <main className="mx-auto mb-12 mt-5 max-w-7xl px-5 2xl:px-0">
       <Marquee {...marquee} />
       <Stories data={storiesData.data} />
       <LandingPages data={landingPagesData.data} />

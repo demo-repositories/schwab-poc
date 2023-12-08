@@ -39,7 +39,7 @@ export default function Navbar({}) {
     },
   ];
   return (
-    <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-7 xl:px-0">
+    <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-7 2xl:px-0">
       <Link
         href="/"
         className="flex h-[24px] items-center justify-between lg:h-[36px]"
