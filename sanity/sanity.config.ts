@@ -21,7 +21,7 @@ export default defineConfig({
     name: 'default',
     title: 'Schwab POC',
     icon: SchwabLogo,
-    projectId: process.env.SANITY_PROJECT_ID || 'fvuvea00',
+    projectId: 'fvuvea00',
     dataset: 'production',
     plugins: [
         deskTool({

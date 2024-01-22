@@ -6,8 +6,10 @@ import { createClient } from '@sanity/client'
  * Used to show additional info on taxonomyTerm documents
  */
 const client = createClient({
-    projectId: process.env.SANITY_PROJECT_ID,
+    projectId: 'fvuvea00',
     dataset: 'production',
+    useCdn: false,
+    apiVersion: '2023-11-01',
 })
 
 export default function ParentAttributes(props: ObjectInputProps) {

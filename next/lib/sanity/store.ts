@@ -16,7 +16,6 @@ const client = createClient({
   apiVersion: "2023-11-01",
   useCdn: true,
   perspective: "published",
-
   // The 'stega' object groups stega-specific options
   stega: {
     enabled: true, // TODO: hard-coded to true but should be set to STEGA_ENABLED before going live

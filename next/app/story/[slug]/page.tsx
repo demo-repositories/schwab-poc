@@ -17,10 +17,10 @@ export async function generateMetadata({
 }: PageParams): Promise<Metadata> {
   const { slug } = params;
   const { data } = await pageData(slug);
-  const { seoData, title, summary } = data;
+  const { title, summary } = data;
   const metadata = { title, description: summary };
-  if (seoData) {
-    seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
+  if (data.seoData) {
+    data.seoData.tags.forEach(({ tag, value }) => (metadata[tag] = value));
   }
 
   return metadata;
