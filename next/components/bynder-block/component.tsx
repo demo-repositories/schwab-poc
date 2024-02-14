@@ -15,19 +15,20 @@ export default function RenderBynderBlock({
   caption,
   bynderAsset,
 }: ISanityBynderBlockDocument) {
-  const { previewImg, aspectRatio } = bynderAsset;
   const imgWidth = 400;
   const fileURL = "/"; // this doesn't come back from Sanity's test space
   return (
     <section className="mx-auto my-7 flex max-w-7xl justify-center">
       <div className="block-wrapper items-center justify-between gap-9 bg-accent p-7 md:flex">
-        <Image
-          src={previewImg}
-          layout="constrained"
-          width={imgWidth}
-          height={imgWidth * aspectRatio}
-          alt={"Image of file available for download"}
-        />
+        {bynderAsset && bynderAsset.previewImg && (
+          <Image
+            src={bynderAsset.previewImg}
+            layout="constrained"
+            width={imgWidth}
+            height={imgWidth * bynderAsset.aspectRatio}
+            alt={"Image of file available for download"}
+          />
+        )}
         <div>
           <h3 className="mb-3 mt-5 text-2xl font-bold tracking-tight lg:mt-0">
             {title}

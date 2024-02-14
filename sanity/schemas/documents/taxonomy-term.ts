@@ -18,7 +18,7 @@ export default {
             type: 'slug',
             options: {
                 source: 'name',
-                isUnique: isUniqueAcrossAllDocuments,
+                // isUnique: isUniqueAcrossAllDocuments,
             },
         },
     ],
