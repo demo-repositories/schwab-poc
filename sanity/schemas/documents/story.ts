@@ -21,7 +21,7 @@ export default {
             options: {
                 source: 'title',
             },
-            validation: (rule: Rule) => rule.required(),
+            // validation: (rule: Rule) => rule.required(),
             group: 'content',
         },
         {
