@@ -8,6 +8,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    taint: true,
+  },
 };
 
 module.exports = nextConfig;

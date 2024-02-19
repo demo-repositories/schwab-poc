@@ -1,4 +1,4 @@
-import { createClient } from "next-sanity";
+import { createClient } from "@sanity/client/stega";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID; // "pv8y60vp"
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET; // "production"

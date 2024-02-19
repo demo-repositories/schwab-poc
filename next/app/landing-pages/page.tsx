@@ -1,6 +1,6 @@
 import LandingPages, { query } from "@/components/pages/landing-pages";
 import { ISanityLandingPageDocument } from "@/components/pages/landing-page";
-import { loadQuery } from "@/lib/sanity/store";
+import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 
 /**
  * List of all available 'landingPage' documents. Not in POC scope but helpful for seeing what contet is available to look at.
