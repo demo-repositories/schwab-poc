@@ -17,12 +17,12 @@ interface ISanityDynamicCTADocument extends ISanityDocument {
   heading: string;
   button: TButtonProps;
 }
-const componentData = async (params: TParams) =>
-  await loadQuery<ISanityDynamicCTADocument>(query, params);
+// const componentData = async (params: TParams) =>
+//   await loadQuery<ISanityDynamicCTADocument>(query, params);
 
-export default async function DynamicCTA({ _ref }: { _ref: string }) {
-  const params = { _id: _ref };
-  const initial = await componentData(params);
+export default async function DynamicCTA(props) {
+  // const params = { _id: _ref };
+  // const initial = await componentData(params);
 
-  return <RenderDynamicCTA {...initial.data} />;
+  return <RenderDynamicCTA {...props.value} />;
 }

@@ -7,6 +7,7 @@ import querySet from './query-set'
 import dynamicCta from './dynamic-cta'
 import bynderBlock from './bynder-block'
 import dataTable from './data-table'
+import redirect from './redirect'
 
 export default [
     story,
@@ -18,4 +19,5 @@ export default [
     dynamicCta,
     bynderBlock,
     dataTable,
+    redirect,
 ]

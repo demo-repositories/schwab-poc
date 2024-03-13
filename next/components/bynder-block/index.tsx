@@ -1,6 +1,10 @@
 import RenderBynderBlock from "./component";
-import { loadQuery } from "@/lib/sanity/loader/loadQuery";
-import query from "./query";
+
+
+// import { loadQuery } from "@/lib/sanity/loader/loadQuery";
+// import query from "./query";
+
+
 import { ISanityDocument } from "@/lib/sanity/types";
 /**
  * Maps to the 'dynamicCta' object type in Sanity.
@@ -17,12 +21,15 @@ export interface ISanityBynderBlockDocument extends ISanityDocument {
   caption: any[];
   bynderAsset: any;
 }
-const componentData = async (params: TParams) =>
-  await loadQuery<ISanityBynderBlockDocument>(query, params);
+// const componentData = async (params: TParams) =>
+//   await loadQuery<ISanityBynderBlockDocument>(query, params);
 
-export default async function BynderBlock({ _ref }: { _ref: string }) {
-  const params = { _id: _ref };
-  const initial = await componentData(params);
+export default async function BynderBlock(props) {
+  // const params = { _id: _ref };
 
-  return <RenderBynderBlock {...initial.data} />;
+
+  // const initial = await componentData(params);
+
+
+  return <RenderBynderBlock {...props.value} />;
 }

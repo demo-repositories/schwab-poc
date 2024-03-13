@@ -29,6 +29,12 @@ export async function generateMetadata({
 export default async function StoryPage({ params }: PageParams) {
   const { slug } = params;
   const initial = await pageData(slug);
+  initial.data.content = initial.data.content.map((item) => {
+    if (item && item.refData && item.refData.length) {
+      item = item.refData[0];
+    }
+    return item;
+  });
 
   if (draftMode().isEnabled) {
     return <StoryPreview params={params} initial={initial} />;
