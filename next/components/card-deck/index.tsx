@@ -1,4 +1,4 @@
-import { loadQuery } from "@/lib/sanity/store";
+import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 import { TSanityCardDeckDocument } from "@/lib/sanity/types";
 import query from "./query";
 import { RenderCardDeck } from "./component";

@@ -3,7 +3,7 @@ import Story, { query, ISanityStoryDocument } from "@/components/pages/story";
 import CustomPortableText from "@/components/pages/story/custom-portable-text";
 import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
-import { loadQuery } from "@/lib/sanity/store";
+import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 import dynamic from "next/dynamic";
 import { PageParams } from "@/components/pages/types";
 

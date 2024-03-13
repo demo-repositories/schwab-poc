@@ -1,7 +1,9 @@
 import RenderBynderBlock from "./component";
 
+
 // import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 // import query from "./query";
+
 
 import { ISanityDocument } from "@/lib/sanity/types";
 /**
@@ -25,7 +27,9 @@ export interface ISanityBynderBlockDocument extends ISanityDocument {
 export default async function BynderBlock(props) {
   // const params = { _id: _ref };
 
+
   // const initial = await componentData(params);
+
 
   return <RenderBynderBlock {...props.value} />;
 }

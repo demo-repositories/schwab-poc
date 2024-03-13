@@ -1,5 +1,5 @@
 import { defineConfig } from 'sanity'
-import { deskTool } from 'sanity/desk'
+import { structureTool } from 'sanity/structure'
 import { presentationTool } from 'sanity/presentation'
 import { visionTool } from '@sanity/vision'
 import { scheduledPublishing } from '@sanity/scheduled-publishing'
@@ -24,10 +24,10 @@ export default defineConfig({
     projectId: 'fvuvea00',
     dataset: 'production',
     plugins: [
-        deskTool({
+        structureTool({
             // Override the layout of our studio and the document editor
             structure: deskStructure,
-            defaultDocumentNode: defaultDocumentNode,
+            // defaultDocumentNode: defaultDocumentNode,
         }),
         presentationTool({
             // Required: set the base URL to the preview location in the front end

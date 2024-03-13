@@ -1,6 +1,6 @@
 "use client";
 
-import { useQuery } from "@/lib/sanity/store";
+import { useQuery } from "@/lib/sanity/loader/useQuery";
 import Story, { ISanityStoryDocument, query } from "./index";
 import PreviewCustomPortableText from "./custom-portable-text/preview";
 import { PageParams } from "../types";

@@ -1,7 +1,7 @@
 import RenderQuerySet from "./component";
 import Results from "./results";
 import query from "./query";
-import { loadQuery } from "@/lib/sanity/store";
+import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 import { TRenderQuerySetProps } from "./types";
 
 /**

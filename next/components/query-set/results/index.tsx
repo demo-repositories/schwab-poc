@@ -1,6 +1,5 @@
 import RenderResults from "./component";
-import { loadQuery } from "@/lib/sanity/store";
-import query from "./query";
+import { loadQuery } from "@/lib/sanity/loader/loadQuery";import query from "./query";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
 import type { TResult } from "./component";
 /**

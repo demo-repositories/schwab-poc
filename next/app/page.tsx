@@ -2,7 +2,7 @@ import Stories, { query as storiesQuery } from "@/components/pages/stories";
 import LandingPages, {
   query as landingPagesQuery,
 } from "@/components/pages/landing-pages";
-import { loadQuery } from "@/lib/sanity/store";
+import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 import { ISanityStoryDocument } from "@/components/pages/story";
 import { ISanityLandingPageDocument } from "@/components/pages/landing-page";
 import { groq } from "next-sanity";

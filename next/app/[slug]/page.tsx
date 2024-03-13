@@ -8,7 +8,7 @@ import Marquee from "@/components/marquee";
 import QuerySet from "@/components/query-set";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { loadQuery } from "@/lib/sanity/store";
+import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 import dynamic from "next/dynamic";
 import type { PageParams } from "@/components/pages/types";
 const PagePreview = dynamic(
