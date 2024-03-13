@@ -3,6 +3,8 @@ import BynderBlock from "@/components/bynder-block";
 import StoryImage from "../story-image";
 import ReferenceResolver from "../reference-resolver";
 import { ReactNode } from "react";
+import DynamicCTA from "@/components/dynamic-cta";
+import DataTable from "@/components/data-table";
 
 export const components = {
   // Custom block types require their own custom components
@@ -10,7 +12,9 @@ export const components = {
     image: StoryImage,
     table: PortableTable,
     bynderBlock: BynderBlock,
-    reference: ReferenceResolver,
+    dynamicCta: DynamicCTA,
+    dataTable: DataTable,
+    // reference: ReferenceResolver,
   },
   // Wrap normal elements with Tailwind classes for styling
   block: {

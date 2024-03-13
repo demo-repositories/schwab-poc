@@ -15,12 +15,12 @@ export interface ISanityDataTableDocument extends ISanityDocument {
   tickers: string[];
   columnHeaders: string[];
 }
-const componentData = async (params: TParams) =>
-  await loadQuery<ISanityDataTableDocument>(query, params);
+// const componentData = async (params: TParams) =>
+//   await loadQuery<ISanityDataTableDocument>(query, params);
 
-export default async function DataTable({ _ref }: { _ref: string }) {
-  const params = { _id: _ref };
-  const initial = await componentData(params);
+export default async function DataTable(props) {
+  // const params = { _id: _ref };
+  // const initial = await componentData(params);
 
-  return <RenderDataTable {...initial.data} />;
+  return <RenderDataTable {...props.value} />;
 }

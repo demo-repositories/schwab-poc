@@ -18,7 +18,32 @@ type TStoryProps = {
 };
 
 export const query = (slug: string) =>
-  groq`*[_type == "story" && slug.current == '${slug}'][0]{slug, title, summary, displayDate, _id, _type, featuredImage{...}, content[]{..., button{..., "to":to->{slug, _type}}, "refType":*[_id==^._ref]._type}, seoData{...,}, taxonomy[]{...,taxonomyAttribute->{name}, terms[]->{name, _id}}}`;
+  groq`*[_type == "story" && slug.current == '${slug}'][0]{
+    slug,
+    title,
+    summary,
+    displayDate,
+    _id,
+    _type,
+    featuredImage{...},
+    content[]{
+      ...,
+      button {
+        ..., 
+        "to":to->{slug, _type}
+      },
+      "refType":*[_id==^._ref]._type,
+      "refData":*[_id==^._ref]{
+        ...,
+      },
+    },
+    seoData {...,},
+    taxonomy[]{
+      ...,
+      taxonomyAttribute->{name},
+      terms[]->{name, _id}
+    }
+  }`;
 
 export default function Story({
   data,
@@ -31,6 +56,7 @@ export default function Story({
         timeZone: "UTC",
       })
     : null;
+
   return (
     <main className="mx-auto mb-12 mt-5 max-w-7xl px-5 xl:px-0">
       <small className="text-lg font-semibold leading-7 text-schwab-blue">

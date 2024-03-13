@@ -14,7 +14,12 @@ export default function StoryPreview({ params, initial }: StoryPreview) {
   const { data } = useQuery<ISanityStoryDocument>(query(slug), params, {
     initial,
   });
-
+  data.content = data.content.map((item) => {
+    if (item && item.refData && item.refData.length) {
+      item = item.refData[0];
+    }
+    return item;
+  });
   return (
     <Story data={data!}>
       <PreviewCustomPortableText value={data!.content} />
