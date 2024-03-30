@@ -20,6 +20,10 @@ const nextConfig = {
   experimental: {
     taint: true,
   },
+  redirects: [
+    { from: "/about", to: "/" },
+    { from: "/old-path/*", to: "/new-path/*" },
+  ],
 };
 
 module.exports = nextConfig;

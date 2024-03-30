@@ -12,6 +12,8 @@ import SchwabLogo from './components/SchwabLogo'
 import { locate } from './presentation/locate'
 import { defaultDocumentNode } from './desk/defaultDocumentNode'
 import ParentAttributes from './components/inputs/parent-attributes'
+import { assist } from '@sanity/assist'
+import { taxonomyManager } from 'sanity-plugin-taxonomy-manager'
 
 // URL to be used for previewing in presentation
 const SANITY_STUDIO_PREVIEW_URL =
@@ -53,6 +55,8 @@ export default defineConfig({
         }),
         // Allow scheduled publishing
         scheduledPublishing(),
+        taxonomyManager({ baseUri: 'https://www.schwab.com/vocab/' }),
+        assist(),
     ],
     document: {
         unstable_comments: {
