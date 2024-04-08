@@ -1,4 +1,6 @@
 import { BookText, Layout, Boxes, Waypoints, WholeWord } from 'lucide-react'
+import { ConfigContext } from 'sanity'
+import { StructureBuilder } from 'sanity/structure'
 
 /**
  * Customizes which documents appear in 'Content', and the order they appear in.
@@ -8,8 +10,8 @@ import { BookText, Layout, Boxes, Waypoints, WholeWord } from 'lucide-react'
  * My personal logic for this first iteration of the layout is to have all document types responsible for 'pages' on the website in a group, followed by a group for taxonomy, and finally all other new document types will be added to the bottom of the list.
  */
 
-export const deskStructure = (S) =>
-    S.list()
+export const deskStructure = (S: StructureBuilder, context: ConfigContext) => {
+    return S.list()
         .title('Content')
         .items([
             S.listItem()
@@ -62,3 +64,4 @@ export const deskStructure = (S) =>
                     ].includes(listItem.getId())
             ),
         ])
+}

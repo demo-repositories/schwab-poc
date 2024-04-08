@@ -1,3 +1,5 @@
+import { createClient } from '@sanity/client'
+import { Component, LayoutGrid, Image, MousePointerSquare } from 'lucide-react'
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { presentationTool } from 'sanity/presentation'
@@ -10,7 +12,7 @@ import { schemaTypes } from './schemas'
 import { deskStructure } from './desk/deskStructure'
 import SchwabLogo from './components/SchwabLogo'
 import { locate } from './presentation/locate'
-import { defaultDocumentNode } from './desk/defaultDocumentNode'
+// import { defaultDocumentNode } from './desk/defaultDocumentNode'
 import ParentAttributes from './components/inputs/parent-attributes'
 import { assist } from '@sanity/assist'
 import { taxonomyManager } from 'sanity-plugin-taxonomy-manager'
@@ -19,9 +21,22 @@ import { taxonomyManager } from 'sanity-plugin-taxonomy-manager'
 const SANITY_STUDIO_PREVIEW_URL =
     process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
 
-export default defineConfig({
-    name: 'default',
-    title: 'Schwab POC',
+// Init client to get user role for showing/hiding workspaces
+const client = createClient({
+    projectId: 'fvuvea00',
+    dataset: 'production',
+    useCdn: false,
+})
+
+const currentUser = await client.request({
+    uri: '/users/me',
+    withCredentials: true,
+})
+
+// Add special tools for administrators
+const adminTools = currentUser.role == 'administrator' ? [visionTool()] : []
+
+const sharedConfig = {
     icon: SchwabLogo,
     projectId: 'fvuvea00',
     dataset: 'production',
@@ -42,7 +57,7 @@ export default defineConfig({
             locate,
         }),
         // GROQ query sandbox
-        visionTool(),
+        ...adminTools,
         // Table type used in stories
         table(),
         // Get images from unsplash
@@ -65,6 +80,53 @@ export default defineConfig({
     },
     schema: {
         types: schemaTypes,
+        templates: (prev) => [
+            ...prev,
+            // Preset template for icon card
+            {
+                id: 'icon-card-deck',
+                title: 'Icon card',
+                schemaType: 'cardDeck',
+                icon: Image,
+                value: {
+                    cardType: 'iconCard',
+                    cards: [
+                        {
+                            _type: 'card',
+                            body: [
+                                {
+                                    _type: 'block',
+                                    children: [
+                                        {
+                                            _type: 'span',
+                                            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+                                        },
+                                    ],
+                                    markDefs: [],
+                                },
+                            ],
+                            icon: {
+                                _type: 'image',
+                                altText: 'hourglass icon',
+                                asset: {
+                                    _ref: 'image-675766bf1420cc1413ef6b01490f8754337e3c8f-72x72-png',
+                                    _type: 'reference',
+                                },
+                            },
+                        },
+                    ],
+                },
+            },
+            {
+                id: 'cta-card-deck',
+                title: 'CTA card',
+                schemaType: 'cardDeck',
+                icon: MousePointerSquare,
+                value: {
+                    cardType: 'ctaCard',
+                },
+            },
+        ],
     },
     // Alternate way to override default document editor UI. Used for 'taxonomyTerm'
     form: {
@@ -83,4 +145,29 @@ export default defineConfig({
             },
         },
     },
+}
+const allConfigs = [
+    {
+        name: 'default',
+        title: 'Schwab POC',
+        basePath: '/default',
+    },
+    {
+        name: 'charitable',
+        title: 'Charitable',
+        basePath: '/charitable',
+    },
+].map((config) => {
+    // Merge different configs with shared config
+    return {
+        ...sharedConfig,
+        ...config,
+    }
 })
+const editorConfigs = allConfigs.filter(
+    (config) => config.name !== 'charitable'
+)
+// return all workspaces for admins
+const configs =
+    currentUser.role === 'administrator' ? allConfigs : editorConfigs
+export default defineConfig(configs)

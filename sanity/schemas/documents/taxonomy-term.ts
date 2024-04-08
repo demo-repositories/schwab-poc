@@ -6,6 +6,9 @@ export default {
     title: 'Taxonomy term',
     type: 'document',
     icon: WholeWord,
+    readOnly: ({ currentUser }) => {
+        return !currentUser.roles.find(({ name }) => name === 'administrator')
+    },
     fields: [
         {
             title: 'Name',

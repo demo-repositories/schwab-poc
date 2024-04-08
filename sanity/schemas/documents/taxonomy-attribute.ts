@@ -5,6 +5,9 @@ export default {
     title: 'Taxonomy attribute',
     type: 'document',
     icon: Waypoints,
+    readOnly: ({ currentUser }) => {
+        return !currentUser.roles.find(({ name }) => name === 'administrator')
+    },
     fields: [
         {
             title: 'Name',
