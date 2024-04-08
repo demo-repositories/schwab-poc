@@ -1,5 +1,5 @@
 "use client";
-import { useQuery } from "@/lib/sanity/loader/useQuery";
+import { useQuery } from "@/lib/sanity/store";
 import Spinner from "@/components/spinner";
 import RenderBynderBlock from "./component";
 import query from "./query";

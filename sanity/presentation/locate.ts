@@ -1,4 +1,5 @@
 import {
+    DocumentLocation,
     DocumentLocationResolver,
     DocumentLocationsState,
 } from 'sanity/presentation'
@@ -21,6 +22,7 @@ export const locate: DocumentLocationResolver = (params, context) => {
               slug?: { current: string }
               title?: string | null
               name?: string | null
+              _id: string
           }[]
         | null
     >
@@ -33,6 +35,13 @@ export const locate: DocumentLocationResolver = (params, context) => {
                     tone: 'critical',
                 } satisfies DocumentLocationsState
             }
+
+            const locations: DocumentLocation[] = []
+
+            // Schema types for pages
+            const pageTypes = ['story', 'landingPage']
+
+            // Get URLs for various page types
             const hrefLookup = ({ type, slug }) => {
                 const locations = {
                     story: `/story/${slug.current}`,
@@ -40,6 +49,7 @@ export const locate: DocumentLocationResolver = (params, context) => {
                 }
                 return locations[type]
             }
+            // Create page locations for each page document
             const generatePageLocations = ({ type }) =>
                 docs
                     .filter(
@@ -50,18 +60,34 @@ export const locate: DocumentLocationResolver = (params, context) => {
                         href: hrefLookup({ type, slug }),
                     }))
 
-            // Generate all the locations for story documents
-            const storyLocations = generatePageLocations({ type: 'story' })
+            // Add page locations to locations array
+            pageTypes.forEach((type) =>
+                locations.push(...generatePageLocations(type))
+            )
 
-            // Generate all the locations for page documents
-            const pageLocations: Array<any> = generatePageLocations({
-                type: 'landingPage',
-            })
+            // Schema types for components
+            const componentTypes = [
+                'bynderBlock',
+                'dynamicCta',
+                'cardDeck',
+                'dataTable',
+                'querySet',
+            ]
+            // Create location for component preview route
+            const generateComponentLocations = ({ type }) =>
+                docs
+                    .filter(({ _type }) => _type === type)
+                    .map(({ _id }) => ({
+                        title: 'Preview component',
+                        href: `/component-preview/${_id}`,
+                    }))
+            // Generate all the locations for components
+            componentTypes.forEach((type) =>
+                locations.push(...generateComponentLocations({ type }))
+            )
 
             return {
-                locations: [...storyLocations, ...pageLocations].filter(
-                    Boolean
-                ),
+                locations: locations.filter(Boolean),
             } satisfies DocumentLocationsState
         })
     )

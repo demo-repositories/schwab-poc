@@ -27,7 +27,7 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "rxjs": "^7.8.1",
-    "sanity": "^3.29.1",
+    "sanity": "^3.36.4",
     "sanity-plugin-asset-source-unsplash": "^1.1.2",
     "sanity-plugin-bynder-input": "^2.0.1",
     "sanity-plugin-dashboard-widget-document-list": "^1.0.1",
