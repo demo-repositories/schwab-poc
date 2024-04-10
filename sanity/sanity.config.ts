@@ -36,6 +36,8 @@ const currentUser = await client.request({
 
 // Add special tools for administrators
 const adminTools = currentUser.role == 'administrator' ? [visionTool()] : []
+
+// Shared languages array
 export const supportedLanguages = [
     { id: 'zh-CN', title: 'Chinese (China)' },
     { id: 'en-US', title: 'English (US)' },
