@@ -12,7 +12,9 @@ interface ISanityHomepageDocument extends ISanityLandingPageDocument {
   marquee: TMarqueeProps;
 }
 export default async function HomePage() {
-  const storiesData = await loadQuery<ISanityStoryDocument[]>(storiesQuery);
+  const storiesData = await loadQuery<ISanityStoryDocument[]>(storiesQuery, {
+    lang: "en-US",
+  });
   const landingPagesData =
     await loadQuery<ISanityLandingPageDocument[]>(landingPagesQuery);
   const {
