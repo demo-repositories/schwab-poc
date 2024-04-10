@@ -13,7 +13,7 @@ export const locate: DocumentLocationResolver = (params, context) => {
         and all documents that reference it
       */
     const doc$ = context.documentStore.listenQuery(
-        `*[_id==$id || references($id)]{_type,slug,title,_id}`,
+        `*[_id==$id || references($id)]{_type,slug,title,_id, language, heading}`,
         params,
         { perspective: 'previewDrafts' }
     ) as Observable<
@@ -42,9 +42,9 @@ export const locate: DocumentLocationResolver = (params, context) => {
             const pageTypes = ['story', 'landingPage']
 
             // Get URLs for various page types
-            const hrefLookup = ({ type, slug }) => {
+            const hrefLookup = ({ type, slug, language }) => {
                 const locations = {
-                    story: `/story/${slug.current}`,
+                    story: `/${language}/story/${slug.current}`,
                     landingPage: `/${slug.current}`,
                 }
                 return locations[type]
@@ -55,14 +55,14 @@ export const locate: DocumentLocationResolver = (params, context) => {
                     .filter(
                         ({ _type, slug }) => _type === type && slug?.current
                     )
-                    .map(({ title, slug }) => ({
+                    .map(({ title, slug, language }) => ({
                         title: title || 'Title missing',
-                        href: hrefLookup({ type, slug }),
+                        href: hrefLookup({ type, slug, language }),
                     }))
 
             // Add page locations to locations array
             pageTypes.forEach((type) =>
-                locations.push(...generatePageLocations(type))
+                locations.push(...generatePageLocations({ type }))
             )
 
             // Schema types for components
@@ -73,12 +73,22 @@ export const locate: DocumentLocationResolver = (params, context) => {
                 'dataTable',
                 'querySet',
             ]
+            const componentHumanName = {
+                bynderBlock: 'Bynder block',
+                dynamicCta: 'Dynamic CTA',
+                cardDeck: 'Card deck',
+                dataTable: 'Data table',
+                querySet: 'Query set',
+            }
             // Create location for component preview route
             const generateComponentLocations = ({ type }) =>
                 docs
                     .filter(({ _type }) => _type === type)
-                    .map(({ _id }) => ({
-                        title: 'Preview component',
+                    .map(({ _id, _type, title, heading }) => ({
+                        title:
+                            `${componentHumanName[_type]} | ${
+                                title || heading
+                            }` || 'Component preview',
                         href: `/component-preview/${_id}`,
                     }))
             // Generate all the locations for components

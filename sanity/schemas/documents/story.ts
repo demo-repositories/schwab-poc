@@ -107,6 +107,19 @@ export default {
             ],
             group: 'content',
         },
+        // This should be driven by taxonomy eventually
+        {
+            name: 'channelStyling',
+            type: 'array',
+            of: [{ type: 'stylingVariation' }],
+        },
+        {
+            // should match 'languageField' plugin configuration setting, if customized
+            name: 'language',
+            type: 'string',
+            readOnly: true,
+            hidden: true,
+        },
         {
             name: 'taxonomy',
             title: 'Taxonomy',

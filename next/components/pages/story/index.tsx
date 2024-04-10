@@ -17,8 +17,7 @@ type TStoryProps = {
   data: ISanityStoryDocument;
 };
 
-export const query = (slug: string) =>
-  groq`*[_type == "story" && slug.current == '${slug}'][0]{
+export const query = groq`*[_type == "story" && slug.current == $slug && language == $lang][0]{
     slug,
     title,
     summary,

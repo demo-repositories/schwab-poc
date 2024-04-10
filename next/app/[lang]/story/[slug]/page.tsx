@@ -9,14 +9,14 @@ import { PageParams } from "@/components/pages/types";
 
 const StoryPreview = dynamic(() => import("@/components/pages/story/preview"));
 
-const pageData = async (slug: string) =>
-  await loadQuery<ISanityStoryDocument>(query(slug));
+const pageData = async (params) =>
+  await loadQuery<ISanityStoryDocument>(query, params);
 
 export async function generateMetadata({
   params,
 }: PageParams): Promise<Metadata> {
-  const { slug } = params;
-  const { data } = await pageData(slug);
+  params.slug = decodeURIComponent(params.slug);
+  const { data } = await pageData(params);
   const { title, summary } = data;
   const metadata = { title, description: summary };
   if (data.seoData) {
@@ -27,8 +27,9 @@ export async function generateMetadata({
 }
 
 export default async function StoryPage({ params }: PageParams) {
-  const { slug } = params;
-  const initial = await pageData(slug);
+  params.slug = decodeURIComponent(params.slug);
+  const initial = await pageData(params);
+
   initial.data.content = initial.data.content.map((item) => {
     if (item && item.refData && item.refData.length) {
       item = item.refData[0];

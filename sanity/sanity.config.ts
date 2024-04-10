@@ -1,5 +1,5 @@
 import { createClient } from '@sanity/client'
-import { Component, LayoutGrid, Image, MousePointerSquare } from 'lucide-react'
+import { Image, MousePointerSquare } from 'lucide-react'
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { presentationTool } from 'sanity/presentation'
@@ -12,10 +12,11 @@ import { schemaTypes } from './schemas'
 import { deskStructure } from './desk/deskStructure'
 import SchwabLogo from './components/SchwabLogo'
 import { locate } from './presentation/locate'
-// import { defaultDocumentNode } from './desk/defaultDocumentNode'
 import ParentAttributes from './components/inputs/parent-attributes'
 import { assist } from '@sanity/assist'
 import { taxonomyManager } from 'sanity-plugin-taxonomy-manager'
+import { codeInput } from '@sanity/code-input'
+import { documentInternationalization } from '@sanity/document-internationalization'
 
 // URL to be used for previewing in presentation
 const SANITY_STUDIO_PREVIEW_URL =
@@ -35,7 +36,10 @@ const currentUser = await client.request({
 
 // Add special tools for administrators
 const adminTools = currentUser.role == 'administrator' ? [visionTool()] : []
-
+export const supportedLanguages = [
+    { id: 'zh-CN', title: 'Chinese (China)' },
+    { id: 'en-US', title: 'English (US)' },
+]
 const sharedConfig = {
     icon: SchwabLogo,
     projectId: 'fvuvea00',
@@ -70,8 +74,28 @@ const sharedConfig = {
         }),
         // Allow scheduled publishing
         scheduledPublishing(),
+        // TODO: change this URI to the schwab URI
         taxonomyManager({ baseUri: 'https://www.schwab.com/vocab/' }),
-        assist(),
+        assist({
+            translate: {
+                document: {
+                    // The name of the field that holds the current language
+                    // in the form of a language code e.g. 'en', 'fr', 'nb_NO'.
+                    // Required
+                    languageField: 'language',
+                    // Optional extra filter for document types.
+                    // If not set, translation is enabled for all documents
+                    // that has a field with the name defined above.
+                    documentTypes: ['story'],
+                },
+            },
+        }),
+        codeInput(),
+        documentInternationalization({
+            // Required configuration
+            supportedLanguages,
+            schemaTypes: ['story'],
+        }),
     ],
     document: {
         unstable_comments: {
@@ -80,53 +104,68 @@ const sharedConfig = {
     },
     schema: {
         types: schemaTypes,
-        templates: (prev) => [
-            ...prev,
-            // Preset template for icon card
-            {
-                id: 'icon-card-deck',
-                title: 'Icon card',
-                schemaType: 'cardDeck',
-                icon: Image,
-                value: {
-                    cardType: 'iconCard',
-                    cards: [
-                        {
-                            _type: 'card',
-                            body: [
-                                {
-                                    _type: 'block',
-                                    children: [
-                                        {
-                                            _type: 'span',
-                                            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-                                        },
-                                    ],
-                                    markDefs: [],
-                                },
-                            ],
-                            icon: {
-                                _type: 'image',
-                                altText: 'hourglass icon',
-                                asset: {
-                                    _ref: 'image-675766bf1420cc1413ef6b01490f8754337e3c8f-72x72-png',
-                                    _type: 'reference',
+        templates: (prev) => {
+            const prevFiltered = prev.filter(
+                (template) => template.id !== 'cardDeck'
+            )
+
+            return [
+                ...prevFiltered,
+                {
+                    id: 'story-language',
+                    title: 'Story with Language',
+                    schemaType: 'story',
+                    parameters: [{ name: 'language', type: 'string' }],
+                    value: (params: { language: string }) => ({
+                        language: params.language,
+                    }),
+                },
+                // Preset template for icon card
+                {
+                    id: 'icon-card-deck',
+                    title: 'Icon card',
+                    schemaType: 'cardDeck',
+                    icon: Image,
+                    value: {
+                        cardType: 'iconCard',
+                        cards: [
+                            {
+                                _type: 'card',
+                                body: [
+                                    {
+                                        _type: 'block',
+                                        children: [
+                                            {
+                                                _type: 'span',
+                                                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+                                            },
+                                        ],
+                                        markDefs: [],
+                                    },
+                                ],
+                                icon: {
+                                    _type: 'image',
+                                    altText: 'hourglass icon',
+                                    asset: {
+                                        _ref: 'image-675766bf1420cc1413ef6b01490f8754337e3c8f-72x72-png',
+                                        _type: 'reference',
+                                    },
                                 },
                             },
-                        },
-                    ],
+                        ],
+                    },
                 },
-            },
-            {
-                id: 'cta-card-deck',
-                title: 'CTA card',
-                schemaType: 'cardDeck',
-                icon: MousePointerSquare,
-                value: {
-                    cardType: 'ctaCard',
+                {
+                    id: 'cta-card-deck',
+                    title: 'CTA card',
+                    schemaType: 'cardDeck',
+                    icon: MousePointerSquare,
+                    value: {
+                        cardType: 'ctaCard',
+                    },
                 },
-            },
-        ],
+            ]
+        },
     },
     // Alternate way to override default document editor UI. Used for 'taxonomyTerm'
     form: {
