@@ -6,7 +6,7 @@ import { groq } from "next-sanity";
  * List page for all 'landingPage' documents
  */
 
-export const query = groq`*[_type == "landingPage" && slug.current != null && slug.current != 'home'] | order(_updatedAt desc){title, slug, summary, featuredImage, _id, _type, _updatedAt}`;
+export const query = groq`*[_type == "landingPage" && slug.current != null && slug.current != 'home'] | order(_updatedAt desc){title, slug, summary, language, featuredImage, _id, _type, _updatedAt}`;
 
 export default function LandingPages({
   data,

@@ -12,6 +12,7 @@ import TaxonomyInfo from "@/components/taxonomy-info";
 export interface ISanityStoryDocument extends ISanityPageDocument {
   content: PortableTextBlock[];
   displayDate?: string;
+  language: string;
 }
 type TStoryProps = {
   data: ISanityStoryDocument;
@@ -20,6 +21,7 @@ type TStoryProps = {
 export const query = groq`*[_type == "story" && slug.current == $slug && language == $lang][0]{
     slug,
     title,
+    language,
     summary,
     displayDate,
     _id,

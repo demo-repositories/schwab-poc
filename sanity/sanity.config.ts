@@ -96,7 +96,7 @@ const sharedConfig = {
         documentInternationalization({
             // Required configuration
             supportedLanguages,
-            schemaTypes: ['story'],
+            schemaTypes: ['story', 'landingPage'],
         }),
     ],
     document: {

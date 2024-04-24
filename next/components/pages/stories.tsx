@@ -6,7 +6,7 @@ import { ISanityStoryDocument } from "./story";
  * List page for all 'story' documents
  */
 
-export const query = groq`*[_type == "story" && slug.current != null && displayDate != null && language == $lang]  | order(displayDate desc){title, slug, summary, featuredImage, _id, _type, displayDate}`;
+export const query = groq`*[_type == "story" && slug.current != null && displayDate != null && language == $lang]  | order(displayDate desc){title, slug, summary, language, featuredImage, _id, _type, displayDate}`;
 
 export default function Stories({ data }: { data: ISanityStoryDocument[] }) {
   return (

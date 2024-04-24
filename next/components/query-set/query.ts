@@ -6,12 +6,13 @@ export default groq`*[_type == 'querySet' && _id == $_id][0]{
     _id,
     contentTypes,
     taxonomyFilters[]{
-        ...
+        ...,
         taxonomyAttribute->{...,},
-        terms[]->},
-        bottomCta {
-            ...,
-            to->{...,}
-        },
-        featuredContent->{...}
-    }`;
+        terms[]->{...,},
+    },
+    bottomCta {
+        ...,
+        to->{...,}
+    },
+    featuredContent->{...},
+}`;

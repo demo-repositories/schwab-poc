@@ -15,17 +15,6 @@ import { ISanityLandingPageDocument } from "./pages/landing-page";
  * Used in both document type list pages to show the available documents.
  */
 
-// type TDocumentCards = {
-//   _id: string;
-//   title: string;
-//   summary: string;
-//   featuredImage: any;
-//   _updatedAt?: string;
-//   slug: {
-//     current: string;
-//   };
-//   _type: string;
-// };
 export default function DocumentCards({
   cards,
 }: {
@@ -45,6 +34,7 @@ export default function DocumentCards({
             _type,
             displayDate,
             _updatedAt,
+            language,
           }) => (
             <Card key={_id} className="mb-4 grid-rows-2 gap-0 lg:mb-0 lg:grid">
               <CardHeader>
@@ -67,7 +57,7 @@ export default function DocumentCards({
               </CardContent>
               <CardFooter>
                 <div className="w-full text-right">
-                  <Button to={{ _type: _type, slug: slug }} text="Read" />
+                  <Button to={{ _type, slug, language }} text="Read" />
                 </div>
               </CardFooter>
             </Card>

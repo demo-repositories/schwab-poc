@@ -45,7 +45,7 @@ export const locate: DocumentLocationResolver = (params, context) => {
             const hrefLookup = ({ type, slug, language }) => {
                 const locations = {
                     story: `/${language}/story/${slug.current}`,
-                    landingPage: `/${slug.current}`,
+                    landingPage: `/${language}/${slug.current}`,
                 }
                 return locations[type]
             }

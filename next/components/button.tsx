@@ -14,6 +14,7 @@ import gsap from "gsap";
 
 export type TToObject = {
   _type: string;
+  language?: string;
   slug: {
     current: string;
   };
@@ -43,13 +44,13 @@ export default function Button({
    * Eventually if being used outside this button should probably go in /lib
    */
   const hrefLookup = (to: TToObject) => {
-    const { _type, slug } = to;
+    const { _type, slug, language } = to;
 
     switch (_type) {
       case "story":
-        return `/story/${slug.current}`;
+        return `/${language}/story/${slug.current}`;
       case "landingPage":
-        return `/${slug.current}`;
+        return `/en-US/${slug.current}`;
       default:
         return `/`;
     }

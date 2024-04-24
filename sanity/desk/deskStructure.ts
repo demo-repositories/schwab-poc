@@ -128,6 +128,23 @@ export const deskStructure = (S: StructureBuilder, context: ConfigContext) => {
                                         .title('Taxonomy terms')
                                         .child()
                                 ),
+                            S.divider(),
+                            S.listItem()
+                                .title('Concept')
+
+                                .child(
+                                    S.documentTypeList('skosConcept')
+                                        .title('Concept')
+                                        .child()
+                                ),
+                            S.listItem()
+                                .title('Concept scheme')
+
+                                .child(
+                                    S.documentTypeList('skosConceptScheme')
+                                        .title('Concept scheme')
+                                        .child()
+                                ),
                         ])
                 ),
             S.divider(),
@@ -139,6 +156,8 @@ export const deskStructure = (S: StructureBuilder, context: ConfigContext) => {
                         'landingPage',
                         'taxonomyAttribute',
                         'taxonomyTerm',
+                        'skosConcept',
+                        'skosConceptScheme',
                     ].includes(listItem.getId())
             ),
         ])

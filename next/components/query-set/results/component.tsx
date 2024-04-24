@@ -12,6 +12,7 @@ export default function RenderResults({
   results,
   taxonomyFilters,
 }: TRenderResultsProps) {
+  // console.log("results", results);
   function filterByTaxonomy() {
     // Get IDs of attributes
     const attributes = taxonomyFilters.map(
@@ -46,6 +47,8 @@ export default function RenderResults({
         const taxonomyItem = result.taxonomy.filter(
           (item) => item.taxonomyAttribute._ref == attrID,
         )[0];
+        // There are no terms set for this document
+        if (!taxonomyItem.terms) return false;
         // Simplify shape of taxonomy item's terms to make filtering easier
         const itemTermIds = taxonomyItem.terms.map((term) => term._ref);
         // If ANY term matches for the attribute, we consider it a match
