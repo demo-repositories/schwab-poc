@@ -19,10 +19,11 @@ export default function Navbar({}) {
       text: "Stories",
       to: {
         slug: {
-          current: "/story",
+          current: "story",
         },
         // spoof type so we can use our 'Button' component
         _type: "landingPage",
+        language: "en-US",
       },
       _id: "1",
     },
@@ -30,10 +31,11 @@ export default function Navbar({}) {
       text: "Landing Pages",
       to: {
         slug: {
-          current: "/landing-pages",
+          current: "landing-pages",
         },
         // spoof type so we can use our 'Button' component
         _type: "landingPage",
+        language: "en-US",
       },
       _id: "2",
     },
@@ -55,7 +57,11 @@ export default function Navbar({}) {
               links.map(({ text, to, _id }) => {
                 return (
                   <NavigationMenuItem key={_id}>
-                    <Link href={to.slug.current} legacyBehavior passHref>
+                    <Link
+                      href={`/${to.language}/${to.slug.current}`}
+                      legacyBehavior
+                      passHref
+                    >
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                       >

@@ -1,13 +1,11 @@
 import type { Rule } from 'sanity'
-import { RectangleHorizontal } from 'lucide-react'
-import DynamicCTAIcon from '../../components/icons/dynamic-cta'
-// import { PreviewDynamicCTA } from '../../components/preview/PreviewDynamicCTA'
+import { MousePointerSquareIcon } from 'lucide-react'
 
 export default {
     name: 'dynamicCta',
     type: 'document',
     title: 'Dynamic CTA',
-    icon: DynamicCTAIcon,
+    icon: MousePointerSquareIcon,
     fields: [
         {
             name: 'heading',
@@ -30,7 +28,7 @@ export default {
             return {
                 title: title,
                 subtitle: 'Dynamic CTA',
-                media: DynamicCTAIcon,
+                media: MousePointerSquareIcon,
             }
         },
     },
