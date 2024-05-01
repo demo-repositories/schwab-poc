@@ -1,8 +1,7 @@
 import RenderQuerySet from "./component";
 import Results from "./results";
 import query from "./query";
-// import { loadQuery } from "@/lib/sanity/loader/loadQuery";
-// import { TRenderQuerySetProps } from "./types";
+
 import { sanityFetch } from "@/lib/sanity/fetch";
 
 /**
@@ -20,9 +19,6 @@ export type TQuerySetProps = {
 // type TComponentDataParams = {
 //   _id: string;
 // };
-
-// const componentData = async (params: TComponentDataParams) =>
-//   await loadQuery<TRenderQuerySetProps>(query, params);
 
 export default async function QuerySet(props: TQuerySetProps) {
   // console.log("queryset props", props);

@@ -1,5 +1,4 @@
 import RenderDynamicCTA from "./component";
-// import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 import { TButtonProps } from "@/components/button";
 import query from "./query";
 import { ISanityDocument } from "@/lib/sanity/types";

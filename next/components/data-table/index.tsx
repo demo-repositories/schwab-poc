@@ -1,4 +1,3 @@
-import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 import query from "./query";
 import { ISanityDocument } from "@/lib/sanity/types";
 import RenderDataTable from "./component";
@@ -16,8 +15,6 @@ export interface ISanityDataTableDocument extends ISanityDocument {
   tickers: string[];
   columnHeaders: string[];
 }
-// const componentData = async (params: TParams) =>
-//   await loadQuery<ISanityDataTableDocument>(query, params);
 
 export default async function DataTable(props) {
   const params = { _id: props._ref };
