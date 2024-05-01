@@ -1,11 +1,17 @@
 import PortableTable from "../portable-table";
 import BynderBlock from "@/components/bynder-block";
 import StoryImage from "../story-image";
-import ReferenceResolver from "../reference-resolver";
+// import ReferenceResolver from "../reference-resolver";
 import { ReactNode } from "react";
 import DynamicCTA from "@/components/dynamic-cta";
 import DataTable from "@/components/data-table";
-
+const BynderImage = ({ value }) => {
+  return (
+    <div className="my-12 flex items-center justify-center">
+      <img src={value.previewImg} />
+    </div>
+  );
+};
 export const components = {
   // Custom block types require their own custom components
   types: {
@@ -14,6 +20,7 @@ export const components = {
     bynderBlock: BynderBlock,
     dynamicCta: DynamicCTA,
     dataTable: DataTable,
+    "bynder.asset": BynderImage,
     // reference: ReferenceResolver,
   },
   // Wrap normal elements with Tailwind classes for styling

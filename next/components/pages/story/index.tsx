@@ -1,5 +1,5 @@
 import { PortableTextBlock } from "@portabletext/types";
-import CustomPortableText from "./custom-portable-text";
+// import CustomPortableText from "./custom-portable-text";
 import SanityImage from "@/components/sanity-image";
 import { ISanityPageDocument } from "@/lib/sanity/types";
 import { groq } from "next-sanity";

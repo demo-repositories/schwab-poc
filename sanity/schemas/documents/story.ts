@@ -92,6 +92,9 @@ export default {
                     ],
                 },
                 {
+                    type: 'bynder.asset',
+                },
+                {
                     type: 'reference',
                     title: 'Shared block',
                     icon: undefined,

@@ -11,7 +11,7 @@ interface StoryPreview extends PageParams {
 }
 export default function StoryPreview({ params, initial }: StoryPreview) {
   const { slug } = params;
-  const { data } = useQuery<ISanityStoryDocument>(query(slug), params, {
+  const { data } = useQuery<ISanityStoryDocument>(query, params, {
     initial,
   });
   data.content = data.content.map((item) => {
@@ -20,6 +20,7 @@ export default function StoryPreview({ params, initial }: StoryPreview) {
     }
     return item;
   });
+
   return (
     <Story data={data!}>
       <PreviewCustomPortableText value={data!.content} />

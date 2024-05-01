@@ -16,7 +16,7 @@ export default function LandingPages({
   return (
     <main className="mx-auto mt-5 max-w-7xl px-5 xl:px-0">
       <section>
-        <h1 className=" mb-3 text-3xl font-extrabold tracking-tight fade-in">
+        <h1 className=" mb-3 text-3xl font-extrabold tracking-tight">
           Landing Pages
         </h1>
       </section>

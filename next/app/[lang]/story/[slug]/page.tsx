@@ -36,6 +36,9 @@ export default async function StoryPage({ params }: PageParams) {
     }
     return item;
   });
+  // const posts = await sanityFetch<SanityDocument[]>({
+  //   query: POSTS_QUERY,
+  // })
 
   if (draftMode().isEnabled) {
     return <StoryPreview params={params} initial={initial} />;

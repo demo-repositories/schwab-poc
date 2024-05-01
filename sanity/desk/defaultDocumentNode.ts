@@ -1,33 +1,28 @@
-import { DefaultDocumentNodeResolver } from 'sanity/desk'
-// import Iframe from 'sanity-plugin-iframe-pane'
+import { DefaultDocumentNodeResolver } from 'sanity/structure'
+//...your other desk structure imports...
+import {
+    TranslationsTab,
+    defaultDocumentLevelConfig,
+} from 'sanity-plugin-studio-smartling'
+//if you are using field-level translations, you can import the field-level config instead:
+//import {TranslationsTab, defaultFieldLevelConfig} from 'sanity-plugin-studio-smartling'
+//if you're not sure which, please look at the document-level and field-level sections below
 
-/**
- * Overrides how the document editor appears for each document type.
- * Was used for old preview-kit way of doing things, but now is not modifying anything
- */
-
-export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, props) => {
-    const { schemaType } = props
-    switch (schemaType) {
-        // case `cardDeck`:
-        //     // Preview pane
-        //     return S.document().views([
-        //         S.view.form(),
-        //         S.view
-        //             .component(Iframe)
-        //             .options({
-        //                 url: (doc) => {
-        //                     const id = doc._id.replace('drafts.', '')
-        //                     return `http://localhost:3000/api/draft?secret=MY_SECRET_TOKEN&path=/component-preview/${id}`
-        //                 },
-        //                 reload: {
-        //                     button: true,
-        //                 },
-        //             })
-        //             .title('Preview'),
-        //     ])
-        // All other document types just show the default
-        default:
-            return S.document().views([S.view.form()])
+export const defaultDocumentNode: DefaultDocumentNodeResolver = (
+    S,
+    { schemaType }
+) => {
+    if (schemaType === 'story') {
+        return S.document().views([
+            S.view.form(),
+            //...my other views -- for example, live preview, document pane, etc.,
+            S.view
+                .component(TranslationsTab)
+                .title('Smartling')
+                .options(defaultDocumentLevelConfig),
+            //again, if you're using field-level translations, you can use the field-level config instead:
+            //S.view.component(TranslationsTab).title('Smartling').options(defaultFieldLevelConfig)
+        ])
     }
+    return S.document()
 }

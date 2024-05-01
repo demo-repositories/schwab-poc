@@ -29,3 +29,5 @@
 *.local
 .env.*
 !.env.EXAMPLE
+
+populateSmartlingSecrets.js

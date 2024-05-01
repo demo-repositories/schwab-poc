@@ -1,4 +1,4 @@
-// import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 // import ky from "ky";
 // import fetchUserProjectRoles from "@/sanity/lib/list-datasets-by-role/fetch-project-data";
 
@@ -18,8 +18,8 @@
 //   prefixUrl: `https://api.sanity.io/v${SANITY_API_VERSION}/projects/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}`,
 // });
 
-// export async function GET(request: NextRequest) {
-//   const roleNames = request.nextUrl.searchParams.getAll("role");
-//   const userProjectRoles = await fetchUserProjectRoles(sanityApi, roleNames);
-//   return NextResponse.json(userProjectRoles);
-// }
+export async function GET(request: NextRequest) {
+  const user = request.nextUrl.searchParams.getAll("user");
+  //   const userProjectRoles = await fetchUserProjectRoles(sanityApi, roleNames);
+  return NextResponse.json("userProjectRoles");
+}

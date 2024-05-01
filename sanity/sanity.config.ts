@@ -17,7 +17,7 @@ import { assist } from '@sanity/assist'
 import { taxonomyManager } from 'sanity-plugin-taxonomy-manager'
 import { codeInput } from '@sanity/code-input'
 import { documentInternationalization } from '@sanity/document-internationalization'
-
+import { defaultDocumentNode } from './desk/defaultDocumentNode'
 // URL to be used for previewing in presentation
 const SANITY_STUDIO_PREVIEW_URL =
     process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
@@ -28,18 +28,34 @@ const client = createClient({
     dataset: 'production',
     useCdn: false,
 })
-
+// Get userId for current user
 const currentUser = await client.request({
     uri: '/users/me',
     withCredentials: true,
 })
+// // Get *sanityID* and *organizationId* for roles query
+// const { sanityUserId } = await client.request({
+//     uri: `/projects/fvuvea00/users/${currentUser.id}`,
+//     withCredentials: true,
+// })
+// const { organizationId } = await client.request({
+//     uri: `/projects/fvuvea00`,
+//     withCredentials: true,
+// })
+// // Needs to be inside a serverless function with org-wide members read access token
+// const userRoles = await client.request({
+//     uri: `/organizations/${organizationId}/acl/${sanityUserId}`,
+//     withCredentials: true,
+// })
 
 // Add special tools for administrators
 const adminTools = currentUser.role == 'administrator' ? [visionTool()] : []
 
 // Shared languages array
 export const supportedLanguages = [
-    { id: 'zh-CN', title: 'Chinese (China)' },
+    { id: 'zh-CN', title: 'Chinese (China - Simplified)' },
+    { id: 'zh-TW', title: 'Chinese (Taiwan-Traditional)' },
+    { id: 'es-US', title: 'Spanish (US)' },
     { id: 'en-US', title: 'English (US)' },
 ]
 const sharedConfig = {
@@ -50,7 +66,7 @@ const sharedConfig = {
         structureTool({
             // Override the layout of our studio and the document editor
             structure: deskStructure,
-            // defaultDocumentNode: defaultDocumentNode,
+            defaultDocumentNode: defaultDocumentNode,
         }),
         presentationTool({
             // Required: set the base URL to the preview location in the front end
