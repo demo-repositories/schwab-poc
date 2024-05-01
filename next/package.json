@@ -34,7 +34,7 @@
     "lucide-react": "^0.292.0",
     "nearest-color": "^0.4.4",
     "next": "^14.2.3",
-    "next-sanity": "^6.1.2",
+    "next-sanity": "^9.0.12",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",

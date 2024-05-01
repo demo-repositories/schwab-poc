@@ -1,14 +1,11 @@
 import RenderResults from "./component";
-import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 import query from "./query";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
-import type { TResult } from "./component";
+import { sanityFetch } from "@/lib/sanity/fetch";
 /**
  * Entry point for list of results from queryset parameters
  */
-const resultsData = async (params: TResultsDataParams) => {
-  return await loadQuery<TResult[]>(query, params);
-};
+
 export type TResultsDataParams = {
   contentTypes: string[];
   taxonomyFilters?: any[];
@@ -25,15 +22,15 @@ export default async function Results({
     ({ taxonomyAttribute }) => taxonomyAttribute._id,
   );
 
-  const initial = await resultsData({
-    contentTypes: vercelStegaCleanAll(contentTypes),
-    taxonomyFilters: vercelStegaCleanAll(attributes),
+  const data = await sanityFetch({
+    query,
+    params: {
+      contentTypes: vercelStegaCleanAll(contentTypes),
+      taxonomyFilters: vercelStegaCleanAll(attributes),
+    },
   });
 
   return (
-    <RenderResults
-      results={[...initial.data]}
-      taxonomyFilters={taxonomyFilters}
-    />
+    <RenderResults results={[...data]} taxonomyFilters={taxonomyFilters} />
   );
 }

@@ -1,7 +1,7 @@
 import PortableTable from "../portable-table";
 import BynderBlock from "@/components/bynder-block";
 import StoryImage from "../story-image";
-// import ReferenceResolver from "../reference-resolver";
+import ReferenceResolver from "../reference-resolver";
 import { ReactNode } from "react";
 import DynamicCTA from "@/components/dynamic-cta";
 import DataTable from "@/components/data-table";
@@ -21,7 +21,7 @@ export const components = {
     dynamicCta: DynamicCTA,
     dataTable: DataTable,
     "bynder.asset": BynderImage,
-    // reference: ReferenceResolver,
+    reference: ReferenceResolver,
   },
   // Wrap normal elements with Tailwind classes for styling
   block: {

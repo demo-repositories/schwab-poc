@@ -1,8 +1,9 @@
 import Stories, { query } from "@/components/pages/stories";
-import { loadQuery } from "@/lib/sanity/loader/loadQuery";
+import { sanityFetch } from "@/lib/sanity/fetch";
+
 export default async function StoriesPage({ params }) {
   params.slug = decodeURIComponent(params.slug);
-  const { data } = await loadQuery<number>(query, params);
+  const data = await sanityFetch<number>({ query, params });
 
   return <Stories data={data} />;
 }

@@ -1,8 +1,8 @@
 import RenderDynamicCTA from "./component";
-import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 import { TButtonProps } from "@/components/button";
 import query from "./query";
 import { ISanityDocument } from "@/lib/sanity/types";
+import { sanityFetch } from "@/lib/sanity/fetch";
 /**
  * Maps to the 'dynamicCta' object type in Sanity.
  *
@@ -17,12 +17,10 @@ interface ISanityDynamicCTADocument extends ISanityDocument {
   heading: string;
   button: TButtonProps;
 }
-// const componentData = async (params: TParams) =>
-//   await loadQuery<ISanityDynamicCTADocument>(query, params);
 
 export default async function DynamicCTA(props) {
-  // const params = { _id: _ref };
-  // const initial = await componentData(params);
+  const params = { _id: props._ref };
+  const data = await sanityFetch({ query, params });
 
-  return <RenderDynamicCTA {...props.value} />;
+  return <RenderDynamicCTA {...data} />;
 }

@@ -34,9 +34,9 @@ export const query = groq`*[_type == "story" && slug.current == $slug && languag
         "to":to->{slug, _type}
       },
       "refType":*[_id==^._ref]._type,
-      "refData":*[_id==^._ref]{
-        ...,
-      },
+      // "refData":*[_id==^._ref]{
+      //   ...,
+      // },
     },
     seoData {...,},
     taxonomy[]{
@@ -50,8 +50,7 @@ export default function Story({
   data,
   children,
 }: PropsWithChildren<TStoryProps>) {
-  const { title, summary, featuredImage, content, displayDate, taxonomy } =
-    data;
+  const { title, summary, featuredImage, displayDate, taxonomy } = data;
   const dateString = displayDate
     ? new Date(displayDate).toLocaleDateString("en-US", {
         timeZone: "UTC",
