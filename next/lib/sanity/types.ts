@@ -10,6 +10,7 @@ type TSanitySEOTag = {
 export type TSanitySEOData = {
   tags: TSanitySEOTag[];
 };
+
 type TTaxonomyAttribute = {
   name: string;
   slug: string;

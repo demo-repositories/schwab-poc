@@ -8,20 +8,16 @@ import { ISanityDocument } from "@/lib/sanity/types";
  * Gets pulled into 'CustomPortableText'
  */
 
-// Params for query
-type TParams = {
-  _id: string;
-};
 export interface ISanityBynderBlockDocument extends ISanityDocument {
   title: string;
   caption: any[];
   bynderAsset: any;
 }
 
-export default async function BynderBlock(props) {
+export default async function BynderBlock(props: { _ref: string }) {
   const params = { _id: props._ref };
 
-  const data = await sanityFetch({ query, params });
+  const data = await sanityFetch<ISanityBynderBlockDocument>({ query, params });
 
   return <RenderBynderBlock {...data} />;
 }
