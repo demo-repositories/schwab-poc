@@ -159,6 +159,8 @@ export const deskStructure = (S: StructureBuilder, context: ConfigContext) => {
                         'taxonomyTerm',
                         'skosConcept',
                         'skosConceptScheme',
+                        'assist.instruction.context',
+                        'translation.metadata',
                     ].includes(listItem.getId())
             ),
         ])

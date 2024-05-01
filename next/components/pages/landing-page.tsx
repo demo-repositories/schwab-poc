@@ -18,8 +18,7 @@ export interface ISanityLandingPageDocument extends ISanityPageDocument {
 type LandingPageProps = {
   taxonomy: any[];
 };
-export const query = (slug: string) =>
-  groq`*[_type == "landingPage" && slug.current == '${slug}'][0]{slug, title, summary, language, _id, _type, _key, seoData{...,}, components[]{..., _ref, _id, _type, image{...,"palette": asset->metadata.palette},"refType":*[_id==^._ref]._type}, taxonomy[]{...,taxonomyAttribute->{name}, terms[]->{name, _id}}}`;
+export const query = groq`*[_type == "landingPage" && slug.current == $slug][0]{slug, title, summary, language, _id, _type, _key, seoData{...,}, components[]{..., _ref, _id, _type, image{...,"palette": asset->metadata.palette},"refType":*[_id==^._ref]._type}, taxonomy[]{...,taxonomyAttribute->{name}, terms[]->{name, _id}}}`;
 
 // Ultimately this component is a wrapper for the blocks provided by /app/[slug]/page.tsx
 export default function LandingPage({

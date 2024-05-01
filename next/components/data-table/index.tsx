@@ -2,6 +2,7 @@ import { loadQuery } from "@/lib/sanity/loader/loadQuery";
 import query from "./query";
 import { ISanityDocument } from "@/lib/sanity/types";
 import RenderDataTable from "./component";
+import { sanityFetch } from "@/lib/sanity/fetch";
 /**
  * Maps to the 'dataTable' object type in Sanity, gets pulled into 'CustomPortableText'
  */
@@ -19,8 +20,8 @@ export interface ISanityDataTableDocument extends ISanityDocument {
 //   await loadQuery<ISanityDataTableDocument>(query, params);
 
 export default async function DataTable(props) {
-  // const params = { _id: _ref };
-  // const initial = await componentData(params);
+  const params = { _id: props._ref };
+  const data = await sanityFetch({ query, params });
 
-  return <RenderDataTable {...props.value} />;
+  return <RenderDataTable {...data} />;
 }
