@@ -1,11 +1,11 @@
 "use client";
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 /**
  * A more global way to target GSAP. See components/button.tsx for a more component-level example
  */
-export default function GSAPProvider({ children }) {
+export default function GSAPProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const wrapperRef = useRef();
   useLayoutEffect(() => {

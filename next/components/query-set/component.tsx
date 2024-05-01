@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 import { TRenderQuerySetProps } from "./types";
 import Button from "@/components/button";
 import SanityImage from "../sanity-image";
+
 export default function RenderQuerySet({
   title,
   bottomCta,

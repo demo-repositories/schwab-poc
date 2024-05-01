@@ -1,5 +1,6 @@
 import { TToObject } from "@/components/button";
 import { TSanityImageProps } from "@/components/sanity-image";
+import { SanityDocument } from "next-sanity";
 /**
  * Place for random sanity-specific types that dont have logical files to live in
  */
@@ -20,10 +21,10 @@ type TTaxonomyTerm = {
   name: string;
   slug: string;
 };
-export type TTaxonomyItem = {
+export interface ITaxonomyItem extends SanityDocument {
   taxonomyAttribute: TTaxonomyAttribute[];
   terms: TTaxonomyTerm[];
-};
+}
 // Individual card object
 export type TSanityCard = {
   title?: string;

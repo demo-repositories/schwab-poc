@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { TMarqueeProps } from "@/components/marquee";
-import { TCardDeckProps } from "@/components/card-deck";
+// import { TCardDeckProps } from "@/components/card-deck";
 import { TQuerySetProps } from "@/components/query-set";
 import type { ISanityPageDocument } from "@/lib/sanity/types";
 import { groq } from "next-sanity";
@@ -13,7 +13,7 @@ import TaxonomyInfo from "@/components/taxonomy-info";
  */
 
 export interface ISanityLandingPageDocument extends ISanityPageDocument {
-  components: Array<TCardDeckProps | TMarqueeProps | TQuerySetProps>;
+  components: Array<{ _ref: string } | TMarqueeProps | TQuerySetProps>;
 }
 type LandingPageProps = {
   taxonomy: any[];

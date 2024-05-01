@@ -6,19 +6,15 @@ import { sanityFetch } from "@/lib/sanity/fetch";
  * Maps to the 'dataTable' object type in Sanity, gets pulled into 'CustomPortableText'
  */
 
-// Params for query
-type TParams = {
-  _id: string;
-};
 export interface ISanityDataTableDocument extends ISanityDocument {
   tableType: string;
   tickers: string[];
   columnHeaders: string[];
 }
 
-export default async function DataTable(props) {
+export default async function DataTable(props: { _ref: string }) {
   const params = { _id: props._ref };
-  const data = await sanityFetch({ query, params });
+  const data = await sanityFetch<ISanityDataTableDocument>({ query, params });
 
   return <RenderDataTable {...data} />;
 }

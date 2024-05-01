@@ -2,13 +2,14 @@ import RenderResults from "./component";
 import query from "./query";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
 import { sanityFetch } from "@/lib/sanity/fetch";
+import { ITaxonomyItem } from "@/lib/sanity/types";
 /**
  * Entry point for list of results from queryset parameters
  */
 
 export type TResultsDataParams = {
+  taxonomyFilters: ITaxonomyItem[];
   contentTypes: string[];
-  taxonomyFilters?: any[];
 };
 export default async function Results({
   params,

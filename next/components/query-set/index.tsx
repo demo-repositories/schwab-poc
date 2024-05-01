@@ -3,7 +3,9 @@ import Results from "./results";
 import query from "./query";
 
 import { sanityFetch } from "@/lib/sanity/fetch";
-
+import { SanityDocument } from "next-sanity";
+import { ITaxonomyItem } from "@/lib/sanity/types";
+import { IRenderQuerySetProps } from "./types";
 /**
  * Entry point for Queryset RSC. Fetches data + returns UI with that data.
  *
@@ -14,16 +16,14 @@ export type TQuerySetProps = {
   _ref: string;
   _key: string;
 };
-
-// Params for query
-// type TComponentDataParams = {
-//   _id: string;
-// };
+interface ISanityQuerySetDocument
+  extends SanityDocument,
+    IRenderQuerySetProps {}
 
 export default async function QuerySet(props: TQuerySetProps) {
   // console.log("queryset props", props);
   const params = { _id: props._ref };
-  const data = await sanityFetch({ query, params });
+  const data = await sanityFetch<ISanityQuerySetDocument>({ query, params });
 
   const { contentTypes, taxonomyFilters } = data;
 

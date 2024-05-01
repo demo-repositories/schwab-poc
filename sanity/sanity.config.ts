@@ -4,7 +4,7 @@ import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { presentationTool } from 'sanity/presentation'
 import { visionTool } from '@sanity/vision'
-import { scheduledPublishing } from '@sanity/scheduled-publishing'
+// import { scheduledPublishing } from '@sanity/scheduled-publishing'
 import { table } from '@sanity/table'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { bynderInputPlugin } from 'sanity-plugin-bynder-input'
@@ -91,7 +91,7 @@ const sharedConfig = {
                 'https://wave-trial.getbynder.com/',
         }),
         // Allow scheduled publishing
-        scheduledPublishing(),
+        // scheduledPublishing(),
         // TODO: change this URI to the schwab URI
         taxonomyManager({ baseUri: 'https://www.schwab.com/vocab/' }),
         assist({

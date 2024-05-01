@@ -9,18 +9,14 @@ import { sanityFetch } from "@/lib/sanity/fetch";
  * Gets pulled into 'CustomPortableText'
  */
 
-// Params for query
-type TParams = {
-  _id: string;
-};
 interface ISanityDynamicCTADocument extends ISanityDocument {
   heading: string;
   button: TButtonProps;
 }
 
-export default async function DynamicCTA(props) {
+export default async function DynamicCTA(props: { _ref: string }) {
   const params = { _id: props._ref };
-  const data = await sanityFetch({ query, params });
+  const data = await sanityFetch<ISanityDynamicCTADocument>({ query, params });
 
   return <RenderDynamicCTA {...data} />;
 }
