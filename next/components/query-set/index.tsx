@@ -4,7 +4,7 @@ import query from "./query";
 
 import { sanityFetch } from "@/lib/sanity/fetch";
 import { SanityDocument } from "next-sanity";
-import { ITaxonomyItem } from "@/lib/sanity/types";
+// import { ITaxonomyItem } from "@/lib/sanity/types";
 import { IRenderQuerySetProps } from "./types";
 /**
  * Entry point for Queryset RSC. Fetches data + returns UI with that data.
