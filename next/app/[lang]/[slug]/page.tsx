@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { PageParams } from "@/components/pages/types";
 import { sanityFetch } from "@/lib/sanity/fetch";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity/client";
 
 /**
  * Renders all 'landingPage' documents from Sanity
@@ -27,6 +29,11 @@ export async function generateMetadata({
   }
 
   return metadata;
+}
+export async function generateStaticParams() {
+  const query = groq`*[_type=="landingPage"]{"slug": slug.current, "lang":language}`;
+  const pages = await client.fetch(query);
+  return pages;
 }
 
 export default async function LandingPagePage({ params }: PageParams) {

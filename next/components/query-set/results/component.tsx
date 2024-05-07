@@ -1,7 +1,7 @@
 import { ISanityLandingPageDocument } from "@/components/pages/landing-page";
-
 import { ISanityStoryDocument } from "@/components/pages/story";
 import DocumentCards from "@/components/document-cards";
+
 export type TResult = ISanityStoryDocument | ISanityLandingPageDocument;
 type TRenderResultsProps = {
   results: TResult[];
@@ -12,12 +12,12 @@ export default function RenderResults({
   results,
   taxonomyFilters,
 }: TRenderResultsProps) {
-  // console.log("results", results);
   function filterByTaxonomy() {
     // Get IDs of attributes
     const attributes = taxonomyFilters.map(
       (filter) => filter.taxonomyAttribute._id,
     );
+    console.log("attributes", attributes);
     // Filter results to only have matching attributes to our filters
     const matchesAttribute = results.filter((result) => {
       if (result?.taxonomy) {
@@ -34,7 +34,6 @@ export default function RenderResults({
     });
     // Copy our initial attribute array to filter through
     let matchesTerm = matchesAttribute;
-
     // Loop through all filters
     for (let i = 0; i < taxonomyFilters.length; i++) {
       // re-set matchesTerm with each filter
