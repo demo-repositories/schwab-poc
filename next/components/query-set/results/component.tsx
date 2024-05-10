@@ -17,7 +17,6 @@ export default function RenderResults({
     const attributes = taxonomyFilters.map(
       (filter) => filter.taxonomyAttribute._id,
     );
-    console.log("attributes", attributes);
     // Filter results to only have matching attributes to our filters
     const matchesAttribute = results.filter((result) => {
       if (result?.taxonomy) {

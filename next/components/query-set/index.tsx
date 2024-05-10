@@ -29,7 +29,9 @@ export default async function QuerySet(props: TQuerySetProps) {
 
   return (
     <RenderQuerySet {...data}>
-      <Results params={{ contentTypes, taxonomyFilters }} />
+      {taxonomyFilters && (
+        <Results params={{ contentTypes, taxonomyFilters }} />
+      )}
     </RenderQuerySet>
   );
 }

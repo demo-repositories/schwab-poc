@@ -109,6 +109,8 @@ export default {
                             name: 'to',
                             title: 'To',
                             type: 'reference',
+                            hidden: ({ parent }) =>
+                                !(parent?.cardType === 'ctaCard'),
                             to: [{ type: 'landingPage' }],
                         },
                     ],

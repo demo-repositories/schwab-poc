@@ -18,6 +18,7 @@ export default async function Results({
 }) {
   const { contentTypes, taxonomyFilters } = params;
   // console.log("taxonomyFilters", taxonomyFilters);
+
   const attributes = taxonomyFilters?.map(
     ({ taxonomyAttribute }) => taxonomyAttribute._id,
   );
@@ -30,6 +31,8 @@ export default async function Results({
     },
   });
   return (
-    <RenderResults results={[...data]} taxonomyFilters={taxonomyFilters} />
+    data && (
+      <RenderResults results={[...data]} taxonomyFilters={taxonomyFilters} />
+    )
   );
 }
