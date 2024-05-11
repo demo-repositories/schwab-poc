@@ -21,7 +21,6 @@ interface ISanityQuerySetDocument
     IRenderQuerySetProps {}
 
 export default async function QuerySet(props: TQuerySetProps) {
-  // console.log("queryset props", props);
   const params = { _id: props._ref };
   const data = await sanityFetch<ISanityQuerySetDocument>({ query, params });
 
