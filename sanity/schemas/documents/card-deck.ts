@@ -1,7 +1,7 @@
 import { Component, LayoutGrid, Image, MousePointerSquare } from 'lucide-react'
 
 import { CardTypeInput } from '../../components/inputs/card-type'
-import Sup from '../../components/preview/Sup'
+import Sup from '../../components/preview/sup'
 import { defineField } from 'sanity'
 
 export const cardTypes = [

@@ -10,7 +10,7 @@ import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { bynderInputPlugin } from 'sanity-plugin-bynder-input'
 import { schemaTypes } from './schemas'
 import { deskStructure } from './desk/deskStructure'
-import SchwabLogo from './components/SchwabLogo'
+import SchwabLogo from './components/schwab-logo'
 import { locate } from './presentation/locate'
 import ParentAttributes from './components/inputs/parent-attributes'
 import { assist } from '@sanity/assist'
@@ -21,10 +21,11 @@ import { defaultDocumentNode } from './desk/defaultDocumentNode'
 // URL to be used for previewing in presentation
 const SANITY_STUDIO_PREVIEW_URL =
     process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
+const SANITY_STUDIO_PROJECT_ID = process.env.SANITY_STUDIO_PROJECT_ID
 
 // Init client to get user role for showing/hiding workspaces
 const client = createClient({
-    projectId: 'fvuvea00',
+    projectId: SANITY_STUDIO_PROJECT_ID,
     dataset: 'production',
     useCdn: false,
 })
@@ -33,20 +34,6 @@ const currentUser = await client.request({
     uri: '/users/me',
     withCredentials: true,
 })
-// // Get *sanityID* and *organizationId* for roles query
-// const { sanityUserId } = await client.request({
-//     uri: `/projects/fvuvea00/users/${currentUser.id}`,
-//     withCredentials: true,
-// })
-// const { organizationId } = await client.request({
-//     uri: `/projects/fvuvea00`,
-//     withCredentials: true,
-// })
-// // Needs to be inside a serverless function with org-wide members read access token
-// const userRoles = await client.request({
-//     uri: `/organizations/${organizationId}/acl/${sanityUserId}`,
-//     withCredentials: true,
-// })
 
 // Add special tools for administrators
 const adminTools = currentUser.role == 'administrator' ? [visionTool()] : []
@@ -60,7 +47,7 @@ export const supportedLanguages = [
 ]
 const sharedConfig = {
     icon: SchwabLogo,
-    projectId: 'fvuvea00',
+    projectId: SANITY_STUDIO_PROJECT_ID,
     dataset: 'production',
     plugins: [
         structureTool({
@@ -87,7 +74,7 @@ const sharedConfig = {
         // Get any asset from bynder
         bynderInputPlugin({
             portalDomain:
-                process.env.BYNDER_PORTAL_DOMAIN ||
+                process.env.SANITY_STUDIO_BYNDER_PORTAL_DOMAIN ||
                 'https://wave-trial.getbynder.com/',
         }),
         // Allow scheduled publishing
