@@ -1,5 +1,4 @@
 import { WholeWord } from 'lucide-react'
-import { isUniqueAcrossAllDocuments } from '../../lib/isUniqueAcrossAllDocuments'
 
 export default {
     name: 'taxonomyTerm',
@@ -21,7 +20,6 @@ export default {
             type: 'slug',
             options: {
                 source: 'name',
-                // isUnique: isUniqueAcrossAllDocuments,
             },
         },
     ],

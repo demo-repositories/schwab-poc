@@ -38,11 +38,13 @@ export default function DocumentCards({
           }) => (
             <Card key={_id} className="mb-4 grid-rows-2 gap-0 lg:mb-0 lg:grid">
               <CardHeader>
-                <SanityImage
-                  value={featuredImage}
-                  height={150}
-                  layout="fixed"
-                />
+                {featuredImage && (
+                  <SanityImage
+                    value={featuredImage}
+                    height={150}
+                    layout="fixed"
+                  />
+                )}
               </CardHeader>
               <CardContent>
                 <CardTitle className="mb-2">{title}</CardTitle>

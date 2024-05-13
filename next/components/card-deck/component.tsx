@@ -12,6 +12,7 @@ export function RenderCardDeck({
   cardType,
   ctaText,
   cards,
+  styles,
 }: TSanityCardDeckDocument) {
   return (
     <section className="mx-auto max-w-7xl flex-row items-center p-7">
@@ -27,7 +28,14 @@ export function RenderCardDeck({
               case "iconCard":
                 return <IconCard key={card._key} {...card} />;
               case "ctaCard":
-                return <CTACard key={card._key} {...card} ctaText={ctaText} />;
+                return (
+                  <CTACard
+                    key={card._key}
+                    {...card}
+                    ctaText={ctaText}
+                    styles={styles}
+                  />
+                );
               default:
                 console.log("Card type not found");
                 return null;

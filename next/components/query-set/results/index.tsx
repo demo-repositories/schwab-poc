@@ -16,9 +16,9 @@ export default async function Results({
 }: {
   params: TResultsDataParams;
 }) {
-  // console.log("praram", params);
   const { contentTypes, taxonomyFilters } = params;
-  // console.log("taxonomyFilters", taxonomyFilters[0].taxonomyAttribute);
+  // console.log("taxonomyFilters", taxonomyFilters);
+
   const attributes = taxonomyFilters?.map(
     ({ taxonomyAttribute }) => taxonomyAttribute._id,
   );
@@ -30,8 +30,9 @@ export default async function Results({
       taxonomyFilters: vercelStegaCleanAll(attributes),
     },
   });
-
   return (
-    <RenderResults results={[...data]} taxonomyFilters={taxonomyFilters} />
+    data && (
+      <RenderResults results={[...data]} taxonomyFilters={taxonomyFilters} />
+    )
   );
 }

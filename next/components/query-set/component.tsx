@@ -40,7 +40,7 @@ export default function RenderQuerySet({
       )}
       {children}
 
-      {bottomCta && (
+      {bottomCta && (bottomCta.hrefOverride || bottomCta.to) && (
         <div className="mt-9 flex justify-end">
           <Button {...bottomCta} />
         </div>
