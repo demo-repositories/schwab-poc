@@ -11,21 +11,21 @@ You should be able to:
 3. `npm install`
 4. Open your studio at [http://localhost:3333/structure](http://localhost:3333/structure)
 
-## Deployment
-
-The studio is automatically deployed whenever files in this directory are changed on the `main` branch.
-
-[Deployed studio](https://sanity-cs-poc.sanity.studio/structure)
-
 ## Project structure
 
 ```
 .
 └── sanity/
     ├── components/
+    │   ├── inputs/
+    │   │   ├── card-type.tsx
+    │   │   ├── parent-attributes.tsx
+    │   │   └── ticker-search.tsx
     │   ├── preview/
-    │   │   └── PreviewDynamicCTA.tsx
-    │   └── SchwabLogo.tsx
+    │   │   └── Sup.tsx
+    │   └── schwab-logo.tsx
+    ├── data/
+    │   └── stock-tickers.json
     ├── desk/
     │   ├── defaultDocumentNode.ts
     │   └── deskStructure.ts
@@ -43,13 +43,17 @@ The studio is automatically deployed whenever files in this directory are change
 
 ### components
 
+#### inputs
+
+Custom inputs for certain fields in the Studio
+
 #### preview
 
 Components for rendering custom blocks in the portable text editor.
 
-#### SchwabLogo.tsx
+#### schwab-logo.tsx
 
-SVG ripped from the website, used as the workspace icon if we ever get into multiple workspaces.
+SVG ripped from the website
 
 ### desk
 
@@ -57,7 +61,7 @@ Customizations to the look and layout of the Sanity studio.
 
 #### defaultDocumentNode.ts
 
-Overrides how the document editing pane appears in the studio. Was formerly just adding the preview iframe pane to 'story' and 'landingPage' types, but with the launch of Presentation is no longer used.
+Overrides how the document editing pane appears in the studio. Adds the "Smartling" tab to the document editor.
 
 #### deskStructure.ts
 
@@ -112,12 +116,3 @@ For content icons in the studio you can pass any React component. Sanity exposes
 -   [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
 -   [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
 -   [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
-
-## Continuous deployment
-
-At the top level of this repository is a `.github/workflows` directory with a file `deploy-studio.yaml`. This is a [GitHub action](https://docs.github.com/en/actions) that will re-deploy the studio when:
-
--   Changes are pushed to main AND
--   Files in the `/sanity` directory are part of the change
-
-These settings can of course be adjusted in the YAML file.

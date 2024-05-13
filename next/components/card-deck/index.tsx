@@ -1,7 +1,7 @@
-import { loadQuery } from "@/lib/sanity/loader/loadQuery";
-import { TSanityCardDeckDocument } from "@/lib/sanity/types";
 import query from "./query";
 import { RenderCardDeck } from "./component";
+import { sanityFetch } from "@/lib/sanity/fetch";
+import { TSanityCardDeckDocument } from "@/lib/sanity/types";
 
 /**
  * Entry point for Card deck RSC. Fetches data + returns UI with that data.
@@ -16,15 +16,13 @@ export type TCardDeckProps = {
 };
 
 // Params for query
-type TParams = {
-  _id: string;
-};
-const componentData = async (params: TParams) =>
-  await loadQuery<TSanityCardDeckDocument>(query, params);
+// type TParams = {
+//   _id: string;
+// };
 
-export default async function CardDeck(props: TCardDeckProps) {
+export default async function CardDeck(props: { _ref: string }) {
   const params = { _id: props._ref };
-  const initial = await componentData(params);
+  const data = await sanityFetch<TSanityCardDeckDocument>({ query, params });
 
-  return <RenderCardDeck {...initial.data} />;
+  return <RenderCardDeck {...data} />;
 }

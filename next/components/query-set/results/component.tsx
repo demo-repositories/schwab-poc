@@ -1,7 +1,7 @@
 import { ISanityLandingPageDocument } from "@/components/pages/landing-page";
-
 import { ISanityStoryDocument } from "@/components/pages/story";
 import DocumentCards from "@/components/document-cards";
+
 export type TResult = ISanityStoryDocument | ISanityLandingPageDocument;
 type TRenderResultsProps = {
   results: TResult[];
@@ -33,7 +33,6 @@ export default function RenderResults({
     });
     // Copy our initial attribute array to filter through
     let matchesTerm = matchesAttribute;
-
     // Loop through all filters
     for (let i = 0; i < taxonomyFilters.length; i++) {
       // re-set matchesTerm with each filter
@@ -46,6 +45,8 @@ export default function RenderResults({
         const taxonomyItem = result.taxonomy.filter(
           (item) => item.taxonomyAttribute._ref == attrID,
         )[0];
+        // There are no terms set for this document
+        if (!taxonomyItem.terms) return false;
         // Simplify shape of taxonomy item's terms to make filtering easier
         const itemTermIds = taxonomyItem.terms.map((term) => term._ref);
         // If ANY term matches for the attribute, we consider it a match

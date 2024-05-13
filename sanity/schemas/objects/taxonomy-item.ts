@@ -45,7 +45,7 @@ export default {
                         filter: async ({ document, parent, getClient }) => {
                             const documentItems = []
                             // Woof and I'm sorry
-                            function getTaxonomyItems(obj) {
+                            function geITaxonomyItems(obj) {
                                 for (var property in obj) {
                                     if (
                                         property == '_type' &&
@@ -55,7 +55,7 @@ export default {
                                     }
                                     if (Array.isArray(obj[property])) {
                                         for (let item in obj[property]) {
-                                            getTaxonomyItems(
+                                            geITaxonomyItems(
                                                 obj[property][item]
                                             )
                                         }
@@ -64,11 +64,11 @@ export default {
                                         typeof obj[property] == 'object' &&
                                         !Array.isArray(obj[property])
                                     ) {
-                                        getTaxonomyItems(obj[property])
+                                        geITaxonomyItems(obj[property])
                                     }
                                 }
                             }
-                            getTaxonomyItems(document)
+                            geITaxonomyItems(document)
 
                             // Compare each taxonomyItem's "terms" array's entries with our "parent" object to find the right item to lookup
                             const parentAttribute = documentItems.filter(

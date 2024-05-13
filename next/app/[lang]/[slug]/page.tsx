@@ -1,33 +1,24 @@
-import { draftMode } from "next/headers";
-import LandingPage, {
-  query,
-  ISanityLandingPageDocument,
-} from "@/components/pages/landing-page";
+import LandingPage, { query } from "@/components/pages/landing-page";
 import CardDeck from "@/components/card-deck";
 import Marquee from "@/components/marquee";
 import QuerySet from "@/components/query-set";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { loadQuery } from "@/lib/sanity/loader/loadQuery";
-import dynamic from "next/dynamic";
 import type { PageParams } from "@/components/pages/types";
-const PagePreview = dynamic(
-  () => import("@/components/pages/landing-page/preview"),
-);
+import { sanityFetch } from "@/lib/sanity/fetch";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity/client";
+
 /**
  * Renders all 'landingPage' documents from Sanity
  */
-
-// Fetch for all landing page data
-const pageData = async (slug: string) =>
-  await loadQuery<ISanityLandingPageDocument>(query(slug));
 
 // SEO metadata from document and/or overrides from 'seoData' field
 export async function generateMetadata({
   params,
 }: PageParams): Promise<Metadata> {
   const { slug } = params;
-  const { data } = await pageData(slug);
+  const data = await sanityFetch({ query, params });
   if (!data) return {};
 
   const { seoData, title, summary } = data;
@@ -39,22 +30,27 @@ export async function generateMetadata({
 
   return metadata;
 }
+export async function generateStaticParams() {
+  const query = groq`*[_type=="landingPage"]{"slug": slug.current, "lang":language}`;
+  const pages = await client.fetch(query);
+  return pages;
+}
 
 export default async function LandingPagePage({ params }: PageParams) {
   const { slug } = params;
-  const initial = await pageData(slug);
+  const page = await sanityFetch({ query, params });
   // 404 if no document in Sanity.
   // This can be done more granularly with the app router, but for now general 404 behavior
-  if (slug == "home" || !initial.data) {
+  if (slug == "home" || !page) {
     notFound();
   }
 
   // Return client component version of page for Presentation
-  if (draftMode().isEnabled) {
-    return <PagePreview params={params} initial={initial} />;
-  }
+  // if (draftMode().isEnabled) {
+  //   return <PagePreview params={params} initial={initial} />;
+  // }
 
-  const { components, taxonomy } = initial.data;
+  const { components, taxonomy } = page;
 
   return (
     <LandingPage taxonomy={taxonomy}>

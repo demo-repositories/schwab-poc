@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 import { TRenderQuerySetProps } from "./types";
 import Button from "@/components/button";
 import SanityImage from "../sanity-image";
+
 export default function RenderQuerySet({
   title,
   bottomCta,
@@ -39,7 +40,7 @@ export default function RenderQuerySet({
       )}
       {children}
 
-      {bottomCta && (
+      {bottomCta && (bottomCta.hrefOverride || bottomCta.to) && (
         <div className="mt-9 flex justify-end">
           <Button {...bottomCta} />
         </div>

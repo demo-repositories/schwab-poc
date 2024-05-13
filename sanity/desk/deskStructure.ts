@@ -11,6 +11,7 @@ import { supportedLanguages } from '../sanity.config'
  * My personal logic for this first iteration of the layout is to have all document types responsible for 'pages' on the website in a group, followed by a group for taxonomy, and finally all other new document types will be added to the bottom of the list.
  */
 export const deskStructure = (S: StructureBuilder, context: ConfigContext) => {
+    console.log('context', context)
     return S.list()
         .title('Content')
         .items([
@@ -128,6 +129,23 @@ export const deskStructure = (S: StructureBuilder, context: ConfigContext) => {
                                         .title('Taxonomy terms')
                                         .child()
                                 ),
+                            S.divider(),
+                            S.listItem()
+                                .title('Concept')
+
+                                .child(
+                                    S.documentTypeList('skosConcept')
+                                        .title('Concept')
+                                        .child()
+                                ),
+                            S.listItem()
+                                .title('Concept scheme')
+
+                                .child(
+                                    S.documentTypeList('skosConceptScheme')
+                                        .title('Concept scheme')
+                                        .child()
+                                ),
                         ])
                 ),
             S.divider(),
@@ -139,6 +157,10 @@ export const deskStructure = (S: StructureBuilder, context: ConfigContext) => {
                         'landingPage',
                         'taxonomyAttribute',
                         'taxonomyTerm',
+                        'skosConcept',
+                        'skosConceptScheme',
+                        'assist.instruction.context',
+                        'translation.metadata',
                     ].includes(listItem.getId())
             ),
         ])

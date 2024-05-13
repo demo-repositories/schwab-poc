@@ -4,31 +4,32 @@ import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { presentationTool } from 'sanity/presentation'
 import { visionTool } from '@sanity/vision'
-import { scheduledPublishing } from '@sanity/scheduled-publishing'
+// import { scheduledPublishing } from '@sanity/scheduled-publishing'
 import { table } from '@sanity/table'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { bynderInputPlugin } from 'sanity-plugin-bynder-input'
 import { schemaTypes } from './schemas'
 import { deskStructure } from './desk/deskStructure'
-import SchwabLogo from './components/SchwabLogo'
+import SchwabLogo from './components/schwab-logo'
 import { locate } from './presentation/locate'
 import ParentAttributes from './components/inputs/parent-attributes'
 import { assist } from '@sanity/assist'
 import { taxonomyManager } from 'sanity-plugin-taxonomy-manager'
 import { codeInput } from '@sanity/code-input'
 import { documentInternationalization } from '@sanity/document-internationalization'
-
+import { defaultDocumentNode } from './desk/defaultDocumentNode'
 // URL to be used for previewing in presentation
 const SANITY_STUDIO_PREVIEW_URL =
     process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
+const SANITY_STUDIO_PROJECT_ID = process.env.SANITY_STUDIO_PROJECT_ID
 
 // Init client to get user role for showing/hiding workspaces
 const client = createClient({
-    projectId: 'fvuvea00',
+    projectId: SANITY_STUDIO_PROJECT_ID,
     dataset: 'production',
     useCdn: false,
 })
-
+// Get userId for current user
 const currentUser = await client.request({
     uri: '/users/me',
     withCredentials: true,
@@ -39,18 +40,20 @@ const adminTools = currentUser.role == 'administrator' ? [visionTool()] : []
 
 // Shared languages array
 export const supportedLanguages = [
-    { id: 'zh-CN', title: 'Chinese (China)' },
+    { id: 'zh-CN', title: 'Chinese (China - Simplified)' },
+    { id: 'zh-TW', title: 'Chinese (Taiwan-Traditional)' },
+    { id: 'es-US', title: 'Spanish (US)' },
     { id: 'en-US', title: 'English (US)' },
 ]
 const sharedConfig = {
     icon: SchwabLogo,
-    projectId: 'fvuvea00',
+    projectId: SANITY_STUDIO_PROJECT_ID,
     dataset: 'production',
     plugins: [
         structureTool({
             // Override the layout of our studio and the document editor
             structure: deskStructure,
-            // defaultDocumentNode: defaultDocumentNode,
+            defaultDocumentNode: defaultDocumentNode,
         }),
         presentationTool({
             // Required: set the base URL to the preview location in the front end
@@ -71,11 +74,11 @@ const sharedConfig = {
         // Get any asset from bynder
         bynderInputPlugin({
             portalDomain:
-                process.env.BYNDER_PORTAL_DOMAIN ||
+                process.env.SANITY_STUDIO_BYNDER_PORTAL_DOMAIN ||
                 'https://wave-trial.getbynder.com/',
         }),
         // Allow scheduled publishing
-        scheduledPublishing(),
+        // scheduledPublishing(),
         // TODO: change this URI to the schwab URI
         taxonomyManager({ baseUri: 'https://www.schwab.com/vocab/' }),
         assist({
@@ -96,7 +99,7 @@ const sharedConfig = {
         documentInternationalization({
             // Required configuration
             supportedLanguages,
-            schemaTypes: ['story'],
+            schemaTypes: ['story', 'landingPage'],
         }),
     ],
     document: {

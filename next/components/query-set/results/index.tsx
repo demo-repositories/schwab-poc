@@ -1,16 +1,15 @@
 import RenderResults from "./component";
-import { loadQuery } from "@/lib/sanity/loader/loadQuery";import query from "./query";
+import query from "./query";
 import { vercelStegaCleanAll } from "@sanity/client/stega";
-import type { TResult } from "./component";
+import { sanityFetch } from "@/lib/sanity/fetch";
+import { ITaxonomyItem } from "@/lib/sanity/types";
 /**
  * Entry point for list of results from queryset parameters
  */
-const resultsData = async (params: TResultsDataParams) => {
-  return await loadQuery<TResult[]>(query, params);
-};
+
 export type TResultsDataParams = {
+  taxonomyFilters: ITaxonomyItem[];
   contentTypes: string[];
-  taxonomyFilters?: any[];
 };
 export default async function Results({
   params,
@@ -19,18 +18,21 @@ export default async function Results({
 }) {
   const { contentTypes, taxonomyFilters } = params;
   // console.log("taxonomyFilters", taxonomyFilters);
-  // const attributes = taxonomyFilters?.map(
-  //   ({ taxonomyAttribute }) => taxonomyAttribute._id,
-  // );
 
-  const initial = await resultsData({
-    contentTypes: vercelStegaCleanAll(contentTypes), // I spent like 30 minutes missing this cleanAll thing
-    // taxonomyFilters: vercelStegaCleanAll(attributes),
+  const attributes = taxonomyFilters?.map(
+    ({ taxonomyAttribute }) => taxonomyAttribute._id,
+  );
+
+  const data = await sanityFetch({
+    query,
+    params: {
+      contentTypes: vercelStegaCleanAll(contentTypes),
+      taxonomyFilters: vercelStegaCleanAll(attributes),
+    },
   });
   return (
-    <RenderResults
-      results={...initial.data}
-      taxonomyFilters={taxonomyFilters}
-    />
+    data && (
+      <RenderResults results={[...data]} taxonomyFilters={taxonomyFilters} />
+    )
   );
 }

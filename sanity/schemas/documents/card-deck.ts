@@ -1,7 +1,8 @@
 import { Component, LayoutGrid, Image, MousePointerSquare } from 'lucide-react'
 
 import { CardTypeInput } from '../../components/inputs/card-type'
-import Sup from '../../components/preview/Sup'
+import Sup from '../../components/preview/sup'
+import { defineField } from 'sanity'
 
 export const cardTypes = [
     {
@@ -27,6 +28,7 @@ export default {
             title: 'Title',
             name: 'title',
             type: 'string',
+            group: 'content',
         },
 
         {
@@ -38,17 +40,20 @@ export default {
                 layout: 'radio',
             },
             components: { input: CardTypeInput },
+            group: 'content',
         },
         {
             name: 'ctaText',
             title: 'CTA text',
             type: 'string',
             hidden: ({ parent }) => !(parent?.cardType === 'ctaCard'),
+            group: 'content',
         },
         {
             name: 'cards',
             title: 'Cards',
             type: 'array',
+            group: 'content',
             of: [
                 // This card type maybe should be its own object, but to keep the logic for show/hide in one place its just defined in line for now
                 {
@@ -109,6 +114,8 @@ export default {
                             name: 'to',
                             title: 'To',
                             type: 'reference',
+                            hidden: ({ parent }) =>
+                                !(parent?.cardType === 'ctaCard'),
                             to: [{ type: 'landingPage' }],
                         },
                     ],
@@ -130,16 +137,49 @@ export default {
                 },
             ],
         },
+        defineField({
+            name: 'styles',
+            type: 'object',
+            group: 'style',
+
+            fields: [
+                defineField({
+                    name: 'variant',
+                    type: 'string',
+                    options: {
+                        list: ['default', 'rounded'],
+                    },
+                }),
+                defineField({
+                    name: 'buttonAlign',
+                    type: 'string',
+                    options: {
+                        list: ['left', 'right'],
+                    },
+                }),
+            ],
+        }),
     ],
     preview: {
         select: {
             title: 'title',
+            subtitle: 'cardType',
         },
-        prepare({ title }) {
+        prepare({ title, subtitle }) {
+            const name = cardTypes.filter(({ value }) => {
+                return value == subtitle
+            })[0].title
             return {
                 title,
-                subtitle: 'Card deck',
+                subtitle: name,
             }
         },
     },
+    groups: [
+        {
+            name: 'content',
+            title: 'Content',
+        },
+        { name: 'style', title: 'Style' },
+    ],
 }

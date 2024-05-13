@@ -66,6 +66,13 @@ export default {
             type: 'seoData',
             group: 'seo',
         },
+        {
+            // should match 'languageField' plugin configuration setting, if customized
+            name: 'language',
+            type: 'string',
+            readOnly: true,
+            hidden: true,
+        },
     ],
     groups: [
         {

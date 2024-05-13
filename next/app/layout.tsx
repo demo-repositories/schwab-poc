@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/components/layout/theme-provider";
 import Navbar from "@/components/layout/navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/layout/footer";
-import { VisualEditing } from "@/components/layout/visual-editing";
+// import { VisualEditing } from "@/components/layout/visual-editing";
 import GSAPProvider from "@/components/layout/gsap-provider";
-
+import { VisualEditing } from "next-sanity";
 export const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",

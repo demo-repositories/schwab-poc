@@ -1,5 +1,5 @@
 import { PortableTextBlock } from "@portabletext/types";
-import CustomPortableText from "./custom-portable-text";
+// import CustomPortableText from "./custom-portable-text";
 import SanityImage from "@/components/sanity-image";
 import { ISanityPageDocument } from "@/lib/sanity/types";
 import { groq } from "next-sanity";
@@ -12,6 +12,7 @@ import TaxonomyInfo from "@/components/taxonomy-info";
 export interface ISanityStoryDocument extends ISanityPageDocument {
   content: PortableTextBlock[];
   displayDate?: string;
+  language: string;
 }
 type TStoryProps = {
   data: ISanityStoryDocument;
@@ -20,6 +21,7 @@ type TStoryProps = {
 export const query = groq`*[_type == "story" && slug.current == $slug && language == $lang][0]{
     slug,
     title,
+    language,
     summary,
     displayDate,
     _id,
@@ -32,9 +34,9 @@ export const query = groq`*[_type == "story" && slug.current == $slug && languag
         "to":to->{slug, _type}
       },
       "refType":*[_id==^._ref]._type,
-      "refData":*[_id==^._ref]{
-        ...,
-      },
+      // "refData":*[_id==^._ref]{
+      //   ...,
+      // },
     },
     seoData {...,},
     taxonomy[]{
@@ -48,8 +50,7 @@ export default function Story({
   data,
   children,
 }: PropsWithChildren<TStoryProps>) {
-  const { title, summary, featuredImage, content, displayDate, taxonomy } =
-    data;
+  const { title, summary, featuredImage, displayDate, taxonomy } = data;
   const dateString = displayDate
     ? new Date(displayDate).toLocaleDateString("en-US", {
         timeZone: "UTC",

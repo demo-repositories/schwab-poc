@@ -82,6 +82,9 @@ export default {
                 },
                 {
                     type: 'image',
+                    options: {
+                        hotspot: true,
+                    },
                     fields: [
                         {
                             name: 'caption',
@@ -90,6 +93,9 @@ export default {
                             of: [{ type: 'block' }],
                         },
                     ],
+                },
+                {
+                    type: 'bynder.asset',
                 },
                 {
                     type: 'reference',
