@@ -23,20 +23,20 @@ const SANITY_STUDIO_PREVIEW_URL =
     process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
 const SANITY_STUDIO_PROJECT_ID = process.env.SANITY_STUDIO_PROJECT_ID
 
-// Init client to get user role for showing/hiding workspaces
-const client = createClient({
-    projectId: SANITY_STUDIO_PROJECT_ID,
-    dataset: 'production',
-    useCdn: false,
-})
-// Get userId for current user
-const currentUser = await client.request({
-    uri: '/users/me',
-    withCredentials: true,
-})
+// // Init client to get user role for showing/hiding workspaces
+// const client = createClient({
+//     projectId: SANITY_STUDIO_PROJECT_ID,
+//     dataset: 'production',
+//     useCdn: false,
+// })
+// // Get userId for current user
+// const currentUser = await client.request({
+//     uri: '/users/me',
+//     withCredentials: true,
+// })
 
-// Add special tools for administrators
-const adminTools = currentUser.role == 'administrator' ? [visionTool()] : []
+// // Add special tools for administrators
+// const adminTools = currentUser.role == 'administrator' ? [visionTool()] : []
 
 // Shared languages array
 export const supportedLanguages = [
@@ -66,7 +66,7 @@ const sharedConfig = {
             locate,
         }),
         // GROQ query sandbox
-        ...adminTools,
+        // ...adminTools,
         // Table type used in stories
         table(),
         // Get images from unsplash
@@ -212,6 +212,6 @@ const editorConfigs = allConfigs.filter(
     (config) => config.name !== 'charitable'
 )
 // return all workspaces for admins
-const configs =
-    currentUser.role === 'administrator' ? allConfigs : editorConfigs
-export default defineConfig(configs)
+// const configs =
+//     currentUser.role === 'administrator' ? allConfigs : editorConfigs
+export default defineConfig(allConfigs)
