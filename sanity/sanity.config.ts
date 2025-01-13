@@ -21,7 +21,8 @@ import { defaultDocumentNode } from './desk/defaultDocumentNode'
 // URL to be used for previewing in presentation
 const SANITY_STUDIO_PREVIEW_URL =
     process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
-const SANITY_STUDIO_PROJECT_ID = process.env.SANITY_STUDIO_PROJECT_ID
+const SANITY_STUDIO_PROJECT_ID =
+    process.env.SANITY_STUDIO_PROJECT_ID ?? 'fvuvea00'
 
 // // Init client to get user role for showing/hiding workspaces
 // const client = createClient({
