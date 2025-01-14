@@ -18,6 +18,8 @@ import { taxonomyManager } from 'sanity-plugin-taxonomy-manager'
 import { codeInput } from '@sanity/code-input'
 import { documentInternationalization } from '@sanity/document-internationalization'
 import { defaultDocumentNode } from './desk/defaultDocumentNode'
+import { workflow } from 'sanity-plugin-workflow'
+
 // URL to be used for previewing in presentation
 const SANITY_STUDIO_PREVIEW_URL =
     process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
@@ -101,6 +103,13 @@ const sharedConfig = {
             // Required configuration
             supportedLanguages,
             schemaTypes: ['story', 'landingPage'],
+        }),
+        workflow({
+            // Required, list of document type names
+            // schemaTypes: ['article', 'product'],
+            schemaTypes: ['story'],
+            // Optional, see below
+            // states: [],
         }),
     ],
     document: {
