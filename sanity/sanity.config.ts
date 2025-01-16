@@ -80,6 +80,7 @@ const sharedConfig = {
                 process.env.SANITY_STUDIO_BYNDER_PORTAL_DOMAIN ||
                 'https://wave-trial.getbynder.com/',
         }),
+
         // Allow scheduled publishing
         // scheduledPublishing(),
         // TODO: change this URI to the schwab URI

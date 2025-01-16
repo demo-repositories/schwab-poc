@@ -104,7 +104,7 @@ export default function Marquee({
           <Image
             src={builder
               .image(image)
-              .width(width)
+              .width(width > 1800 ? 1800 : width)
               .fit("max")
               .auto("format")
               .url()}
@@ -112,6 +112,7 @@ export default function Marquee({
             height={600}
             alt={image.alt || ""}
             className="relative -z-10"
+            loading="eager"
           />
         </div>
       </div>
